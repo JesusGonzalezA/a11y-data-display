@@ -1,5 +1,5 @@
 {
-  "name": "a11y-course",
+  "name": "a11y-data-display",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -46,7 +46,7 @@
     "@types/node": "^22.0.0",
     "@testing-library/dom": "^10.4.1"
   },
-  "description": "Plantilla de weaaare para cursos con diapositivas y Storybook.",
+  "description": "Presentación de datos accesible: Data Display. Curso de weaaare de 120 minutos y 13 lecciones.",
   "engines": {
     "node": ">=22.12.0"
   }
