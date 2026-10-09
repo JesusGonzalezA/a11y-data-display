@@ -29,10 +29,96 @@ Aquí no hay observación de soporte con tecnología de apoyo real.
 
 ## Matriz de criterios
 
-Criterio literal de MagentaA11y heading: “WHEN I use the tab key I SEE nothing
-happens to the heading because headings must NOT be focusable”. El resto se
-resume abajo; los Gherkin completos están en las fuentes enlazadas. Son criterios
-de evaluación, no una transcripción garantizada de anuncios.
+Los siguientes extractos conservan los criterios aplicables de MagentaA11y
+(T-Mobile), publicados bajo [Apache-2.0](https://github.com/tmobile/magentaA11y/blob/c0d97812d9298757f5a2d8902ed7671afb1aa9ba/LICENSE.txt).
+Consulta: 2026-10-09; fuente fijada al commit
+`c0d97812d9298757f5a2d8902ed7671afb1aa9ba`. Se conserva la redacción original de
+los escenarios; la clasificación y las evidencias de M1 se añaden después.
+«I HEAR» es un criterio para evaluación con lector real, nunca una afirmación
+basada en tests DOM.
+
+### Gherkin original: heading
+
+[Fuente fijada al SHA consultado](https://github.com/tmobile/magentaA11y/blob/c0d97812d9298757f5a2d8902ed7671afb1aa9ba/public/content/documentation/web/component/heading.md).
+
+```gherkin
+GIVEN THAT I am on a page with a heading
+
+1. Keyboard for mobile & desktop
+
+      - WHEN I use the arrow key to browse to a heading I SEE the heading comes into view
+      - WHEN I use the tab key I SEE nothing happens to the heading because headings must NOT be focusable
+
+2. Desktop screenreader
+
+      - WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) AND
+      - I use the arrow key to browse to a heading
+         - I HEAR the heading's purpose and level must be clear
+         - I HEAR it identifies itself as a heading and its level
+         - I HEAR it is logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
+      - WHEN when I use the tab key I HEAR nothing happens to the heading because headings must NOT be focusable
+
+3. Mobile screenreader
+
+      - WHEN I use a mobile screenreader (Talkback, VoiceOver) AND
+      - I swipe to browse to a heading
+         - I HEAR the heading's purpose and level must be clear
+         - I HEAR it identifies itself as a heading and its level
+         - I HEAR it is logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
+```
+
+### Gherkin original: link
+
+[Fuente fijada al SHA consultado](https://github.com/tmobile/magentaA11y/blob/c0d97812d9298757f5a2d8902ed7671afb1aa9ba/public/content/documentation/web/component/link.md).
+
+```gherkin
+GIVEN THAT I am on a page with a link
+
+1. Keyboard for mobile & desktop
+
+   - WHEN I use the tab key to move focus to a link I SEE focus is strongly visually indicated
+   - THEN when I use the enter key to activate the link I SEE my browser goes somewhere
+
+2. Desktop screenreader
+
+   - WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) AND
+   - I use the tab key to move focus to a link
+      - I HEAR its purpose is clear
+      - I HEAR it identifies itself as a link
+   - THEN when I use the enter key to activate the link I HEAR my browser goes somewhere
+
+3. Mobile screenreader
+
+   - WHEN I use a mobile screenreader (Talkback, VoiceOver) AND
+   - I swipe to focus on a link
+      - I HEAR its purpose is clear
+      - I HEAR it identifies itself as a link
+   - THEN when I doubletap with the link in focus I HEAR my browser goes somewhere
+```
+
+### Trazabilidad de los escenarios originales
+
+En las referencias H1–H3 y L1–L3, el número corresponde al apartado original
+Keyboard, Desktop screenreader o Mobile screenreader del bloque anterior.
+
+| Escenario / resultado original | Clasificación | Evidencia concreta y límite |
+| --- | --- | --- |
+| H1: flecha y encabezado entra en vista | Manual pendiente; evidencia asistida parcial | En IAB a 1280×720 la flecha derecha recorre las ocho slides. Esto no prueba la navegación por encabezados de un lector de pantalla. |
+| H1: Tab no enfoca encabezados | Automatizado DOM | `intro.test.tsx`: ausencia de tabindex y user-event Tab llega al enlace sin enfocar los títulos. |
+| H2: propósito/nivel, rol/nivel y orden lógico anunciados | Manual pendiente | NVDA/Firefox, JAWS/Chrome y VoiceOver/Safari macOS. DOM: h1 en portada y h2 en slides; no demuestra anuncios. |
+| H2: Tab no enfoca encabezados con lector | Manual pendiente | Repetir el recorrido en las combinaciones anteriores; la prueba user-event no activa un lector. |
+| H3: swipe; propósito/nivel, rol/nivel y orden lógico | Manual pendiente | VoiceOver/Safari iOS y TalkBack/Chrome Android; registrar versiones. |
+| L1: Tab y foco visible | Automatizado DOM + manual pendiente | user-event alcanza el enlace. Revisora comprobó Tab en IAB y outline calculado de 3px con offset de 4px; aspecto visual humano pendiente. |
+| L1: Enter navega | Asistido en navegador; manual pendiente en navegadores objetivo | Revisora activó con Enter el enlace en IAB y regresó a la slide. Destino GitHub/develop aún muestra plantilla hasta integración de PR; verificar mapa después de integrar. |
+| L2: Tab, propósito y rol anunciados; Enter y navegación percibida | Manual pendiente | NVDA/Firefox, JAWS/Chrome y VoiceOver/Safari macOS. getByRole, texto y href solo acreditan el DOM. |
+| L3: swipe, propósito/rol, doble toque y navegación percibida | Manual pendiente | VoiceOver/Safari iOS y TalkBack/Chrome Android; no ejecutado. |
+
+Estos escenarios se aplican al contenido de encabezados y al único enlace de
+materiales añadido en M1. No se evalúa un patrón ARIA nuevo. No hay escenarios
+heading/link descartados como no aplicables; los límites de componentes ajenos al
+módulo se distinguen en la matriz general.
+
+### Matriz general
 
 | Criterio y fuente | Clasificación | Evidencia / brecha |
 | --- | --- | --- |
@@ -41,11 +127,11 @@ de evaluación, no una transcripción garantizada de anuncios.
 | Secuencia del material y registro único; #1/#2 | Automatizado | `intro.test.tsx`: M1 registrado una sola vez en orden, sin muestra. No demuestra orden de lectura percibido. |
 | Nombre, rol y destino del enlace; Magenta link | Automatizado (DOM) | `intro.test.tsx`: rol link, texto visible y href del mapa. |
 | Reglas automáticas de estructura; WCAG 1.3.1 | Automatizado parcial | axe por slide en `intro.test.tsx`; no evalúa toda WCAG ni contraste en JSDOM. |
-| Encabezados entran en vista y estructura se entiende; Magenta heading | Manual pendiente | Navegador y lector: NVDA/Firefox en Windows y VoiceOver/Safari en macOS; registrar versiones y diferencias. |
+| Encabezados entran en vista y estructura se entiende; Magenta heading | Manual pendiente | Navegador y lector: NVDA/Firefox y JAWS/Chrome en Windows; VoiceOver/Safari en macOS; registrar versiones y diferencias. |
 | Nombre, rol y nivel leídos; navegación por encabezados; Magenta heading | Manual pendiente | Mismas combinaciones de escritorio; inspeccionar portada, slide activa y slides ocultas de Reveal. |
 | Lectura de encabezados con gestos; Magenta heading | Manual pendiente | VoiceOver/Safari iOS y TalkBack/Chrome Android, con versiones. |
 | Tab, foco visible, Enter y destino del enlace; Magenta link, WCAG teclado/foco | Manual pendiente | Chrome en escritorio y Safari; confirmar orden, activación y regreso. DOM no demuestra navegación ni aspecto del foco. |
-| Nombre/rol del enlace con lector y activación; Magenta link | Manual pendiente | NVDA/Firefox y VoiceOver/Safari; repetir swipe y doble toque en móvil. |
+| Nombre/rol del enlace con lector y activación; Magenta link | Manual pendiente | NVDA/Firefox, JAWS/Chrome y VoiceOver/Safari; repetir swipe y doble toque en móvil. |
 | Lienzo, orden visual, contraste y legibilidad; WAI estructura, [WCAG 1.4.3](https://www.w3.org/TR/WCAG22/#contrast-minimum) | Manual pendiente (autor) | Preparar portada y las siete slides en navegador. La inspección geométrica asistida se comunica en #2; no sustituye revisión visual del autor. |
 | Zoom 200%, reflow a 320 CSS px y continuidad; WCAG resize/reflow | Manual pendiente | Revisar Reveal y Markdown en navegador real. No se presume una excepción general por ser slides. |
 | Duración 2 + 3 minutos; #2 | Manual pendiente | Ensayo de locución con cronómetro; tiempos editoriales no son una medición. |
@@ -63,6 +149,7 @@ manual. No se declara conformidad completa por compilar o pasar axe.
 Los nueve tests y las cuatro validaciones del repositorio pasan. Inspección
 asistida en navegador integrado a 1280 × 720: portada y siete slides alcanzables
 con flecha derecha; sin elementos de contenido fuera del lienzo ni solapamientos
-según sus rectángulos DOM renderizados. Sin capturas. No se ejecutaron las
-comprobaciones manuales pendientes de la matriz. Storybook compila con índice
-vacío; el aviso de ausencia de stories es esperado para esta entrega documental.
+según sus rectángulos DOM renderizados. Sin capturas. Las comprobaciones humanas
+pendientes de la matriz no se consideran ejecutadas; la evidencia asistida
+adicional de la revisora se identifica en la trazabilidad. Storybook compila con
+índice vacío; el aviso de ausencia de stories es esperado para esta entrega documental.
