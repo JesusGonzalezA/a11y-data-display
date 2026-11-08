@@ -1,6 +1,6 @@
 ---
 name: course-structure
-description: Use when creating, moving, or reviewing course modules, lessons, slides, presenter notes, Markdown content, Storybook examples, or tests in this repository. Apply the vertical-slice lesson structure and keep the continuous slide registry ordered.
+description: Use when creating, moving, or reviewing course modules, lessons, slides, presenter notes, Markdown content, example pages, or tests in this repository. Apply the vertical-slice lesson structure and keep the continuous slide registry ordered.
 ---
 
 # Course structure
@@ -20,15 +20,15 @@ src/lessons/
 │       └── examples/
 │           └── ExampleName/
 │               ├── ExampleName.tsx
-│               ├── ExampleName.stories.tsx
+│               ├── ExampleName.example.ts
+│               ├── example-name.css
 │               └── ExampleName.test.tsx
 └── 02-nombre-del-modulo/
 ```
 
 El módulo 1 conserva las lecciones «Bienvenida y presentación» y «Objetivos y
 contenidos» en todos los cursos. Su contenido y duración se adaptan al curso.
-Los módulos siguientes se definen según el temario validado por el autor.
-`02-ejemplo` solo demuestra la infraestructura; se sustituye al crear un curso.
+Los módulos siguientes se definen según el temario validado por el autor en GitHub.
 
 Los módulos contienen un `README.md` con el mapa del módulo. Las lecciones usan
 numeración `02.01`, `02.02`, etc., seguida de un nombre en kebab-case.
@@ -51,15 +51,15 @@ no al revés:
    **Completado cuando:** ningún concepto técnico aparece antes de tener una razón
    comprensible para la persona.
 3. **Fija la columna vertebral.** Define juntos el título y la idea visible de cada
-   slide, el desarrollo oral correspondiente y, si procede, la story que se abrirá.
+   slide, el desarrollo oral correspondiente y, si procede, la página de ejemplo que se abrirá.
    El presentador amplía lo que la slide plantea; no mantiene una segunda narrativa
    ni introduce afirmaciones ausentes de la presentación.
    **Completado cuando:** cada slide tiene un único apartado equivalente en el guion
    y ambos cuentan la misma lección en el mismo orden. Si una slide se elimina o se
    reordena, su apartado se elimina o se renumera en el mismo cambio.
-4. **Diseña las superficies ejecutables.** Separa los componentes que enseñan una
-   pieza reutilizable de los ejemplos que componen el recorrido completo. Implementa
-   stories y tests después de que ese límite sea explícito.
+4. **Diseña las superficies ejecutables.** Elige para cada barrera la página real
+   donde aparecería con más naturalidad y define qué arreglos la corrigen. Implementa
+   la página, su definición y sus tests después de que ese límite sea explícito.
    **Completado cuando:** cada nombre describe un componente o un escenario, pero no
    mezcla ambos papeles.
 5. **Valida la lección completa.** Comprueba contenido, slides, guion, ejemplos,
@@ -70,64 +70,89 @@ no al revés:
 
 ## Contrato de una lección
 
-- `README.md`: guía mínima de la lección: objetivo, instalación y ejecución,
-  componentes, consideraciones de accesibilidad, pruebas y referencias.
-- `presenter.md`: narración completa, organizada por slide y lista para leer
-  durante una grabación. Usa acotaciones breves como
-  `[Storybook: mostrar …]` solo cuando haya que cambiar lo que aparece en
-  pantalla.
-- `slides.tsx`: columna vertebral visual del guion. Cada slide muestra el número
-  de la lección en formato humano (`2.1`, `2.2`, etc.), seguido de un título arriba,
-  fondo blanco y contenido alineado a la izquierda. Debe representar fielmente lo
-  que desarrolla el presentador sin copiar toda la narración. Presenta primero la
-  tarea de la persona en lenguaje cotidiano y descubre los controles técnicos
-  a partir de las acciones necesarias para completarla. Formula cada concepto
-  desde la pregunta o necesidad que resuelve para la persona antes de explicar
-  la técnica. Los títulos y el texto explicativo expresan conceptos transferibles
-  que se entienden sin conocer la demo. Los detalles propios del escenario aparecen
-  solo en fragmentos de código; los enlaces a Storybook se rotulan por la interacción
-  o el concepto que permiten revisar. Cuando una lección presenta los primeros
-  elementos de una familia
-  más amplia, sitúalos como punto de partida y anticipa que el resto aparecerá
-  a lo largo del curso. Al explicar teclado, describe el recorrido en el orden
-  de la tarea y cómo permite completarla sin saltos inesperados. Reserva el
-  detalle de tests y las decisiones de alcance para el README, salvo cuando
-  sean el concepto que se está explicando.
-  La primera slide usa como título el nombre completo publicado en el `README.md`
-  del módulo y define de forma directa qué se va a aprender. Todos los demás
-  títulos nombran el concepto concreto de la slide; evita conclusiones abstractas
-  que presupongan que la audiencia ya conoce el tema. Una persona debe poder
-  identificar y comprender la lección leyendo las slides en orden, sin abrir
-  Storybook. Las demos refuerzan una explicación ya visible.
-  En una lección dedicada a un componente o patrón interactivo, ordena la
-  explicación para responder de forma explícita y con ejemplos concretos:
-  **para qué sirve y cuándo se usa → qué alternativa nativa existe → qué ARIA
-  necesita y para qué sirve cada atributo → qué interacciones ofrece → qué
-  consideraciones o límites especiales tiene**. No uses como título una
-  conclusión metafórica o un contraste técnico —por ejemplo, «ya tiene
-  contrato»— antes de explicar en lenguaje básico qué significa.
-- `examples/`: módulos ejecutables de la lección.
-- `*.stories.tsx`: estados y variantes del ejemplo en el Storybook único del repositorio.
-- `*.test.tsx`: comportamiento, semántica accesible y teclado del mismo ejemplo.
+Toda lección práctica cuenta la misma historia, centrada en una persona usuaria:
 
-Una lección puede ser inicialmente documental. Añade `slides.tsx` y `presenter.md`
-cuando se prepare para impartirla; no inventes
-componentes solo para completar una plantilla.
+1. **Lección:** título completo de la lección y qué se va a aprender.
+2. **Situación:** una persona de `src/personas.ts` (Andrés, Elena, Lucía, Manuel,
+   Ana), cómo usa la web y qué quiere hacer en la página del ejemplo.
+3. **Error común:** qué falla en el código y qué le pasa a esa persona.
+4. **Solución:** el código corregido, por qué funciona y los enlaces a la página
+   de ejemplo con y sin arreglo.
 
-## Slides continuas
+Cuando una lección tiene varias barreras, repite pares error → solución. Puede
+añadir slides de tipo «Lección» con conceptos previos y cerrar con un «Resumen».
 
-`src/lessons/lessonRegistry.ts` es la única fuente de orden de las slides. Cada nueva
-lección debe exportar `slides` (elementos React con claves únicas) desde su `slides.tsx` y añadirse al registro en el
-orden pedagógico. Cada elemento contiene el título y el contenido;
-`CourseSlides` añade el contenedor y el número de lección. La composición de `src/slides/CourseSlides.tsx` solo renderiza ese
-registro y no contiene contenido específico de una lección.
+- `slides.tsx`: se entiende sin el vídeo ni otro material. Usa las piezas de
+  `src/slides/parts.tsx`: `SlideTitle` (tipo `leccion`, `situacion`, `error`,
+  `solucion`, `comprobar` o `resumen`), `PersonaCard`, `Code` (tono `error`,
+  `solucion` o `neutral`) y `ExampleLinks`. La primera slide es de tipo
+  `leccion` y su título es el nombre completo de la lección. Cada título nombra
+  el concepto o el error concreto en lenguaje cotidiano. El texto de error dice
+  «Qué le pasa a <persona>». El código reproduce el antes y el después de la
+  definición del ejemplo. Los enlaces se rotulan por la interacción que permiten
+  revisar. **Nunca muestres tiempos en las slides.**
+- `presenter.md`: guía para presentar, no texto para leer. Por cada slide, un
+  apartado `## N. Título` con palabras clave en viñetas, frases importantes como
+  cita (`> «…»`) y acotaciones `[Ejemplo: …]` cuando cambia la pantalla. La
+  cabecera puede indicar la duración aproximada y la demo.
+- `README.md`: resumen esquemático con estas secciones: Objetivo, Situación,
+  Errores comunes → solución (tabla error / qué le pasa / solución), Ejemplo
+  (página, pasos de la demo, código), Conceptos clave, Pruebas (automatizadas y
+  manuales pendientes) y Fuentes. Sin prosa larga ni duplicar las slides.
+- `examples/`: páginas de ejemplo de la lección.
+- `*.example.ts`: definición de la página (slug, lección, título, qué probar y lista
+  de arreglos con dónde, por qué y código antes/después). Se registra una vez en
+  `src/examples/exampleRegistry.ts`, en el orden del curso.
+- `*.test.tsx`: comportamiento, semántica accesible y teclado de la página con y sin
+  arreglo.
+
+Las lecciones de introducción y cierre (1.1, 1.2, 5.3) no tienen persona ni
+ejemplo: usan slides `leccion` y `resumen`.
+
+## Páginas de ejemplo
+
+Cada ejemplo es una página simple y creíble de un sitio distinto (tienda, receta,
+noticia…), elegido porque la barrera aparece ahí con naturalidad. La aplicación
+la sirve en `/ejemplos/<slug>`; `?arreglo=1` la abre con el arreglo aplicado.
+
+- La página recibe `fixed: boolean` y muestra por defecto la barrera. No incluye
+  rótulos didácticos: la herramienta flotante del curso explica el cambio.
+- Marca con `data-fix="<id>"` cada elemento que cambia, en ambos estados, para que
+  «Ver cambios» lo resalte. Cada `id` corresponde a un arreglo de la definición.
+- Cada arreglo dice dónde está, por qué la versión sin arreglo es una barrera y
+  muestra el código antes y después con los mismos detalles que la página.
+- Las barreras se acotan al bloque BEM de la página; nunca afectan a la
+  herramienta flotante ni capturan el teclado de forma real.
+- La herramienta flotante no añade encabezados ni regiones, para no alterar lo que
+  revelan lectores, bookmarklets o Accessibility Insights.
+
+## Slides continuas y superficies del servidor
+
+`src/lessons/lessonRegistry.ts` (`courseModules`) es la única fuente del orden de
+módulos, lecciones y slides. Cada lección exporta `slides` (elementos React con
+claves únicas) desde su `slides.tsx`. `CourseSlides` añade la portada, una slide
+separadora por módulo (`#/modulo-N`), el identificador de la primera slide de cada
+lección (`#/leccion-N-M`) y la etiqueta «Lección N.M · Título»; no contiene
+contenido de lecciones. Una lección no importa `lessonRegistry` (dependencia
+circular).
+
+El servidor ofrece cuatro superficies (rutas en `src/routes.ts`):
+
+- `/`: índice; por módulo y lección enlaza diapositivas, ejemplos y contenido.
+- `/diapositivas/`: la presentación.
+- `/ejemplos/`: páginas de ejemplo, agrupadas por módulo (`#modulo-N`).
+- `/contenido/`: Markdown del repositorio (`modulo-N`, `N.M`, `N.M/presentador`).
+
+`src/lessons/slides.test.tsx` valida todas las slides: tipo y título, axe,
+situación → error → solución en lecciones con ejemplo, enlaces a cada ejemplo y
+ausencia de tiempos.
 
 ## Reglas de colocación
 
-1. Coloca un ejemplo y sus stories y tests dentro de la lección que lo enseña.
+1. Coloca una página de ejemplo, su definición y sus tests dentro de la lección que la enseña.
 2. Reutiliza un módulo desde otra lección solo cuando sea realmente compartido; entonces
    muévelo a un módulo común explícito y documenta su interfaz.
-3. Mantén un único Storybook para todo `src/lessons/**/examples/**/*.stories.tsx`.
+3. Registra cada página de ejemplo una sola vez en `src/examples/exampleRegistry.ts`.
 4. No dupliques el contenido completo en Markdown y slides: el primero desarrolla, las
    segundas sintetizan.
 5. Usa nombres de carpetas estables, numerados y sin espacios ni tildes.
@@ -139,18 +164,18 @@ registro y no contiene contenido específico de una lección.
 7. Escribe los estilos de los ejemplos con BEM: cada componente define un
    bloque y expresa sus partes y variantes mediante elementos y modificadores.
 8. Mantén una correspondencia uno a uno entre los apartados de `presenter.md` y
-   las slides. Cuando una acotación abra Storybook, incluye en esa misma slide
-   un enlace directo y con nombre descriptivo a la story que se va a mostrar.
-9. Usa en los ejemplos una base visual sobria inspirada en shadcn: tipografía
-   sans compacta como Geist, superficies blancas, escala neutral, controles
-   compactos, bordes y sombras sutiles y un foco inequívoco. La referencia
-   visual no implica añadir shadcn como dependencia.
+   las slides. Cuando una acotación abra un ejemplo, incluye en esa misma slide
+   un enlace directo con `exampleUrl(slug, fixed)` y nombre descriptivo.
+9. Da a cada página de ejemplo una identidad propia y creíble para su sitio
+   (nombre, acento pastel, contenido) dibujada con el lenguaje visual de weAAAre
+   que define la skill `weaaare-brand`, con un foco inequívoco salvo cuando el foco
+   sea la barrera. La herramienta flotante mantiene un aspecto propio de devtools,
+   distinto de la página.
 10. Representa las affordances comunes como aparecerían en producto. Por ejemplo,
     usa un SVG decorativo en un botón de icono y conserva el nombre y el estado
     accesibles; evita indicadores pedagógicos ajenos a una interfaz real.
-11. Agrupa las stories con la jerarquía
-    `Módulo N: Nombre/Lección N.M: Nombre/Componentes|Ejemplos/Story`. Usa los
-    títulos del mapa del curso y no crees una raíz genérica como `Lecciones`.
+11. Da a cada página un título de documento como lo tendría la web real y usa el
+    número y el título de la lección del mapa del curso en su definición.
 
 ## Checklist de finalización
 
@@ -161,10 +186,12 @@ registro y no contiene contenido específico de una lección.
 - [ ] La tarea de la persona, el orden de descubrimiento y lo que queda para
       lecciones posteriores están definidos antes de los detalles técnicos.
 - [ ] `presenter.md` y `slides.tsx` existen cuando la lección está preparada.
-- [ ] `presenter.md` se puede leer en voz alta y sus únicas instrucciones son
-      acotaciones breves para cambiar la superficie mostrada.
-- [ ] Cada slide tiene el título arriba, fondo blanco y contenido alineado a la
-      izquierda, y sirve de base al apartado equivalente del guion.
+- [ ] Las slides siguen lección → situación → error común → solución, con una
+      persona de `src/personas.ts`, y no muestran tiempos.
+- [ ] `presenter.md` contiene palabras clave y frases importantes por slide, no
+      narración para leer.
+- [ ] Cada slide usa `SlideTitle`, tiene fondo blanco y contenido alineado a la
+      izquierda, y tiene un apartado equivalente en `presenter.md`.
 - [ ] Los títulos y el texto principal se entienden sin conocer el ejemplo; cualquier
       detalle del escenario queda dentro de código de apoyo y los enlaces nombran el
       concepto o la interacción que permiten revisar.
@@ -172,11 +199,13 @@ registro y no contiene contenido específico de una lección.
       su mismo orden pedagógico.
 - [ ] Las slides retiradas o reordenadas tienen el mismo cambio reflejado en el
       guion del presentador, incluidos sus números y acotaciones.
-- [ ] Cada salto a Storybook indicado en el guion tiene un enlace directo al
-      ejemplo en la slide correspondiente.
-- [ ] Cada ejemplo tiene implementación, story y test co-localizados.
-- [ ] La lección está incluida una sola vez y en orden en `lessonRegistry.ts`.
-- [ ] Los componentes, stories y slides afectados quedan disponibles para la
+- [ ] Cada salto a un ejemplo indicado en el guion tiene un enlace directo a la
+      página en la slide correspondiente.
+- [ ] Cada ejemplo tiene página, definición y test co-localizados, y está en el
+      registro de ejemplos.
+- [ ] La lección está incluida una sola vez y en orden en `lessonRegistry.ts` y
+      aparece en el índice `/` con sus diapositivas, ejemplos y contenido.
+- [ ] Las páginas de ejemplo y slides afectadas quedan disponibles para la
       revisión manual del autor, y la PR indica si esa revisión está pendiente
       o completada.
-- [ ] `pnpm test`, `pnpm lint`, `pnpm build` y `pnpm build-storybook` pasan.
+- [ ] `pnpm test`, `pnpm lint` y `pnpm build` pasan.

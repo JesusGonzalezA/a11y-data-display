@@ -1,5 +1,5 @@
 {
-  "name": "a11y-course",
+  "name": "a11y-data-display",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -11,42 +11,39 @@
     "test:watch": "vitest",
     "lint": "biome check .",
     "format": "biome format --write .",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "preview": "vite preview",
-    "check": "pnpm test && pnpm lint && pnpm build && pnpm build-storybook"
+    "check": "pnpm test && pnpm lint && pnpm build"
   },
   "dependencies": {
-    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/atkinson-hyperlegible-mono": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/atkinson-hyperlegible": "^5.3.0",
     "@revealjs/react": "^0.2.1",
+    "highlight.js": "^11.12.0",
+    "marked": "^15.0.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "reveal.js": "^5.2.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/react": "^8.6.14",
-    "@storybook/react-vite": "^8.6.14",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest-axe": "^3.5.9",
+    "@types/node": "^22.0.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.4.1",
     "axe-core": "^4.10.2",
     "jest-axe": "^10.0.0",
     "jsdom": "^26.1.0",
-    "storybook": "^8.6.14",
     "typescript": "^5.9.2",
     "vite": "^6.3.6",
-    "vitest": "^3.2.4",
-    "@storybook/addon-a11y": "^8.6.14",
-    "@types/node": "^22.0.0",
-    "@testing-library/dom": "^10.4.1"
+    "vitest": "^3.2.4"
   },
-  "description": "Plantilla de weaaare para cursos con diapositivas y Storybook.",
+  "description": "Presentación de datos accesible: curso de weaaare de 120 minutos sobre iconos, ayuda contextual, listas, cards, tablas y grid.",
   "engines": {
     "node": ">=22.12.0"
   }

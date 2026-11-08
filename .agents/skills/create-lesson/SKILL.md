@@ -6,8 +6,9 @@ description: Use when the user asks to create, develop, start, or add a course l
 # Create a lesson
 
 Entrega una lección lista para impartir y revisar: documentación, guion, slides,
-superficies ejecutables, stories, tests e integración en el curso. La lección incluida en `02-ejemplo` muestra la estructura técnica mínima;
-la profundidad pedagógica se define por los objetivos y la duración del curso.
+superficies ejecutables, stories, tests e integración en el curso. La estructura
+canónica está en `course-structure`; la profundidad pedagógica se define por los
+objetivos y la duración del curso.
 
 ## Flujo
 
@@ -37,14 +38,16 @@ la profundidad pedagógica se define por los objetivos y la duración del curso.
 
 4. **Implementa la vertical slice.** Crea dentro de la lección:
 
-   - `README.md` con objetivo, ejecución, componentes o ejemplos, accesibilidad,
-     cobertura automatizada, matriz manual y fuentes;
-   - `presenter.md`, listo para leer durante la grabación;
-   - `slides.tsx`, fiel al guion y con enlaces a las stories que se demuestran;
+   - `README.md` esquemático: objetivo, situación, errores → solución, ejemplo,
+     conceptos clave, pruebas y fuentes;
+   - `presenter.md`, con palabras clave y frases importantes por slide;
+   - `slides.tsx`, con el recorrido lección → situación → error → solución y
+     enlaces a las páginas de ejemplo;
    - componentes y ejemplos ejecutables co-localizados con sus stories y tests.
 
    Actualiza el mapa del módulo y `src/lessons/lessonRegistry.ts` una sola vez y en
-   orden. Reutiliza las convenciones visuales y técnicas existentes.
+   orden. Reutiliza las convenciones técnicas existentes y aplica la skill
+   `weaaare-brand` a la voz de los textos y al aspecto de slides y ejemplos.
    **Completado cuando:** la lección puede leerse, presentarse, ejecutarse y probarse
    sin depender de archivos de otra ubicación salvo interfaces compartidas explícitas.
 
@@ -57,11 +60,11 @@ la profundidad pedagógica se define por los objetivos y la duración del curso.
    justificación; ningún test exige un rol inexistente y la documentación no presenta
    como automatizado lo que requiere navegador o tecnología de asistencia real.
 
-6. **Valida y prepara la revisión.** Ejecuta `pnpm test`, `pnpm lint`, `pnpm build` y
-   `pnpm build-storybook`. Aplica `storybook-pr-visuals` para comprobar que todas las
-   stories y slides tienen una ruta local y deja la revisión visual manual claramente
-   marcada. Revisa el diff completo antes de preparar la PR.
-   **Completado cuando:** pasan las cuatro validaciones, todas las superficies se pueden
+6. **Valida y prepara la revisión.** Ejecuta `pnpm test`, `pnpm lint` y `pnpm build`.
+   Aplica `example-pr-visuals` para comprobar que todas las páginas de ejemplo y slides
+   tienen una ruta local y deja la revisión visual manual claramente marcada. Revisa el
+   diff completo antes de preparar la PR.
+   **Completado cuando:** pasan las tres validaciones, todas las superficies se pueden
    revisar localmente y la PR cumple `repository-workflow`.
 
 7. **Aprende del feedback real.** Cuando la revisión revele una convención reutilizable,

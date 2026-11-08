@@ -1,12 +1,28 @@
 # 1.2 Objetivos y contenidos
 
-Estado: base para personalizar. Duración orientativa: 3 minutos.
+> Módulo 1 · Introducción · sin página de ejemplo
 
-Explicar los resultados de aprendizaje y cómo se utilizarán las diapositivas
-junto a los ejemplos de Storybook. Define los objetivos en `src/course.ts` y
-amplía las slides con el mapa real de módulos cuando el temario esté validado.
+## Objetivo
 
-- [Diapositivas](./slides.tsx): una slide, número 1.2.
-- [Guion](./presenter.md): un apartado correspondiente a esa slide.
-- Ejecución: `pnpm dev`, desde la raíz.
-- Esta lección introductoria no necesita un componente de ejemplo.
+- Presentar los resultados de aprendizaje y los conocimientos previos.
+- Mostrar el recorrido por los cinco módulos y qué queda fuera.
+- Explicar dónde están los materiales y cómo usarlos después.
+
+## Ideas clave
+
+- Resultados: ver `course.objectives` en `src/course.ts`.
+- Previos: HTML semántico, nombre accesible y teclado básicos.
+- Recorrido: iconos y ayuda → listas y cards → tablas → grid. De lo más simple a lo más interactivo.
+- Fuera de alcance: edición de celdas, selección múltiple, virtualización, hojas de cálculo y gráficos.
+- Materiales: índice `/` → diapositivas, ejemplos y contenido por lección.
+
+## Slides
+
+1. Objetivos y contenidos.
+2. Qué necesitas saber antes.
+3. El recorrido del curso.
+4. Dónde encontrar los materiales.
+
+## Fuentes
+
+- [Temario del curso, issue #1](https://github.com/JesusGonzalezA/a11y-data-display/issues/1)
