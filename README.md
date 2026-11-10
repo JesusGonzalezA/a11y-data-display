@@ -73,6 +73,14 @@ sin recargar, y **Explicación** dice qué probar y lista las barreras. Al abrir
 barrera, se marca en la página con su número y se ve dónde está, qué pasa, cómo
 se arregla y el código antes y después.
 
+## Despliegue
+
+Cada push a `develop` publica el curso en GitHub Pages con
+`.github/workflows/deploy.yml`:
+<https://jesusgonzaleza.github.io/a11y-data-display/>. El build usa
+`BASE_PATH=/a11y-data-display/` y copia `index.html` a cada superficie, a cada
+página de ejemplo y a `404.html`, porque Pages no reescribe rutas.
+
 ## Validación
 
 ```bash
