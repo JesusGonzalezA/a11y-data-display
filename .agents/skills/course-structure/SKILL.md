@@ -109,7 +109,7 @@ añadir slides de tipo «Lección» con conceptos previos y cerrar con un «Resu
 - `*.test.tsx`: comportamiento, semántica accesible y teclado de la página con y sin
   arreglo.
 
-Las lecciones de introducción y cierre (1.1, 1.2, 5.3) no tienen persona ni
+Las lecciones de introducción y cierre (1.1, 1.2 y la última del curso, hoy 4.5) no tienen persona ni
 ejemplo: usan slides `leccion` y `resumen`.
 
 ## Páginas de ejemplo

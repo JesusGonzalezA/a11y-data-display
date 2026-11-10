@@ -1,11 +1,11 @@
-# Introducción al desarrollo web accesible
+# Presentación de datos accesible: Data Display
 
-Curso de **weaaare** para personas con HTML y CSS básicos, sin conocimientos
-previos de accesibilidad. Docente: **Jesús González Álvarez**. Duración
-aproximada: **60 minutos**, demostraciones incluidas.
+Curso de **weAAAre** para personas que ya conocen lo básico de HTML semántico,
+nombre accesible y teclado. Docente: **Jesús González Álvarez**.
 
-Presenta los **errores de accesibilidad más comunes** desde la experiencia de
-cinco personas y cómo resolverlos con HTML y CSS.
+Enseña a presentar datos para que cualquier persona pueda entenderlos y usarlos:
+iconos, tooltips, listas, cards y tablas. Publicado en
+<https://jesusgonzaleza.github.io/a11y-data-display/>.
 
 ## Cómo está construida cada lección
 
@@ -16,23 +16,21 @@ cinco personas y cómo resolverlos con HTML y CSS.
 
 | Persona | Cómo usa la web |
 | --- | --- |
-| Andrés | Temblor en las manos; solo teclado |
+| Andrés | Temblor en las manos; sobre todo teclado |
 | Elena | Ciega; lector de pantalla |
-| Lucía | TDAH y dislexia; necesita textos claros que no desaparezcan |
-| Manuel | 72 años, daltonismo rojo-verde; letra grande y zoom |
-| Ana | Trastorno vestibular; «Reducir movimiento» activado |
+| Lucía | TDAH y dislexia; necesita etiquetas claras que no desaparezcan |
 
 ## Programa
 
 | Módulo | Lecciones | Ejemplos |
 | --- | --- | --- |
 | [1. Introducción](./src/lessons/01-intro/README.md) | 1.1 Bienvenida y presentación · 1.2 Objetivos y contenidos | — |
-| [2. Entender la accesibilidad](./src/lessons/02-entender-la-accesibilidad/README.md) | 2.1 Personas, formas de interacción y barreras · 2.2 Cómo interpreta el navegador nuestra interfaz | `tienda-online`, `cine` |
-| [3. Dar significado al contenido](./src/lessons/03-dar-significado-al-contenido/README.md) | 3.1 Estructura de página y orden de lectura · 3.2 Imágenes, enlaces y controles comprensibles | `receta`, `noticia` |
-| [4. Permitir la interacción y la percepción](./src/lessons/04-interaccion-y-percepcion/README.md) | 4.1 Navegación por teclado y foco visible · 4.2 Contraste, color y tamaño del texto · 4.3 Animaciones y movimiento | `biblioteca`, `horarios`, `festival` |
-| [5. Primeras comprobaciones y próximos pasos](./src/lessons/05-comprobaciones-y-proximos-pasos/README.md) | 5.1 Bookmarklets · 5.2 Accessibility Insights · 5.3 Cómo continuar aprendiendo | `museo`, `taller-bicicletas` |
+| [2. Iconografía y ayuda contextual](./src/lessons/02-iconografia-y-ayuda-contextual/README.md) | 2.1 Iconografía: significado y nombre accesible · 2.2 Tooltip: ayuda contextual y límites | `envios`, `correo` |
+| [3. Listas, cards y orden de lectura](./src/lessons/03-listas-cards-y-orden-de-lectura/README.md) | 3.1 Listas · 3.2 Cards | `casa-rural`, `academia` |
+| [4. Tablas accesibles](./src/lessons/04-tablas-accesibles/README.md) | 4.1 Tabla simple · 4.2 Tabla con doble eje · 4.3 Tabla ordenable · 4.4 Tabla con filtros · 4.5 Cómo continuar aprendiendo | `pedidos`, `tarifas`, `carrera`, `empleo` |
+| 5. Patrón grid | Pendiente de desarrollar | — |
 
-Temario original: [issue #1](https://github.com/JesusGonzalezA/a11y-introduction/issues/1).
+Temario original: [issue #1](https://github.com/JesusGonzalezA/a11y-data-display/issues/1).
 
 ## Instalar y ejecutar
 

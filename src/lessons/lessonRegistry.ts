@@ -9,6 +9,7 @@ import { slides as simpleTableSlides } from './04-tablas-accesibles/04.01-tabla-
 import { slides as twoAxisSlides } from './04-tablas-accesibles/04.02-tabla-con-doble-eje/slides'
 import { slides as sortableSlides } from './04-tablas-accesibles/04.03-tabla-ordenable/slides'
 import { slides as filterSlides } from './04-tablas-accesibles/04.04-tabla-con-filtros/slides'
+import { slides as closingSlides } from './04-tablas-accesibles/04.05-como-continuar-aprendiendo/slides'
 
 export interface CourseLesson {
   /** Número humano: `2.1`. */
@@ -114,6 +115,12 @@ export const courseModules: CourseModule[] = [
         title: 'Tabla con filtros: resultados y continuidad de la tarea',
         folder: '04.04-tabla-con-filtros',
         slides: filterSlides,
+      },
+      {
+        number: '4.5',
+        title: 'Cómo continuar aprendiendo',
+        folder: '04.05-como-continuar-aprendiendo',
+        slides: closingSlides,
       },
     ],
   },
