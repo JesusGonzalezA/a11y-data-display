@@ -57,9 +57,6 @@
 - Gestión del foco: el botón desaparece al pulsarlo → foco al buscador (si no, se pierde en el `body`)
 - > «Si el elemento con foco desaparece, decide tú adónde va el foco.»
 - [Ejemplo: «Quitar los filtros» · «Explicación»]
-
-## 9. Resumen · La tabla sigue siendo una tabla
-
 - 4.3 y 4.4 añaden controles alrededor y encima: la estructura no cambia
 - El lector sigue usando sus atajos de tabla (Ctrl+Alt+flechas)
 - Puente al módulo 5: ¿cuándo sí hace falta un grid?

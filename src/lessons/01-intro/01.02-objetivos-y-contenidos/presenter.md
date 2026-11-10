@@ -22,9 +22,6 @@
 - El grid, al final y con cautela: solo cuando la tarea lo pide
 - Fuera: edición de celdas, selección múltiple, virtualización, hojas de cálculo, gráficos
 - > «Cuanto más interactivo, más responsabilidad: cada tecla que capturas tienes que explicarla.»
-
-## 4. Dónde encontrar los materiales
-
 - Índice del servidor: por módulo → diapositivas, ejemplos, contenido
 - Diapositivas: la teoría · ejemplos: para probar y repetir · contenido: resumen y fuentes
 - En cada ejemplo: «Con barreras», «Arreglada» y «Explicación»

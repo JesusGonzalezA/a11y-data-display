@@ -22,19 +22,6 @@ export const slides = [
       <li>Un aviso del cambio.</li>
     </ul>
   </Fragment>,
-  <Fragment key="4.3-que-cambia">
-    <SlideTitle kind="leccion">Qué cambia al ordenar</SlideTitle>
-    <p>Al ordenar pasan tres cosas:</p>
-    <ol className="steps">
-      <li>La persona pulsa una columna.</li>
-      <li>La tabla queda ordenada por ella, de menor a mayor o al revés.</li>
-      <li>Las filas cambian de sitio.</li>
-    </ol>
-    <p>
-      Con la vista se nota todo a la vez. Con teclado o con lector de pantalla
-      hay que comunicar cada cosa.
-    </p>
-  </Fragment>,
   <Fragment key="4.3-situacion">
     <SlideTitle kind="situacion">Andrés busca a su hermana</SlideTitle>
     <PersonaCard
@@ -65,7 +52,7 @@ export const slides = [
       </li>
       <li>
         <kbd>Tab</kbd> llega al botón. <kbd>Enter</kbd> o <kbd>Espacio</kbd>{' '}
-        ordenan; otra pulsación, al revés.
+        ordenan.
       </li>
       <li>El foco se queda en el botón.</li>
     </ul>
@@ -92,11 +79,7 @@ export const slides = [
         <code>ascending</code> (de menor a mayor) o <code>descending</code>,
         solo en <strong>una</strong> columna.
       </li>
-      <li>La flecha se oculta al lector: el atributo ya lo dice.</li>
-      <li>
-        El título de la tabla avisa: «Los encabezados con botón permiten
-        ordenar».
-      </li>
+      <li>La flecha se oculta al lector: el atributo ya lo dice.</li>{' '}
     </ul>
   </Fragment>,
   <Fragment key="4.3-error-anuncio">

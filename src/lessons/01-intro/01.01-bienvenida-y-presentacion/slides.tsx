@@ -34,21 +34,6 @@ export const slides = [
       </li>
     </ol>
   </Fragment>,
-  <Fragment key="significado-no-visual">
-    <SlideTitle kind="leccion">
-      El significado no puede quedarse en lo visual
-    </SlideTitle>
-    <p>
-      Nosotros vemos columnas, colores e iconos. Un lector de pantalla no:{' '}
-      <strong>solo lee lo que está en el HTML</strong>.
-    </p>
-    <ul>
-      <li>Un icono sin texto no dice nada.</li>
-      <li>Unas cajas colocadas como una tabla no son una tabla.</li>
-      <li>Lo que se ve primero no siempre se lee primero.</li>
-    </ul>
-    <p>Por eso, en cada lección elegiremos bien el HTML.</p>
-  </Fragment>,
   <Fragment key="como-funciona-cada-leccion">
     <SlideTitle kind="leccion">Cómo funciona cada lección</SlideTitle>
     <p>Todas las lecciones siguen los mismos cuatro pasos:</p>

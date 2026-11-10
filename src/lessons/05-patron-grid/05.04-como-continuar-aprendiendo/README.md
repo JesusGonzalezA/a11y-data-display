@@ -44,8 +44,7 @@ Catálogo completo: [weaaare.com/cursos](https://weaaare.com/cursos).
 
 1. Cómo continuar aprendiendo (repaso por persona).
 2. Qué estructura elegir.
-3. Cursos para profundizar.
-4. Dónde seguir.
+3. Cursos para profundizar, catálogo e índice del curso.
 
 ## Fuentes
 

@@ -20,8 +20,7 @@
 
 1. Objetivos y contenidos.
 2. Qué necesitas saber antes.
-3. El recorrido del curso.
-4. Dónde encontrar los materiales.
+3. El recorrido del curso, con el enlace al índice.
 
 ## Fuentes
 

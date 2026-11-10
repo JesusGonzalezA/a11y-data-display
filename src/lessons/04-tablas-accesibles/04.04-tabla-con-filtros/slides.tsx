@@ -65,8 +65,7 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Lucía:</strong> escribe «di» y la segunda letra se
-      pierde: el foco ya se ha ido a los resultados. A Elena, su lector la lleva
-      a otro sitio sin pedirlo.
+      pierde: el foco ya se ha ido a los resultados.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-foco">
@@ -108,22 +107,5 @@ export const slides = [
       <li>Después, el foco vuelve al buscador.</li>
     </ul>
     <ExampleLinks slug="empleo" task="filtrar las ofertas" />
-  </Fragment>,
-  <Fragment key="4.4-resumen">
-    <SlideTitle kind="resumen">La tabla sigue siendo una tabla</SlideTitle>
-    <ul>
-      <li>
-        <strong>Ordenar:</strong> botón en el encabezado, <code>aria-sort</code>{' '}
-        y un mensaje.
-      </li>
-      <li>
-        <strong>Filtrar:</strong> etiquetas, foco quieto, recuento y una salida.
-      </li>
-      <li>La tabla sigue siendo una tabla: el lector la recorre igual.</li>
-    </ul>
-    <p>
-      Para esto no hace falta un grid. Cuándo sí hace falta, en el siguiente
-      módulo.
-    </p>
   </Fragment>,
 ]

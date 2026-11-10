@@ -19,8 +19,8 @@
 
 1. Bienvenida y presentación.
 2. Cuatro tareas con datos.
-3. El significado no puede quedarse en lo visual.
-4. Cómo funciona cada lección.
+3. Cómo funciona cada lección.
+4. Cómo usar las páginas de ejemplo.
 
 ## Fuentes
 

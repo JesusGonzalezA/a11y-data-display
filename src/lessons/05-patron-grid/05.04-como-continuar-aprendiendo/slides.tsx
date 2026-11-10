@@ -96,9 +96,9 @@ export const slides = [
         .
       </li>
       <li>
-        Comprobar que los componentes funcionan:{' '}
+        Comprobar los componentes:{' '}
         <a href="https://weaaare.com/cursos/curso-testing-de-accesibilidad-digital-para-desarrolladores">
-          Testing de accesibilidad para desarrolladores
+          Testing de accesibilidad
         </a>
         .
       </li>
@@ -124,26 +124,9 @@ export const slides = [
         .
       </li>
     </ul>
-  </Fragment>,
-  <Fragment key="5.4-materiales">
-    <SlideTitle kind="resumen">Dónde seguir</SlideTitle>
-    <ul>
-      <li>
-        <strong>Las fuentes de cada lección:</strong> están en «Contenido», en
-        el índice del curso.
-      </li>
-      <li>
-        <strong>Los ejemplos:</strong> repítelos con teclado, con un lector de
-        pantalla y con zoom.
-      </li>
-      <li>
-        <strong>Más cursos:</strong> el{' '}
-        <a href="https://weaaare.com/cursos">catálogo de weAAAre</a>.
-      </li>
-    </ul>
     <p>
-      Un método para tu trabajo: elige una tarea → piensa en una persona → elige
-      la estructura → pruébala.
+      Hay más en el{' '}
+      <a href="https://weaaare.com/cursos">catálogo de cursos de weAAAre</a>.
     </p>
     <p>
       <a className="lesson-slide__example-link" href={portalUrl}>

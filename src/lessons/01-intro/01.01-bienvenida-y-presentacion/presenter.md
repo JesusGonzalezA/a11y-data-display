@@ -15,20 +15,13 @@
 - Ejemplos cotidianos: un estado de envío, un catálogo, una comparativa de tarifas, una tabla que ordenas o filtras
 - > «Antes de elegir un componente, pregúntate qué intenta hacer la persona con esos datos.»
 
-## 3. El significado no puede quedarse en lo visual
-
-- Lo que vemos: columnas, colores, iconos, posición
-- Lo que recibe el lector de pantalla: roles, nombres, relaciones
-- Si la relación solo está en el CSS, para Elena no existe
-- > «La estructura es lo que viaja al lector de pantalla; el diseño se queda en la pantalla.»
-
-## 4. Cómo funciona cada lección
+## 3. Cómo funciona cada lección
 
 - Siempre el mismo recorrido: lección → persona → error → solución
 - Tres personas nos acompañan: Andrés (teclado), Elena (lector de pantalla), Lucía (atención y lectura)
 - > «Siempre empezamos por la persona, no por la técnica.»
 
-## 5. Cómo usar las páginas de ejemplo
+## 4. Cómo usar las páginas de ejemplo
 
 - Cada error está en una página real, con un botón flotante abajo a la derecha
 - «Con barreras»: así se abre · probarla como la persona de la lección

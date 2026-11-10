@@ -52,24 +52,6 @@ export const slides = [
     </table>
     <p>En los bordes, el foco se queda donde está.</p>
   </Fragment>,
-  <Fragment key="5.2-tabindex">
-    <SlideTitle kind="leccion">Solo una celda con tabindex 0</SlideTitle>
-    <Code tone="neutral">
-      {
-        '<button tabindex="0">09:00, Pista 1</button>\n<button tabindex="-1">09:00, Pista 2</button>\n<button tabindex="-1">09:00, Pista 3</button>'
-      }
-    </Code>
-    <ul>
-      <li>
-        <code>tabindex="0"</code>: la celda a la que llega Tab. Solo una.
-      </li>
-      <li>
-        <code>tabindex="-1"</code>: recibe el foco con las flechas, pero Tab la
-        salta.
-      </li>
-      <li>Al mover el foco, el 0 se mueve con él.</li>
-    </ul>
-  </Fragment>,
   <Fragment key="5.2-situacion">
     <SlideTitle kind="situacion">Andrés reserva una pista</SlideTitle>
     <PersonaCard
@@ -97,10 +79,14 @@ export const slides = [
       }
     </Code>
     <ul>
+      {' '}
       <li>
-        <kbd>Tab</kbd> entra en el grid. El siguiente <kbd>Tab</kbd> sale.
+        <code>tabindex="0"</code>: solo una celda. Ahí llega <kbd>Tab</kbd>.
       </li>
-      <li>Al volver, el foco está donde lo dejó.</li>
+      <li>
+        <code>tabindex="-1"</code>: el resto. Reciben el foco con las flechas.
+      </li>
+      <li>Al volver al grid, el foco está donde lo dejó.</li>
     </ul>
   </Fragment>,
   <Fragment key="5.2-error-flechas">

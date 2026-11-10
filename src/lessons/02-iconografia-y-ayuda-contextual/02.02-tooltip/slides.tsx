@@ -148,14 +148,4 @@ export const slides = [
     </p>
     <ExampleLinks slug="correo" task="usar la barra del correo" />
   </Fragment>,
-  <Fragment key="2.2-resumen">
-    <SlideTitle kind="resumen">Antes de añadir un tooltip</SlideTitle>
-    <ol className="steps">
-      <li>¿Es imprescindible? Texto visible.</li>
-      <li>¿Tiene enlaces o botones? Un diálogo.</li>
-      <li>¿Es el nombre o la descripción? Usa su atributo.</li>
-      <li>¿Se abre con teclado, se cierra con Escape y da tiempo a leer?</li>
-    </ol>
-    <p>Pruébalo con teclado, con lector de pantalla y en un móvil.</p>
-  </Fragment>,
 ]

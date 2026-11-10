@@ -50,20 +50,10 @@ export const slides = [
         </tr>
       </tbody>
     </table>
-    <p>Una tabla con botones para ordenar o filtrar sigue siendo una tabla.</p>
-  </Fragment>,
-  <Fragment key="5.1-visual">
-    <SlideTitle kind="leccion">Una cuadrícula visual no es un grid</SlideTitle>
-    <ul>
-      <li>
-        <code>display: grid</code> coloca cosas en filas y columnas. Es solo
-        aspecto.
-      </li>
-      <li>
-        <code>role="grid"</code> promete que las flechas mueven el foco.
-      </li>
-      <li>Unas cards en cuadrícula son una lista (lección 3.2).</li>
-    </ul>
+    <p>
+      Ordenar o filtrar no convierte una tabla en un grid. Colocarla con{' '}
+      <code>display: grid</code>, tampoco.
+    </p>
   </Fragment>,
   <Fragment key="5.1-situacion">
     <SlideTitle kind="situacion">

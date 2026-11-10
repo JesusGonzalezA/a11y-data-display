@@ -56,27 +56,13 @@ export const slides = [
       </li>
     </ol>
     <p>
+      {' '}
       Fuera del curso: editar celdas, selección múltiple, virtualización y
       gráficos.
     </p>
-  </Fragment>,
-  <Fragment key="materiales">
-    <SlideTitle kind="leccion">Dónde encontrar los materiales</SlideTitle>
-    <p>Cada módulo tiene tres materiales:</p>
-    <ul>
-      <li>
-        <strong>Diapositivas:</strong> la teoría de cada lección.
-      </li>
-      <li>
-        <strong>Ejemplos:</strong> páginas para probar cada error y su arreglo.
-      </li>
-      <li>
-        <strong>Contenido:</strong> el resumen de cada lección y sus fuentes.
-      </li>
-    </ul>
     <p>
       <a className="lesson-slide__example-link" href={portalUrl}>
-        Abrir el índice del curso
+        Índice del curso: diapositivas, ejemplos y contenido
       </a>
     </p>
   </Fragment>,

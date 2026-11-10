@@ -21,9 +21,6 @@
 - Todos de weAAAre: HTML Semántico · Introducción a ARIA · Testing
 - Si trabajas con filtros y menús: ARIA Avanzado de formularios y de navegación
 - Para entender mejor a las personas: Discapacidad y tecnologías asistivas
-
-## 4. Dónde seguir
-
 - Cada lección tiene sus fuentes en «Contenido»: WCAG, tutoriales de WAI, APG
 - Repetir los ejemplos con teclado, NVDA o VoiceOver y zoom al 400 %
 - Método: tarea → persona → estructura → probar

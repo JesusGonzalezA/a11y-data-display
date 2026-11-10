@@ -99,20 +99,4 @@ export const slides = [
     </ul>
     <ExampleLinks slug="tarifas" task="comparar las tarifas" />
   </Fragment>,
-  <Fragment key="4.2-resumen">
-    <SlideTitle kind="resumen">Cuando la tabla se complica</SlideTitle>
-    <ul>
-      <li>
-        <strong>Un eje:</strong> <code>th scope="col"</code> en la primera fila.
-      </li>
-      <li>
-        <strong>Dos ejes:</strong> además, <code>th scope="row"</code> en la
-        primera columna.
-      </li>
-      <li>
-        <strong>Más niveles:</strong> mejor divide la tabla en varias. Si no
-        puedes, existen <code>colgroup</code> y <code>headers</code>.
-      </li>
-    </ul>
-  </Fragment>,
 ]

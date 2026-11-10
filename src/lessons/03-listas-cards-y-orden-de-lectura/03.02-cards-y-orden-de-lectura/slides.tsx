@@ -82,8 +82,8 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Andrés:</strong> el foco se para en el enlace y
-      luego en el botón de dentro. El enlace se anuncia con todo el texto de la
-      card. Y los cuatro botones se llaman igual: «Guardar».
+      luego en el botón de dentro. Y los cuatro botones se llaman igual:
+      «Guardar».
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-anidado">
@@ -117,8 +117,9 @@ export const slides = [
     <ul>
       <li>Escribe el HTML en el orden de lectura.</li>
       <li>
-        El CSS (<code>order</code>, <code>row-reverse</code>, <code>grid</code>)
-        cambia lo que se ve. No cambia lo que se lee ni el orden del foco.
+        {' '}
+        El CSS cambia lo que se ve. No cambia lo que se lee ni el orden del
+        foco.
       </li>
       <li>En cuadrícula o en lista, el orden es el mismo.</li>
     </ul>

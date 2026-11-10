@@ -74,9 +74,6 @@
 - `aria-describedby` desde el botón de la papelera: nombre + descripción
 - Lector: «Mover a la papelera, botón, Los mensajes de la papelera se borran…»
 - [Ejemplo: «Explicación» · revisar los tres arreglos]
-
-## 11. Resumen · Antes de añadir un tooltip
-
 - Cuatro preguntas en orden
 - Patrón APG Tooltip: «work in progress», sin consenso del grupo de trabajo · no hay ejemplo oficial
 - El soporte de `aria-describedby` y de `role="tooltip"` varía entre lectores: probar con NVDA, VoiceOver y en móvil
