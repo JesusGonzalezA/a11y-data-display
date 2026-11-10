@@ -79,7 +79,8 @@ Cada push a `develop` publica el curso en GitHub Pages con
 `.github/workflows/deploy.yml`:
 <https://jesusgonzaleza.github.io/a11y-data-display/>. El build usa
 `BASE_PATH=/a11y-data-display/` y copia `index.html` a cada superficie, a cada
-página de ejemplo y a `404.html`, porque Pages no reescribe rutas.
+página de ejemplo, a cada página de contenido y a `404.html`, porque Pages no
+reescribe rutas.
 
 ## Validación
 
