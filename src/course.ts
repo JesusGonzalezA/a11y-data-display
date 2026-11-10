@@ -4,14 +4,14 @@ export const course = {
   author: 'Jesús González Álvarez',
   duration: '120 minutos',
   audience:
-    'HTML semántico, nombre accesible y navegación por teclado básicos. El curso de Introducción al desarrollo web accesible es una buena preparación.',
+    'Personas que ya conocen lo básico de HTML semántico, nombre accesible y teclado.',
   description:
-    'Aprenderás a presentar datos para que cualquier persona pueda entenderlos, recorrerlos y usarlos: iconos, ayuda contextual, listas, cards, tablas y grids.',
+    'Aprenderás a presentar datos para que cualquier persona pueda entenderlos y usarlos: iconos, tooltips, listas, cards, tablas y grids.',
   objectives: [
     'Dar significado y nombre a los iconos.',
-    'Crear tooltips que se puedan leer con ratón, teclado y pantalla táctil.',
-    'Elegir entre lista, card y tabla según cómo se relacionan los datos.',
-    'Ordenar y filtrar una tabla sin que nadie se pierda.',
-    'Saber cuándo hace falta un grid y cómo se recorre con teclado.',
+    'Crear tooltips que todo el mundo pueda leer.',
+    'Elegir entre lista, card y tabla.',
+    'Ordenar y filtrar tablas sin que nadie se pierda.',
+    'Saber cuándo hace falta un grid.',
   ],
 }

@@ -10,39 +10,32 @@ export const slides = [
   <Fragment key="2.2-leccion">
     <SlideTitle kind="leccion">Tooltip: ayuda contextual y límites</SlideTitle>
     <p>
-      Un <strong>tooltip</strong> es un texto breve que aparece al enfocar un
-      elemento o al pasar el puntero por él.
+      Un <strong>tooltip</strong> es un texto breve que aparece al pasar el
+      puntero o al enfocar un elemento.
     </p>
-    <p>En esta lección aprenderás:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Cuándo basta un tooltip y cuándo hace falta texto visible.</li>
-      <li>
-        Qué diferencia hay entre el nombre de un control y su descripción.
-      </li>
-      <li>
-        Cómo hacer que aparezca con teclado, se cierre con Escape y dé tiempo a
-        leerlo.
-      </li>
+      <li>Cuándo usar un tooltip y cuándo texto visible.</li>
+      <li>Nombre y descripción de un control.</li>
+      <li>Tooltips que se abren con teclado y dan tiempo a leer.</li>
     </ul>
   </Fragment>,
   <Fragment key="2.2-cuando">
     <SlideTitle kind="leccion">¿Tooltip o texto visible?</SlideTitle>
     <p>
-      Un tooltip no siempre se puede abrir: en una pantalla táctil no existe
-      «pasar por encima».
+      Un tooltip no siempre se puede abrir. En un móvil no hay puntero que pasar
+      por encima.
     </p>
     <ul>
       <li>
-        <strong>Tooltip:</strong> una ayuda breve y prescindible, como recordar
-        qué hace un icono.
+        <strong>Tooltip:</strong> una ayuda breve que no es imprescindible.
       </li>
       <li>
-        <strong>Texto visible:</strong> todo lo que la persona necesita para
-        decidir o para no equivocarse.
+        <strong>Texto visible:</strong> lo que hace falta para decidir o para no
+        equivocarse.
       </li>
       <li>
-        <strong>Ninguno de los dos:</strong> si la ayuda tiene enlaces o
-        botones, es un diálogo.
+        <strong>Diálogo:</strong> si la ayuda tiene enlaces o botones.
       </li>
     </ul>
   </Fragment>,
@@ -51,22 +44,22 @@ export const slides = [
     <dl className="facts">
       <dt>Nombre</dt>
       <dd>
-        Qué es o qué hace el control: «Archivar». Se anuncia primero. Se da con{' '}
+        Qué hace el control: «Archivar». Se anuncia primero. Atributos:{' '}
         <code>aria-label</code> o <code>aria-labelledby</code>.
       </dd>
       <dt>Descripción</dt>
       <dd>
-        Un detalle añadido: «Se borra a los 30 días». Se anuncia después. Se da
-        con <code>aria-describedby</code>.
+        Un detalle más: «Se borra a los 30 días». Se anuncia después. Atributo:{' '}
+        <code>aria-describedby</code>.
       </dd>
     </dl>
-    <p>Un tooltip es una cosa o la otra. Decide cuál y usa su atributo.</p>
+    <p>Un tooltip es el nombre o la descripción. Nunca los dos.</p>
   </Fragment>,
   <Fragment key="2.2-situacion">
     <SlideTitle kind="situacion">Andrés ordena su correo</SlideTitle>
     <PersonaCard
       id="andres"
-      task="Quiere archivar un mensaje y saber si lo que manda a la papelera se puede recuperar. No reconoce todos los iconos."
+      task="Quiere archivar un mensaje y saber si puede recuperar lo que tira a la papelera. No reconoce todos los iconos."
     />
   </Fragment>,
   <Fragment key="2.2-error-foco">
@@ -77,9 +70,9 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> recorre la barra con <kbd>Tab</kbd>{' '}
-      y solo ve tres iconos. La ayuda existe, pero a él nunca le aparece. Con el
-      atributo <code>title</code> pasa lo mismo.
+      <strong>Qué le pasa a Andrés:</strong> avanza con <kbd>Tab</kbd> y solo ve
+      tres iconos. La ayuda nunca le aparece. Con el atributo <code>title</code>{' '}
+      pasa lo mismo.
     </p>
   </Fragment>,
   <Fragment key="2.2-solucion-foco">
@@ -92,10 +85,9 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>Aparece al enfocar el botón y al pasar el puntero.</li>
+      <li>El tooltip aparece con el foco y con el puntero.</li>
       <li>
-        Aquí el tooltip <strong>es el nombre</strong> del botón: se ve y se
-        anuncia el mismo texto.
+        Aquí <strong>es el nombre</strong> del botón: se ve y se oye lo mismo.
       </li>
     </ul>
   </Fragment>,
@@ -107,27 +99,25 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> con el temblor, el puntero se le
-      sale del botón y el tooltip desaparece. Y cuando el tooltip tapa algo, no
-      puede quitarlo: <kbd>Escape</kbd> no hace nada.
+      <strong>Qué le pasa a Andrés:</strong> le tiembla la mano, el puntero se
+      sale del botón y el tooltip desaparece. Y si le tapa algo, no puede
+      cerrarlo con <kbd>Escape</kbd>.
     </p>
   </Fragment>,
   <Fragment key="2.2-solucion-cerrar">
     <SlideTitle kind="solucion">
       Se puede cerrar, alcanzar y leer con calma
     </SlideTitle>
-    <p>Todo lo que aparece al enfocar o al pasar el puntero debe:</p>
+    <p>Un tooltip bien hecho:</p>
     <ul>
       <li>
-        <strong>Poder cerrarse</strong> con <kbd>Escape</kbd>, sin mover el foco
-        ni el puntero.
+        <strong>Se cierra</strong> con <kbd>Escape</kbd>, sin mover el foco.
       </li>
       <li>
-        <strong>Poder alcanzarse:</strong> el puntero pasa del botón al tooltip
-        sin que se cierre.
+        <strong>No se cierra</strong> al llevar el puntero hasta él.
       </li>
       <li>
-        <strong>Quedarse</strong> hasta que la persona se va o lo cierra.
+        <strong>Se queda</strong> abierto hasta que la persona se va.
       </li>
     </ul>
     <p>Lo pide el criterio 1.4.13 de WCAG.</p>
@@ -140,9 +130,9 @@ export const slides = [
       {'<span class="pista" onmouseenter="mostrar()">?</span>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> el «?» no recibe el foco. No llega
-      a saber que la papelera se vacía a los 30 días. En un móvil, tampoco se
-      puede abrir.
+      <strong>Qué le pasa a Andrés:</strong> con el teclado no llega al «?». No
+      se entera de que la papelera se vacía a los 30 días. En un móvil pasa
+      igual.
     </p>
   </Fragment>,
   <Fragment key="2.2-solucion-esencial">
@@ -153,29 +143,19 @@ export const slides = [
       }
     </Code>
     <p>
-      El aviso es un texto que ve todo el mundo. <code>aria-describedby</code>{' '}
-      lo une al botón: el lector anuncia «Mover a la papelera» y después el
-      aviso.
+      El aviso está siempre a la vista. <code>aria-describedby</code> lo une al
+      botón: el lector lo anuncia después del nombre.
     </p>
-    <ExampleLinks
-      slug="correo"
-      barrier="Usar la barra del correo con barreras"
-      fixed="Usar la barra del correo corregida"
-    />
+    <ExampleLinks slug="correo" task="usar la barra del correo" />
   </Fragment>,
   <Fragment key="2.2-resumen">
     <SlideTitle kind="resumen">Antes de añadir un tooltip</SlideTitle>
     <ol className="steps">
-      <li>¿Es imprescindible? Mejor texto visible.</li>
-      <li>¿Tiene enlaces o botones? No es un tooltip.</li>
-      <li>¿Es el nombre o una descripción? Usa su atributo.</li>
-      <li>
-        ¿Aparece con foco y con puntero, se cierra con Escape y da tiempo a
-        leerlo?
-      </li>
+      <li>¿Es imprescindible? Texto visible.</li>
+      <li>¿Tiene enlaces o botones? Un diálogo.</li>
+      <li>¿Es el nombre o la descripción? Usa su atributo.</li>
+      <li>¿Se abre con teclado, se cierra con Escape y da tiempo a leer?</li>
     </ol>
-    <p>
-      Compruébalo siempre con teclado, con un lector de pantalla y en un móvil.
-    </p>
+    <p>Pruébalo con teclado, con lector de pantalla y en un móvil.</p>
   </Fragment>,
 ]

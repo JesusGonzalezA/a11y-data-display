@@ -12,17 +12,16 @@ export const slides = [
       Tabla con doble eje: encabezados de fila y columna
     </SlideTitle>
     <p>
-      En algunas tablas, cada dato depende de{' '}
-      <strong>dos cosas a la vez</strong>: su columna y su fila. Si falta uno de
-      los dos encabezados, el dato no se entiende.
+      En algunas tablas, un dato depende de{' '}
+      <strong>su columna y su fila</strong>. Hacen falta los dos encabezados.
     </p>
-    <p>En esta lección aprenderás a:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Reconocer los encabezados de fila.</li>
+      <li>Encabezados de fila.</li>
       <li>
-        Marcarlos con <code>scope="row"</code>.
+        El atributo <code>scope="row"</code>.
       </li>
-      <li>Dar texto a las celdas que solo tienen un icono.</li>
+      <li>Celdas que solo tienen un icono.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.2-dos-ejes">
@@ -37,15 +36,15 @@ export const slides = [
       </li>
     </ul>
     <p>
-      Cuando la primera columna dice qué hay en cada fila, sus celdas son
-      encabezados de fila.
+      Si la primera columna dice qué hay en cada fila, sus celdas son
+      encabezados.
     </p>
   </Fragment>,
   <Fragment key="4.2-situacion">
     <SlideTitle kind="situacion">Elena compara tarifas</SlideTitle>
     <PersonaCard
       id="elena"
-      task="Quiere elegir la tarifa más barata que incluya televisión y no tenga permanencia."
+      task="Compara tarifas de fibra. Busca la más barata que tenga televisión y no tenga permanencia."
     />
   </Fragment>,
   <Fragment key="4.2-error-filas">
@@ -57,8 +56,7 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Elena:</strong> baja por la columna Plus y oye «35
-      €», «2», «12 meses». Sabe la tarifa, pero no qué es cada valor. Tiene que
-      volver a la primera columna en cada fila.
+      €», «2», «12 meses». No sabe qué es cada valor.
     </p>
   </Fragment>,
   <Fragment key="4.2-solucion-filas">
@@ -69,9 +67,9 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>Ahora cada celda se anuncia con su fila: «Permanencia, 12 meses».</li>
+      <li>Ahora oye la fila con cada dato: «Permanencia, 12 meses».</li>
       <li>
-        La celda de la esquina no encabeza nada: es un <code>td</code> vacío.
+        La esquina no es encabezado de nada: es un <code>td</code> vacío.
       </li>
     </ul>
   </Fragment>,
@@ -84,7 +82,7 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Elena:</strong> en la fila Televisión oye tres
-      celdas en blanco. Justo el dato que necesitaba para decidir.
+      celdas vacías. Era el dato que buscaba.
     </p>
   </Fragment>,
   <Fragment key="4.2-solucion-iconos">
@@ -95,15 +93,11 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>Un texto oculto a la vista dice «Incluida» o «No incluida».</li>
-      <li>Es lo que vimos en la lección 2.1, ahora dentro de una celda.</li>
+      <li>Un texto que no se ve dice «Incluida» o «No incluida».</li>
+      <li>Es lo mismo que en la lección 2.1, ahora en una celda.</li>
       <li>La marca y la cruz tienen formas distintas, no solo colores.</li>
     </ul>
-    <ExampleLinks
-      slug="tarifas"
-      barrier="Comparar las tarifas con barreras"
-      fixed="Comparar las tarifas corregidas"
-    />
+    <ExampleLinks slug="tarifas" task="comparar las tarifas" />
   </Fragment>,
   <Fragment key="4.2-resumen">
     <SlideTitle kind="resumen">Cuando la tabla se complica</SlideTitle>
@@ -116,9 +110,8 @@ export const slides = [
         primera columna.
       </li>
       <li>
-        <strong>Encabezados agrupados o en varios niveles:</strong> existen{' '}
-        <code>colgroup</code> y <code>headers</code>, pero antes intenta dividir
-        la tabla en varias más simples.
+        <strong>Más niveles:</strong> mejor divide la tabla en varias. Si no
+        puedes, existen <code>colgroup</code> y <code>headers</code>.
       </li>
     </ul>
   </Fragment>,

@@ -89,8 +89,10 @@ añadir slides de tipo «Lección» con conceptos previos y cerrar con un «Resu
   `leccion` y su título es el nombre completo de la lección. Cada título nombra
   el concepto o el error concreto en lenguaje cotidiano. El texto de error dice
   «Qué le pasa a <persona>». El código reproduce el antes y el después de la
-  definición del ejemplo. Los enlaces se rotulan por la interacción que permiten
-  revisar. **Nunca muestres tiempos en las slides.**
+  definición del ejemplo. `ExampleLinks` recibe la tarea en
+  minúscula («revisar los envíos») y rotula los dos enlaces con los nombres del
+  botón flotante: «Con barreras: …» y «Arreglada: …». Cada texto de una slide es
+  una frase corta con una sola idea; como máximo tres viñetas por slide. **Nunca muestres tiempos en las slides.**
 - `presenter.md`: guía para presentar, no texto para leer. Por cada slide, un
   apartado `## N. Título` con palabras clave en viñetas, frases importantes como
   cita (`> «…»`) y acotaciones `[Ejemplo: …]` cuando cambia la pantalla. La

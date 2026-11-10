@@ -27,7 +27,7 @@
 - Navegación por tablas: NVDA/JAWS Ctrl+Alt+flechas · VoiceOver Ctrl+Opción+flechas
 - Tecla T (NVDA) para saltar a la siguiente tabla
 - Tarea: importe del pedido devuelto
-- [Ejemplo: abrir «Consultar los pedidos con barreras» · entrar en la tabla con el lector]
+- [Ejemplo: abrir «Con barreras: consultar los pedidos» · entrar en la tabla con el lector]
 
 ## 5. Error · Una tabla sin título ni encabezados
 

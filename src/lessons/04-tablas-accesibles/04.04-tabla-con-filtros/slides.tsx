@@ -12,22 +12,22 @@ export const slides = [
       Tabla con filtros: resultados y continuidad de la tarea
     </SlideTitle>
     <p>
-      Un filtro muestra menos datos para encontrar algo antes. Funciona si la
-      persona sabe <strong>qué está filtrando</strong>,{' '}
-      <strong>qué ha encontrado</strong> y <strong>cómo volver atrás</strong>.
+      Un filtro muestra menos filas para encontrar algo antes. La persona tiene
+      que saber <strong>qué filtra</strong>, <strong>qué ha encontrado</strong>{' '}
+      y <strong>cómo volver atrás</strong>.
     </p>
-    <p>En esta lección aprenderás a:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Poner etiquetas que no desaparecen.</li>
-      <li>Decir cuántos resultados hay sin mover el foco.</li>
-      <li>Explicar que no hay resultados y ofrecer una salida.</li>
+      <li>Etiquetas que no desaparecen.</li>
+      <li>Cuántos resultados hay.</li>
+      <li>Qué hacer cuando no hay resultados.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.4-situacion">
     <SlideTitle kind="situacion">Lucía busca trabajo</SlideTitle>
     <PersonaCard
       id="lucia"
-      task="Quiere ver solo las ofertas de diseño en remoto. Si no hay, quiere volver a verlo todo sin empezar de cero."
+      task="Busca ofertas de diseño en remoto. Si no hay, quiere volver a verlas todas sin empezar de cero."
     />
   </Fragment>,
   <Fragment key="4.4-error-etiquetas">
@@ -38,9 +38,8 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Lucía:</strong> en cuanto escribe o elige una
-      opción, la pista desaparece. ¿Qué buscaba este campo: un puesto, una
-      ciudad? ¿De qué era «Remoto»?
+      <strong>Qué le pasa a Lucía:</strong> escribe y la pista desaparece. Elige
+      «Remoto» y ya no sabe qué campo era.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-etiquetas">
@@ -53,7 +52,7 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>La etiqueta dice qué se filtra y no desaparece al escribir.</li>
+      <li>La etiqueta siempre se ve.</li>
       <li>«Todas» es una opción de verdad, no una etiqueta disfrazada.</li>
     </ul>
   </Fragment>,
@@ -66,8 +65,8 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Lucía:</strong> escribe «di» y la segunda letra se
-      pierde: el foco ya está en otro sitio. Con un lector de pantalla, Elena
-      salta de sitio sin haberlo pedido.
+      pierde: el foco ya se ha ido a los resultados. A Elena, su lector la lleva
+      a otro sitio sin pedirlo.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-foco">
@@ -78,12 +77,12 @@ export const slides = [
       {'<p role="status">\n  Mostrando 3 de 8 ofertas.\n</p>'}
     </Code>
     <ul>
-      <li>Filtrar no es cambiar de página: el foco no se mueve.</li>
+      <li>El foco no se mueve al filtrar.</li>
       <li>
-        El recuento es visible y, con <code>role="status"</code>, el lector lo
-        anuncia sin interrumpir.
+        El mensaje se ve, y el lector lo anuncia gracias a{' '}
+        <code>role="status"</code>.
       </li>
-      <li>«3 de 8» dice cuántas quedan y cuántas había.</li>
+      <li>«3 de 8»: cuántas quedan y cuántas había.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.4-error-vacio">
@@ -92,8 +91,8 @@ export const slides = [
       {'<table>\n  <thead>…</thead>\n  <tbody></tbody>\n</table>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Lucía:</strong> ve una cabecera sin filas. ¿Ha
-      fallado la página? Para volver, tiene que deshacer cada filtro a mano.
+      <strong>Qué le pasa a Lucía:</strong> ve una tabla sin filas. ¿Ha fallado
+      la página? Para volver, tiene que quitar cada filtro a mano.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-vacio">
@@ -104,36 +103,27 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>El mensaje repite los filtros activos: se entiende qué ha pasado.</li>
-      <li>
-        «Quitar los filtros» recupera todo en un paso y devuelve el foco al
-        buscador.
-      </li>
+      <li>El mensaje dice qué se ha buscado.</li>
+      <li>«Quitar los filtros» lo recupera todo en un paso.</li>
+      <li>Después, el foco vuelve al buscador.</li>
     </ul>
-    <ExampleLinks
-      slug="empleo"
-      barrier="Filtrar las ofertas con barreras"
-      fixed="Filtrar las ofertas corregidas"
-    />
+    <ExampleLinks slug="empleo" task="filtrar las ofertas" />
   </Fragment>,
   <Fragment key="4.4-resumen">
     <SlideTitle kind="resumen">La tabla sigue siendo una tabla</SlideTitle>
     <ul>
       <li>
         <strong>Ordenar:</strong> botón en el encabezado, <code>aria-sort</code>{' '}
-        y mensaje de estado.
+        y un mensaje.
       </li>
       <li>
         <strong>Filtrar:</strong> etiquetas, foco quieto, recuento y una salida.
       </li>
-      <li>
-        En los dos casos, el lector sigue recorriendo filas y columnas con sus
-        atajos de tabla.
-      </li>
+      <li>La tabla sigue siendo una tabla: el lector la recorre igual.</li>
     </ul>
     <p>
-      Añadir controles a una tabla no la convierte en otra cosa. Cuándo hace
-      falta un grid lo veremos en el siguiente módulo.
+      Para esto no hace falta un grid. Cuándo sí hace falta, en el siguiente
+      módulo.
     </p>
   </Fragment>,
 ]

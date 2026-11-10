@@ -13,29 +13,29 @@ export const slides = [
     </SlideTitle>
     <p>
       Una <strong>tabla</strong> ordena datos en filas y columnas. Cada dato se
-      entiende gracias al encabezado de su columna.
+      entiende por el encabezado de su columna.
     </p>
-    <p>En esta lección aprenderás a:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Reconocer cuándo unos datos piden una tabla.</li>
-      <li>Dar título a la tabla y encabezado a cada columna.</li>
-      <li>Evitar que una tabla ancha se recorte.</li>
+      <li>Cuándo usar una tabla.</li>
+      <li>Título y encabezados.</li>
+      <li>Tablas anchas que no se recortan.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-cuando">
     <SlideTitle kind="leccion">¿Son datos de tabla?</SlideTitle>
     <p>
-      Sí, cuando todos los elementos tienen <strong>los mismos datos</strong> y
-      tiene sentido leerlos <strong>por filas y por columnas</strong>.
+      Sí, si todos los elementos tienen <strong>los mismos datos</strong> y
+      tiene sentido <strong>compararlos</strong>.
     </p>
     <ul>
       <li>
-        Pedidos con número, fecha, importe y estado: <strong>tabla</strong>.
+        Varios pedidos con fecha, importe y estado: <strong>tabla</strong>.
       </li>
       <li>
-        Los datos de un solo elemento: lista de descripciones (lección 3.1).
+        Los datos de un solo pedido: lista de descripciones (lección 3.1).
       </li>
-      <li>Colocar contenido en columnas: CSS, nunca una tabla.</li>
+      <li>Colocar cosas en columnas: CSS, no una tabla.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-estructura">
@@ -47,15 +47,15 @@ export const slides = [
     </Code>
     <p>
       <code>caption</code>: el título. <code>th</code>: un encabezado.{' '}
-      <code>td</code>: un dato. <code>scope="col"</code>: el encabezado vale
-      para toda su columna.
+      <code>td</code>: un dato. <code>scope="col"</code>: el encabezado es de su
+      columna.
     </p>
   </Fragment>,
   <Fragment key="4.1-situacion">
     <SlideTitle kind="situacion">Elena revisa sus pedidos</SlideTitle>
     <PersonaCard
       id="elena"
-      task="Quiere saber cuánto pagó por el pedido que devolvió. Se mueve por la tabla celda a celda con su lector."
+      task="Busca cuánto pagó por un pedido que devolvió. Recorre la tabla celda a celda con su lector."
     />
   </Fragment>,
   <Fragment key="4.1-error-encabezados">
@@ -67,8 +67,7 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Elena:</strong> oye «tabla, 6 filas, 5 columnas»,
-      sin saber de qué. Llega a una celda y solo oye «7,50 €». ¿Es el importe,
-      un descuento, el envío?
+      pero no de qué. En una celda oye «7,50 €» y no sabe qué dato es.
     </p>
   </Fragment>,
   <Fragment key="4.1-solucion-encabezados">
@@ -79,8 +78,8 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>Al entrar en la tabla: «Tus pedidos de 2026, tabla…».</li>
-      <li>Al cambiar de columna: «Importe, 7,50 €».</li>
+      <li>Al entrar oye el título: «Tus pedidos de 2026».</li>
+      <li>En cada celda oye su encabezado: «Importe, 7,50 €».</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-error-recorte">
@@ -89,9 +88,8 @@ export const slides = [
       {'.tabla-contenedor { overflow: hidden; }'}
     </Code>
     <p>
-      <strong>Qué le pasa:</strong> con zoom o en una pantalla estrecha, las
-      últimas columnas quedan fuera y no hay forma de verlas. Le pasa a
-      cualquier persona que amplíe la página.
+      <strong>Qué le pasa:</strong> con zoom o en un móvil, las últimas columnas
+      no se ven. Y no hay forma de llegar a ellas.
     </p>
   </Fragment>,
   <Fragment key="4.1-solucion-recorte">
@@ -105,17 +103,12 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <code>tabindex="0"</code>: la zona se alcanza con Tab y se desplaza con
-        las flechas.
+        <code>tabindex="0"</code>: se puede desplazar con el teclado.
       </li>
       <li>
-        <code>role="region"</code> y un nombre dicen qué es esa parada del foco.
+        <code>role="region"</code> y un nombre: el lector dice qué es.
       </li>
     </ul>
-    <ExampleLinks
-      slug="pedidos"
-      barrier="Consultar los pedidos con barreras"
-      fixed="Consultar los pedidos corregidos"
-    />
+    <ExampleLinks slug="pedidos" task="consultar los pedidos" />
   </Fragment>,
 ]

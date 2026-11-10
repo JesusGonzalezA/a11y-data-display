@@ -11,7 +11,7 @@
 
 ## 2. Cuatro tareas con datos
 
-- Comprender · recorrer · comparar · operar
+- Comprender · recorrer · comparar · actuar
 - Ejemplos cotidianos: un estado de envío, un catálogo, una comparativa de tarifas, una tabla que ordenas o filtras
 - > «Antes de elegir un componente, pregúntate qué intenta hacer la persona con esos datos.»
 

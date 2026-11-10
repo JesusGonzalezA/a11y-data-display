@@ -30,7 +30,7 @@
 - Teclado · temblor → apuntar con el ratón le cuesta
 - No reconoce todos los iconos: archivar y papelera se parecen
 - Quiere saber si lo que borra se puede recuperar
-- [Ejemplo: abrir «Usar la barra del correo con barreras»]
+- [Ejemplo: abrir «Con barreras: usar la barra del correo»]
 
 ## 5. Error · El tooltip solo aparece con el ratón
 

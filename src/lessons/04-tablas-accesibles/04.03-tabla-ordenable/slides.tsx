@@ -12,40 +12,34 @@ export const slides = [
       Tabla ordenable: controles y dirección de ordenación
     </SlideTitle>
     <p>
-      Ordenar una tabla es una <strong>acción</strong>. Hay que poder
-      encontrarla, hacerla con el teclado y saber qué ha pasado después.
+      Ordenar es una <strong>acción</strong>. Hay que poder hacerla con el
+      teclado y saber qué ha pasado después.
     </p>
-    <p>En esta lección aprenderás a:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Poner un botón en el encabezado para ordenar.</li>
-      <li>Indicar qué columna ordena la tabla y en qué sentido.</li>
-      <li>Avisar del cambio sin mover el foco.</li>
+      <li>Un botón para ordenar.</li>
+      <li>Qué columna ordena la tabla y en qué sentido.</li>
+      <li>Un aviso del cambio.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.3-que-cambia">
     <SlideTitle kind="leccion">Qué cambia al ordenar</SlideTitle>
+    <p>Al ordenar pasan tres cosas:</p>
     <ol className="steps">
-      <li>
-        <strong>El control:</strong> la persona elige una columna.
-      </li>
-      <li>
-        <strong>El estado:</strong> la tabla queda ordenada por esa columna, en
-        un sentido.
-      </li>
-      <li>
-        <strong>El resultado:</strong> las filas cambian de sitio.
-      </li>
+      <li>La persona pulsa una columna.</li>
+      <li>La tabla queda ordenada por ella, de menor a mayor o al revés.</li>
+      <li>Las filas cambian de sitio.</li>
     </ol>
     <p>
-      Quien mira la tabla percibe las tres cosas a la vez. Quien usa el teclado
-      o un lector de pantalla necesita recibir cada una.
+      Con la vista se nota todo a la vez. Con teclado o con lector de pantalla
+      hay que comunicar cada cosa.
     </p>
   </Fragment>,
   <Fragment key="4.3-situacion">
     <SlideTitle kind="situacion">Andrés busca a su hermana</SlideTitle>
     <PersonaCard
       id="andres"
-      task="Quiere ordenar la clasificación por nombre para encontrar a su hermana y después volver a ordenarla por tiempo."
+      task="Busca a su hermana en la clasificación de una carrera. Quiere ordenarla por nombre y después por tiempo."
     />
   </Fragment>,
   <Fragment key="4.3-error-control">
@@ -54,9 +48,8 @@ export const slides = [
       {'<th onclick="ordenar(\'nombre\')">\n  Nombre ▲\n</th>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> pulsa <kbd>Tab</kbd> y el foco se
-      salta los encabezados. No puede ordenar con el teclado: tendría que buscar
-      a su hermana fila a fila.
+      <strong>Qué le pasa a Andrés:</strong> con <kbd>Tab</kbd>, el foco pasa de
+      largo los encabezados. No puede ordenar.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-control">
@@ -68,13 +61,13 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        El <code>th</code> sigue siendo el encabezado; el botón es la acción.
+        El <code>th</code> sigue siendo el encabezado. El botón es la acción.
       </li>
       <li>
-        <kbd>Tab</kbd> llega al botón; <kbd>Enter</kbd> o <kbd>Espacio</kbd>{' '}
-        ordenan. Otra pulsación invierte el orden.
+        <kbd>Tab</kbd> llega al botón. <kbd>Enter</kbd> o <kbd>Espacio</kbd>{' '}
+        ordenan; otra pulsación, al revés.
       </li>
-      <li>El foco se queda en el botón: Andrés no pierde su sitio.</li>
+      <li>El foco se queda en el botón.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.3-error-estado">
@@ -83,9 +76,8 @@ export const slides = [
       {'<th>\n  <button>Tiempo ▲</button>\n</th>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> su lector lee la flecha como
-      «triángulo negro», o no la lee. No sabe qué columna ordena la tabla ni en
-      qué sentido.
+      <strong>Qué le pasa a Elena:</strong> su lector lee «triángulo negro» o
+      nada. No sabe por qué columna está ordenada la tabla.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-estado">
@@ -97,8 +89,8 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <code>ascending</code> (de menor a mayor) o <code>descending</code> (de
-        mayor a menor), solo en <strong>una</strong> columna a la vez.
+        <code>ascending</code> (de menor a mayor) o <code>descending</code>,
+        solo en <strong>una</strong> columna.
       </li>
       <li>La flecha se oculta al lector: el atributo ya lo dice.</li>
       <li>
@@ -110,13 +102,12 @@ export const slides = [
   <Fragment key="4.3-error-anuncio">
     <SlideTitle kind="error">Las filas cambian en silencio</SlideTitle>
     <p>
-      Al ordenar, el foco sigue en el botón y las filas cambian más abajo. No
-      todos los lectores de pantalla anuncian el nuevo valor de{' '}
-      <code>aria-sort</code>.
+      Al ordenar, las filas cambian lejos del foco. Y no todos los lectores
+      anuncian el nuevo <code>aria-sort</code>.
     </p>
     <p>
-      <strong>Qué le pasa a Elena:</strong> pulsa el botón y nada le confirma
-      que la tabla haya cambiado.
+      <strong>Qué le pasa a Elena:</strong> pulsa el botón y no sabe si ha
+      pasado algo.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-anuncio">
@@ -125,16 +116,10 @@ export const slides = [
       {'<p role="status">\n  Ordenada por nombre, de la A a la Z.\n</p>'}
     </Code>
     <ul>
-      <li>
-        <code>role="status"</code> se anuncia sin mover el foco.
-      </li>
-      <li>Es visible: también confirma el cambio a quien mira la tabla.</li>
-      <li>Es corto: dice la columna y el sentido.</li>
+      <li>El lector lo anuncia sin mover el foco.</li>
+      <li>Se ve: también sirve a quien mira la tabla.</li>
+      <li>Es corto: columna y sentido.</li>
     </ul>
-    <ExampleLinks
-      slug="carrera"
-      barrier="Ordenar la clasificación con barreras"
-      fixed="Ordenar la clasificación corregida"
-    />
+    <ExampleLinks slug="carrera" task="ordenar la clasificación" />
   </Fragment>,
 ]

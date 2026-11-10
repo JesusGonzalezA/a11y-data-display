@@ -20,7 +20,7 @@
 - Teclado: cada Tab es un esfuerzo, el orden importa
 - Tarea: recorrer, guardar dos, abrir el destacado
 - También pensamos en Elena: encabezados y nombres
-- [Ejemplo: abrir «Recorrer el catálogo con barreras»]
+- [Ejemplo: abrir «Con barreras: recorrer el catálogo»]
 
 ## 4. Error · El título solo lo parece
 

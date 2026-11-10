@@ -26,6 +26,6 @@
 ## 4. Dónde encontrar los materiales
 
 - Índice del servidor: por módulo → diapositivas, ejemplos, contenido
-- Las diapositivas se entienden solas · los ejemplos se pueden repetir
+- Diapositivas: la teoría · ejemplos: para probar y repetir · contenido: resumen y fuentes
 - En cada ejemplo: «Con barreras», «Arreglada» y «Explicación»
 - Recomendar probar los ejemplos con teclado y con un lector de pantalla (NVDA, VoiceOver)

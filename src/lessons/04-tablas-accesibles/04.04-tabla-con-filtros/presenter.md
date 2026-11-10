@@ -13,7 +13,7 @@
 - TDAH y dislexia: necesita que la información siga visible y que nada la saque de lo que hace
 - Usa ratón y teclado; a menudo el móvil
 - Tarea con dos filtros + caso sin resultados
-- [Ejemplo: abrir «Filtrar las ofertas con barreras»]
+- [Ejemplo: abrir «Con barreras: filtrar las ofertas»]
 
 ## 3. Error · El placeholder hace de etiqueta
 

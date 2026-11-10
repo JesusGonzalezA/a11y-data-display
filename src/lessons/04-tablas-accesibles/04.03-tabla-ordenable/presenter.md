@@ -18,7 +18,7 @@
 
 - Teclado · tabla de 7 filas aquí, cientos en la real
 - Tarea: ordenar por nombre, encontrar, volver a ordenar por tiempo
-- [Ejemplo: abrir «Ordenar la clasificación con barreras» · intentar con Tab]
+- [Ejemplo: abrir «Con barreras: ordenar la clasificación» · intentar con Tab]
 
 ## 4. Error · El encabezado solo responde al ratón
 

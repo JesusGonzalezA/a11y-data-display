@@ -20,7 +20,7 @@
 
 - Lector de pantalla · navega por encabezados y por botones
 - Tarea: detectar el envío con problema, copiar su número, descargar la etiqueta
-- [Ejemplo: abrir «Revisar los envíos con barreras» · activar el lector (VoiceOver: Cmd+F5 · NVDA: Ctrl+Alt+N)]
+- [Ejemplo: abrir «Con barreras: revisar los envíos» · activar el lector (VoiceOver: Cmd+F5 · NVDA: Ctrl+Alt+N)]
 
 ## 4. Error · El estado es solo un círculo de color
 

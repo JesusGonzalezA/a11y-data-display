@@ -20,8 +20,8 @@ export const slides = [
         <strong>HTML semántico:</strong> encabezados, listas, enlaces y botones.
       </li>
       <li>
-        <strong>Nombre accesible:</strong> el texto con el que un lector de
-        pantalla anuncia cada control.
+        <strong>Nombre accesible:</strong> cómo anuncia un lector de pantalla
+        cada control.
       </li>
       <li>
         <strong>Teclado:</strong> <kbd>Tab</kbd> para avanzar; <kbd>Enter</kbd>{' '}
@@ -29,24 +29,26 @@ export const slides = [
       </li>
     </ul>
     <p>
-      Si algo te suena nuevo, empieza por el curso «Introducción al desarrollo
-      web accesible» de weAAAre.
+      ¿Te suena nuevo? Empieza por el curso «Introducción al desarrollo web
+      accesible», de weAAAre.
     </p>
   </Fragment>,
   <Fragment key="mapa-del-curso">
     <SlideTitle kind="leccion">El recorrido del curso</SlideTitle>
-    <ol className="course-map" start={2}>
+    <ol className="course-map">
+      <li>
+        <strong>Introducción:</strong> cómo funciona el curso.
+      </li>
       <li>
         <strong>Iconografía y ayuda contextual:</strong> iconos que se entienden
-        y tooltips que se pueden leer.
+        y tooltips que se leen.
       </li>
       <li>
         <strong>Listas, cards y orden de lectura:</strong> colecciones que se
         recorren en orden.
       </li>
       <li>
-        <strong>Tablas accesibles:</strong> encabezados, doble eje, ordenación y
-        filtros.
+        <strong>Tablas accesibles:</strong> encabezados, ordenación y filtros.
       </li>
       <li>
         <strong>Patrón grid:</strong> cuándo hace falta y cómo se usa con
@@ -54,7 +56,7 @@ export const slides = [
       </li>
     </ol>
     <p>
-      Queda fuera del curso: editar celdas, selección múltiple, virtualización y
+      Fuera del curso: editar celdas, selección múltiple, virtualización y
       gráficos.
     </p>
   </Fragment>,
@@ -63,15 +65,13 @@ export const slides = [
     <p>Cada módulo tiene tres materiales:</p>
     <ul>
       <li>
-        <strong>Diapositivas:</strong> se entienden solas, sin el vídeo.
+        <strong>Diapositivas:</strong> la teoría de cada lección.
       </li>
       <li>
-        <strong>Ejemplos:</strong> páginas que puedes ver «Con barreras» o
-        «Arreglada», con la explicación de cada cambio.
+        <strong>Ejemplos:</strong> páginas para probar cada error y su arreglo.
       </li>
       <li>
-        <strong>Contenido:</strong> el resumen de cada lección, con fuentes y
-        comprobaciones.
+        <strong>Contenido:</strong> el resumen de cada lección y sus fuentes.
       </li>
     </ul>
     <p>

@@ -17,7 +17,7 @@
 ## 3. Situación · Elena compara tarifas
 
 - Tarea con tres condiciones: precio, televisión, permanencia → compara en vertical y en horizontal
-- [Ejemplo: abrir «Comparar las tarifas con barreras» · ir a la columna Plus]
+- [Ejemplo: abrir «Con barreras: comparar las tarifas» · ir a la columna Plus]
 
 ## 4. Error · La primera columna no son encabezados
 

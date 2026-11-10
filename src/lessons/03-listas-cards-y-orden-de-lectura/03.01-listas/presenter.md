@@ -21,7 +21,7 @@
 
 - Lector de pantalla · usa atajos: H para encabezados, L para listas (NVDA), rotor en VoiceOver
 - Tarea: qué ofrece la casa, cómo llegar, horario de entrada
-- [Ejemplo: abrir «Leer la ficha con barreras» · lista de elementos del lector]
+- [Ejemplo: abrir «Con barreras: leer la ficha» · lista de elementos del lector]
 
 ## 4. Error · Los servicios son párrafos sueltos
 

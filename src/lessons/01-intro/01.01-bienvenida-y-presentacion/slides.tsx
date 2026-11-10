@@ -17,22 +17,20 @@ export const slides = [
   <Fragment key="cuatro-tareas">
     <SlideTitle kind="leccion">Cuatro tareas con datos</SlideTitle>
     <p>
-      Cuando consultamos datos en una web, casi siempre queremos una de estas
-      cuatro cosas:
+      Con los datos de una web casi siempre hacemos una de estas cuatro cosas:
     </p>
     <ol className="steps">
       <li>
-        <strong>Comprender</strong> un dato: «¿ha salido ya mi envío?».
+        <strong>Comprender</strong> un dato: «¿Ha salido mi envío?».
       </li>
       <li>
-        <strong>Recorrer</strong> una colección: un catálogo, unos resultados.
+        <strong>Recorrer</strong> una lista: un catálogo.
       </li>
       <li>
         <strong>Comparar</strong> valores: qué incluye cada tarifa.
       </li>
       <li>
-        <strong>Operar</strong> con ellos: ordenar, filtrar o actuar sobre una
-        fila.
+        <strong>Actuar</strong> sobre ellos: ordenar o filtrar.
       </li>
     </ol>
   </Fragment>,
@@ -41,16 +39,15 @@ export const slides = [
       El significado no puede quedarse en lo visual
     </SlideTitle>
     <p>
-      Al mirar una página vemos columnas, colores, iconos y posiciones. Un
-      lector de pantalla no ve nada de eso:{' '}
-      <strong>solo recibe lo que está escrito en el HTML</strong>.
+      Nosotros vemos columnas, colores e iconos. Un lector de pantalla no:{' '}
+      <strong>solo lee lo que está en el HTML</strong>.
     </p>
     <ul>
       <li>Un icono sin texto no dice nada.</li>
-      <li>Una «tabla» hecha con cajas no tiene filas ni columnas.</li>
-      <li>Si el orden que se ve no es el del código, se lee desordenado.</li>
+      <li>Unas cajas colocadas como una tabla no son una tabla.</li>
+      <li>Lo que se ve primero no siempre se lee primero.</li>
     </ul>
-    <p>En cada lección elegiremos el HTML que conserva el significado.</p>
+    <p>Por eso, en cada lección elegiremos bien el HTML.</p>
   </Fragment>,
   <Fragment key="como-funciona-cada-leccion">
     <SlideTitle kind="leccion">Cómo funciona cada lección</SlideTitle>
@@ -60,15 +57,13 @@ export const slides = [
         <strong>La lección:</strong> qué vas a aprender.
       </li>
       <li>
-        <strong>La situación:</strong> una persona, cómo usa la web y qué quiere
-        hacer.
+        <strong>La situación:</strong> una persona quiere hacer algo.
       </li>
       <li>
-        <strong>El error común:</strong> qué falla y qué le pasa a esa persona.
+        <strong>El error común:</strong> qué falla y qué le pasa.
       </li>
       <li>
-        <strong>La solución:</strong> qué cambia en el código y por qué
-        funciona.
+        <strong>La solución:</strong> cómo se arregla.
       </li>
     </ol>
     <p>
@@ -82,23 +77,16 @@ export const slides = [
   </Fragment>,
   <Fragment key="como-usar-los-ejemplos">
     <SlideTitle kind="leccion">Cómo usar las páginas de ejemplo</SlideTitle>
-    <p>
-      Cada error está en una página de ejemplo. Abajo a la derecha tiene un
-      botón flotante con tres opciones:
-    </p>
+    <p>Cada error tiene una página de ejemplo con un botón flotante:</p>
     <ol className="steps">
       <li>
-        <strong>«Con barreras»:</strong> así se abre la página. Pruébala como lo
-        haría la persona de la lección.
+        <strong>«Con barreras»:</strong> la página con el error. Pruébala.
       </li>
       <li>
-        <strong>«Arreglada»:</strong> la misma página, ya sin barreras. Puedes
-        ir y volver cuantas veces quieras.
+        <strong>«Arreglada»:</strong> la misma página, ya corregida.
       </li>
       <li>
-        <strong>«Explicación»:</strong> qué probar y la lista de barreras. Al
-        abrir una, se marca en la página con su número y ves el código antes y
-        después.
+        <strong>«Explicación»:</strong> qué probar, qué falla y cómo se arregla.
       </li>
     </ol>
   </Fragment>,

@@ -12,16 +12,14 @@ export const slides = [
       Cards: estructura, acciones y orden de lectura
     </SlideTitle>
     <p>
-      Una <strong>card</strong> reúne los datos de un elemento de una colección
-      (un curso, un producto) y lo que se puede hacer con él.
+      Una <strong>card</strong> junta los datos de un elemento (un curso, un
+      producto) y sus acciones.
     </p>
-    <p>En esta lección aprenderás a:</p>
+    <p>En esta lección:</p>
     <ul>
-      <li>Dar a cada card un título que sea un encabezado.</li>
-      <li>Separar el enlace principal de los botones.</li>
-      <li>
-        Hacer que lo que se ve, lo que se lee y el foco sigan el mismo orden.
-      </li>
+      <li>El título de la card es un encabezado.</li>
+      <li>El enlace y los botones van separados.</li>
+      <li>El orden que se ve es el orden del código.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.2-anatomia">
@@ -33,14 +31,13 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <strong>Encabezado:</strong> permite saltar de card en card.
+        <strong>Título:</strong> un encabezado, para saltar de card en card.
       </li>
       <li>
-        <strong>Enlace principal:</strong> corto y en el título.
+        <strong>Enlace:</strong> corto y dentro del título.
       </li>
       <li>
-        <strong>Otras acciones:</strong> botones aparte, nunca dentro del
-        enlace.
+        <strong>Botones:</strong> aparte, nunca dentro del enlace.
       </li>
     </ul>
   </Fragment>,
@@ -48,7 +45,7 @@ export const slides = [
     <SlideTitle kind="situacion">Andrés elige un curso</SlideTitle>
     <PersonaCard
       id="andres"
-      task="Quiere recorrer el catálogo, guardar dos cursos para decidir después y abrir el destacado."
+      task="Recorre un catálogo de cursos. Quiere guardar dos para decidir después y abrir el destacado."
     />
   </Fragment>,
   <Fragment key="3.2-error-titulo">
@@ -57,9 +54,8 @@ export const slides = [
       {'<span class="card__titulo">Excel desde cero</span>'}
     </Code>
     <p>
-      <strong>Qué le pasa:</strong> Andrés no nota la diferencia, pero Elena sí.
-      Con su lector de pantalla no puede saltar de curso en curso: tiene que
-      escuchar cada card entera.
+      <strong>Qué le pasa:</strong> Andrés no lo nota. Elena sí: su lector no
+      puede saltar de curso en curso y tiene que oír cada card entera.
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-titulo">
@@ -70,11 +66,11 @@ export const slides = [
       }
     </Code>
     <ul>
+      <li>Con encabezados, el lector salta de curso en curso.</li>
       <li>
-        El nivel del encabezado depende de la estructura de la página, no del
-        tamaño de letra.
+        El nivel (h2, h3…) lo decide la estructura de la página, no el tamaño de
+        letra.
       </li>
-      <li>El enlace del título es corto y distinto en cada card.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.2-error-anidado">
@@ -85,9 +81,9 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> el foco entra en el enlace y
-      después en un botón que está dentro de él. El enlace se anuncia con todo
-      el texto de la card, «Guardar» incluido. Y hay cuatro «Guardar» iguales.
+      <strong>Qué le pasa a Andrés:</strong> el foco se para en el enlace y
+      luego en el botón de dentro. El enlace se anuncia con todo el texto de la
+      card. Y los cuatro botones se llaman igual: «Guardar».
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-anidado">
@@ -98,8 +94,8 @@ export const slides = [
       }
     </Code>
     <p>
-      En el código hay dos controles separados, cada uno con su nombre. El CSS
-      hace que toda la card siga respondiendo al clic.
+      Ahora son dos controles separados y cada uno tiene su nombre. El CSS hace
+      que toda la card siga respondiendo al clic.
     </p>
   </Fragment>,
   <Fragment key="3.2-error-orden">
@@ -112,27 +108,20 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> ve el curso destacado arriba a la
-      izquierda, pero el foco empieza en la segunda card. Llega al destacado al
-      final, saltando hacia atrás.
+      <strong>Qué le pasa a Andrés:</strong> ve el curso destacado el primero.
+      Pero el foco empieza en la segunda card y llega al destacado al final.
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-orden">
     <SlideTitle kind="solucion">El código manda el orden</SlideTitle>
     <ul>
-      <li>Escribe los elementos en el orden en que deben leerse.</li>
+      <li>Escribe el HTML en el orden de lectura.</li>
       <li>
         El CSS (<code>order</code>, <code>row-reverse</code>, <code>grid</code>)
-        cambia lo que se ve, pero no lo que se lee ni el orden del foco.
+        cambia lo que se ve. No cambia lo que se lee ni el orden del foco.
       </li>
-      <li>
-        Si hay varias vistas (cuadrícula, lista), el orden es el mismo en todas.
-      </li>
+      <li>En cuadrícula o en lista, el orden es el mismo.</li>
     </ul>
-    <ExampleLinks
-      slug="academia"
-      barrier="Recorrer el catálogo con barreras"
-      fixed="Recorrer el catálogo corregido"
-    />
+    <ExampleLinks slug="academia" task="recorrer el catálogo" />
   </Fragment>,
 ]
