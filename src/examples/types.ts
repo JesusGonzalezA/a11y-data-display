@@ -4,11 +4,14 @@ import type { ComponentType } from 'react'
 export interface ExampleFix {
   /** Valor de `data-fix` en los elementos que cambian con este arreglo. */
   id: string
+  /** La barrera en lenguaje cotidiano; sirve con y sin arreglo. */
   title: string
-  /** Dónde está el cambio, en lenguaje de la página. */
+  /** Dónde está, en lenguaje de la página. Una frase. */
   where: string
-  /** Por qué la versión sin arreglo es una barrera y qué resuelve el cambio. */
-  why: string
+  /** Qué pasa sin arreglo y a quién. Una o dos frases. */
+  problem: string
+  /** Qué cambia con el arreglo. Una o dos frases. */
+  solution: string
   before: string
   after: string
 }
@@ -26,8 +29,8 @@ export interface ExampleDefinition {
   lessonTitle: string
   /** Título del documento, como lo tendría la web real. */
   title: string
-  /** Qué hacer en la página para notar la barrera. */
-  tryIt: string
+  /** Pasos cortos para notar las barreras en la página. */
+  steps: string[]
   fixes: ExampleFix[]
   Page: ComponentType<ExamplePageProps>
 }

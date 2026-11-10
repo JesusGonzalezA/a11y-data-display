@@ -16,8 +16,7 @@ describe('Registro de páginas de ejemplo', () => {
       '4.1',
       '4.2',
       '4.3',
-      '5.1',
-      '5.2',
+      '4.4',
     ])
   })
 
@@ -74,12 +73,12 @@ describe('Registro de páginas de ejemplo', () => {
   })
 
   it('monta la página y la herramienta para una ruta conocida', () => {
-    render(<ExamplesApp pathname="/ejemplos/cine" />)
+    render(<ExamplesApp pathname="/ejemplos/envios" />)
     expect(
-      screen.getByRole('heading', { level: 1, name: 'La ola tranquila' }),
+      screen.getByRole('heading', { level: 1, name: 'Mis envíos' }),
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('button', { name: 'Aplicar arreglo' }),
+      screen.getByRole('button', { name: 'Arreglada' }),
     ).toBeInTheDocument()
   })
 })

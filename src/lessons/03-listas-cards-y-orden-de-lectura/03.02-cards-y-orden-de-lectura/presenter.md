@@ -41,7 +41,7 @@
 - Nombre del enlace = todo el texto de la card · «Guardar» × 4 sin contexto
 - [Ejemplo: Tab por la primera card · escuchar el nombre del enlace con el lector]
 
-## 7. Solución · Enlace en el título, acción al lado
+## 7. Solución · Enlace en el título, botón al lado
 
 - Patrón del «enlace extendido»: `::after` con `position: absolute; inset: 0`
 - El botón con `position: relative; z-index: 1` queda por encima y sigue siendo clicable
@@ -61,4 +61,4 @@
 - `order`, `row-reverse`, `grid-area`, `grid-auto-flow: dense`: cambian solo lo visual
 - Si de verdad hace falta otro orden visual en una pantalla, cambiar el DOM para esa vista
 - > «Si el CSS reordena, el teclado se desordena.»
-- [Ejemplo: «Aplicar arreglo» · Tab en ambas vistas · «Ver cambios»]
+- [Ejemplo: «Arreglada» · Tab en ambas vistas · «Explicación»]

@@ -12,22 +12,20 @@ export const slides = [
       Iconografía: significado y nombre accesible
     </SlideTitle>
     <p>
-      Un icono se ve, pero no se oye. Si transmite información, esa información
-      tiene que llegar también por otra vía.
+      Un icono se ve, pero no se oye. Si dice algo importante, ese mensaje tiene
+      que llegar también de otra forma.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás a:</p>
     <ul>
-      <li>
-        Distinguir iconos decorativos, informativos y dentro de controles.
-      </li>
-      <li>Evitar que el color sea la única señal de un estado.</li>
+      <li>Distinguir los tres papeles de un icono.</li>
+      <li>No usar el color como única señal.</li>
       <li>Dar nombre a un botón o enlace que solo muestra un icono.</li>
     </ul>
   </Fragment>,
   <Fragment key="2.1-tipos">
     <SlideTitle kind="leccion">Tres papeles de un icono</SlideTitle>
     <p>
-      Pregunta clave: <strong>¿qué pierde la persona si quito el icono?</strong>
+      Pregúntate: <strong>¿qué pierde la persona si quito el icono?</strong>
     </p>
     <table className="summary-table">
       <thead>
@@ -47,13 +45,13 @@ export const slides = [
         </tr>
         <tr>
           <th scope="row">Informativo</th>
-          <td>Se pierde un dato (un estado, un aviso)</td>
-          <td>Texto visible junto al icono, o texto alternativo</td>
+          <td>Se pierde un dato: un estado, un aviso</td>
+          <td>Escribir el dato con texto</td>
         </tr>
         <tr>
-          <th scope="row">En un control</th>
+          <th scope="row">Dentro de un botón</th>
           <td>No se sabe qué hace el botón</td>
-          <td>El control necesita un nombre accesible</td>
+          <td>Dar nombre al botón</td>
         </tr>
       </tbody>
     </table>
@@ -73,29 +71,25 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> el lector no anuncia nada; no sabe
-      que un envío tiene una incidencia. Quien no distingue el rojo del verde
-      tampoco lo sabe.
+      <strong>Qué le pasa a Elena:</strong> su lector no anuncia nada. No sabe
+      qué envío tiene un problema. Tampoco lo sabe quien no distingue el rojo
+      del verde.
     </p>
   </Fragment>,
   <Fragment key="2.1-solucion-estado">
-    <SlideTitle kind="solucion">
-      Escribir el estado; el icono acompaña
-    </SlideTitle>
+    <SlideTitle kind="solucion">Escribir el estado con palabras</SlideTitle>
     <Code tone="solucion" caption="Así se arregla">
       {
         '<p class="estado estado--incidencia">\n  <svg aria-hidden="true">…</svg>\n  <span>Incidencia: dirección incompleta</span>\n</p>'
       }
     </Code>
     <ul>
+      <li>El texto visible sirve a todo el mundo.</li>
       <li>
-        El texto visible sirve a todo el mundo: lector, daltonismo, prisa.
-      </li>
-      <li>
-        El icono pasa a ser decorativo: se oculta para no anunciar lo mismo dos
+        El icono pasa a ser decorativo: se oculta para no decir lo mismo dos
         veces.
       </li>
-      <li>Una forma distinta por estado refuerza sin depender del color.</li>
+      <li>Cada estado tiene una forma distinta, no solo un color.</li>
     </ul>
   </Fragment>,
   <Fragment key="2.1-error-decorativo">
@@ -108,9 +102,9 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> al saltar entre encabezados oye
-      «Icono de una caja de cartón, Envío a Lugo» tres veces. El dato importante
-      llega tarde y envuelto en ruido.
+      <strong>Qué le pasa a Elena:</strong> al saltar de título en título oye
+      «Icono de una caja de cartón, Envío a Lugo». Y así en cada envío: ruido
+      antes del dato que busca.
     </p>
   </Fragment>,
   <Fragment key="2.1-solucion-decorativo">
@@ -122,11 +116,11 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <code>alt=""</code> en una imagen y <code>aria-hidden="true"</code> en
-        un SVG la sacan de lo que se anuncia.
+        <code>alt=""</code> oculta una imagen; <code>aria-hidden="true"</code>{' '}
+        oculta un SVG.
       </li>
       <li>
-        No es lo mismo que no poner <code>alt</code>: sin él, el lector puede
+        Quitar el atributo <code>alt</code> no sirve: sin él, el lector puede
         leer el nombre del archivo.
       </li>
     </ul>
@@ -137,9 +131,8 @@ export const slides = [
       {'<button type="button">\n  <svg aria-hidden="true">…</svg>\n</button>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> el lector anuncia «botón» y
-      «enlace», sin decir qué hacen. Hay tres envíos con los mismos controles y
-      no sabe cuál corresponde a cada uno.
+      <strong>Qué le pasa a Elena:</strong> oye «botón» y «enlace», sin saber
+      qué hacen. Además se repiten en cada envío, y no sabe cuál es de cuál.
     </p>
   </Fragment>,
   <Fragment key="2.1-solucion-nombre">
@@ -153,10 +146,11 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <code>aria-label</code> o un texto oculto visualmente dan el nombre.
+        <code>aria-label</code> da al botón un nombre que no se ve.
       </li>
       <li>
-        Nombra la acción («Copiar») y, si se repite, a qué afecta («RY4821»).
+        Di la acción («Copiar») y, si el botón se repite, sobre qué actúa
+        («RY4821»).
       </li>
     </ul>
     <ExampleLinks

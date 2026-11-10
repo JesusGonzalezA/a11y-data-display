@@ -27,7 +27,7 @@
 - Demo:
   1. Lista de listas del lector (NVDA: L; VoiceOver: rotor): no hay ninguna.
   2. Leer «Cómo llegar» y «Datos del alojamiento» con flecha abajo.
-  3. **Aplicar arreglo** y repetir.
+  3. Pulsar **Arreglada** y repetir.
 - Código: `examples/RuralHouse/`.
 
 ## Conceptos clave

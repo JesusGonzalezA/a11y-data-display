@@ -84,7 +84,6 @@ export function OrderHistory({ fixed }: ExamplePageProps) {
           </p>
         )}
         {fixed ? (
-          // biome-ignore lint/a11y/noNoninteractiveTabindex: zona desplazable enfocable para teclado
           <div
             className="orders__scroll"
             role="region"

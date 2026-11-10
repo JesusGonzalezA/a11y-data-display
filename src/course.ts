@@ -6,12 +6,12 @@ export const course = {
   audience:
     'HTML semántico, nombre accesible y navegación por teclado básicos. El curso de Introducción al desarrollo web accesible es una buena preparación.',
   description:
-    'Veremos, desde la experiencia de personas concretas, cómo presentar datos para que se entiendan, se recorran y se puedan usar: iconos, ayuda contextual, listas, cards, tablas y grids.',
+    'Aprenderás a presentar datos para que cualquier persona pueda entenderlos, recorrerlos y usarlos: iconos, ayuda contextual, listas, cards, tablas y grids.',
   objectives: [
-    'Decidir qué significa un icono y qué nombre necesita un control con icono.',
-    'Ofrecer ayuda contextual que se pueda leer con puntero, teclado y pantalla táctil.',
-    'Elegir lista, card o tabla según la relación entre los datos, con un orden de lectura coherente.',
-    'Mantener ordenación y filtros comprensibles sin perder el contexto.',
-    'Saber cuándo un grid está justificado y cómo se recorre con teclado.',
+    'Dar significado y nombre a los iconos.',
+    'Crear tooltips que se puedan leer con ratón, teclado y pantalla táctil.',
+    'Elegir entre lista, card y tabla según cómo se relacionan los datos.',
+    'Ordenar y filtrar una tabla sin que nadie se pierda.',
+    'Saber cuándo hace falta un grid y cómo se recorre con teclado.',
   ],
 }

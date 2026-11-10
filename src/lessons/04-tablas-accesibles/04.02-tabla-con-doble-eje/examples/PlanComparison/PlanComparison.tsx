@@ -58,7 +58,6 @@ export function PlanComparison({ fixed }: ExamplePageProps) {
         <p className="plans__intro">
           Fibra y móvil en una sola factura. Precios con IVA incluido.
         </p>
-        {/* biome-ignore lint/a11y/noNoninteractiveTabindex: zona desplazable enfocable para teclado */}
         <div
           className="plans__scroll"
           role="region"

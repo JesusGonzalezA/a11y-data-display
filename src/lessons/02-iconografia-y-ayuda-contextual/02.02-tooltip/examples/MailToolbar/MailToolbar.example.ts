@@ -7,14 +7,21 @@ export const mailToolbarExample: ExampleDefinition = {
   lesson: '2.2',
   lessonTitle: 'Tooltip: ayuda contextual y límites',
   title: 'Reserva confirmada · Buzón Brisa',
-  tryIt:
-    'Recorre los botones con Tab: ¿sabes qué hace cada icono? Pasa el puntero por un botón e intenta llevarlo hasta el tooltip para leerlo. Pulsa Escape con el tooltip abierto. Busca cuándo se borran los mensajes de la papelera desde un móvil o solo con teclado.',
+  steps: [
+    'Recorre los tres botones con Tab. ¿Sabes qué hace cada uno?',
+    'Pasa el puntero por un botón e intenta llevarlo hasta el texto de ayuda.',
+    'Con la ayuda abierta, pulsa Escape.',
+    'Sin usar el ratón, averigua cuándo se borran los mensajes de la papelera.',
+  ],
   fixes: [
     {
       id: 'focus',
-      title: 'El tooltip aparece también con el foco',
-      where: 'Los tres botones de la barra de acciones.',
-      why: 'Sin arreglo, la ayuda solo aparece con mouseenter: quien usa teclado ve tres iconos y no sabe qué hacen. Con el arreglo, el tooltip se abre con el foco y con el puntero, y es el nombre del botón (aria-labelledby): lo que se ve y lo que se anuncia es el mismo texto.',
+      title: 'La ayuda solo aparece con el ratón',
+      where: 'Los tres botones de la barra.',
+      problem:
+        'El tooltip solo se abre al pasar el puntero. Quien usa el teclado ve tres iconos y no sabe qué hacen.',
+      solution:
+        'El tooltip se abre también al enfocar el botón. Además es su nombre (aria-labelledby): se ve y se anuncia el mismo texto.',
       before:
         '<button aria-label="Archivar"\n  onmouseenter="mostrar()">…</button>\n<span class="tooltip">Archivar</span>',
       after:
@@ -22,9 +29,12 @@ export const mailToolbarExample: ExampleDefinition = {
     },
     {
       id: 'dismiss',
-      title: 'El tooltip se puede cerrar y se puede leer',
-      where: 'El contenedor de cada botón y su tooltip.',
-      why: 'WCAG 1.4.13 pide que el contenido que aparece al pasar el puntero o al enfocar se pueda descartar (Escape, sin mover el foco), se pueda recorrer con el puntero y se mantenga mientras haga falta. Sin arreglo, el tooltip está separado del botón y se cierra al intentar alcanzarlo, y Escape no hace nada.',
+      title: 'El tooltip se cierra antes de poder leerlo',
+      where: 'El tooltip de cada botón.',
+      problem:
+        'Hay un hueco entre el botón y el tooltip: al mover el puntero hacia el texto, desaparece. Y Escape no lo cierra.',
+      solution:
+        'El puntero puede pasar del botón al tooltip sin que se cierre, y Escape lo cierra sin mover el foco (WCAG 1.4.13).',
       before:
         '<span class="tip">\n  <button onmouseleave="ocultar()">…</button>\n  <span class="tooltip tooltip--separado">…</span>\n</span>',
       after:
@@ -32,9 +42,12 @@ export const mailToolbarExample: ExampleDefinition = {
     },
     {
       id: 'essential',
-      title: 'La información esencial está siempre visible',
-      where: 'Junto a la barra de acciones.',
-      why: 'Que los mensajes de la papelera se borran a los 30 días es información necesaria para decidir. Escondida en un «?» que solo responde al puntero, no la recibe quien usa teclado, pantalla táctil o lector de pantalla. Como texto visible llega a todas las personas; aria-describedby la asocia al botón como descripción, separada de su nombre.',
+      title: 'Un dato importante está escondido en un «?»',
+      where: 'Junto a la barra de botones.',
+      problem:
+        'Que la papelera se vacía a los 30 días solo aparece al pasar el puntero por el «?». Con teclado o en un móvil no se puede leer.',
+      solution:
+        'El aviso es un texto siempre visible. aria-describedby lo une al botón de la papelera como descripción.',
       before: '<span class="pista" onmouseenter="mostrar()">?</span>',
       after:
         '<button aria-labelledby="tip-papelera"\n  aria-describedby="ayuda-papelera">…</button>\n<p id="ayuda-papelera">Los mensajes de la papelera\n  se borran para siempre a los 30 días.</p>',

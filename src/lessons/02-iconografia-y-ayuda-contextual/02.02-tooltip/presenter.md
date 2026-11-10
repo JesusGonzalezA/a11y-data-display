@@ -44,7 +44,7 @@
 - El foco se queda en el botón: el tooltip nunca recibe foco
 - `role="tooltip"` + `aria-labelledby` → el texto visible es el nombre: una sola fuente
 - Comprobar: el nombre «Archivar» se entiende sin ver el icono
-- [Ejemplo: «Aplicar arreglo» · Tab de nuevo]
+- [Ejemplo: «Arreglada» · Tab de nuevo]
 
 ## 7. Error · Se cierra al intentar leerlo
 
@@ -53,7 +53,7 @@
 - Tooltip que tapa contenido y no se quita
 - [Ejemplo: sin arreglo, llevar el ratón al tooltip → desaparece · pulsar Escape → nada]
 
-## 8. Solución · Descartable, recorrible y persistente
+## 8. Solución · Se puede cerrar, alcanzar y leer con calma
 
 - WCAG 1.4.13 (AA): tres condiciones
 - Descartable: Escape, sin mover foco ni puntero
@@ -68,12 +68,12 @@
 - El dato (30 días) es necesario para decidir
 - [Ejemplo: sin arreglo, intentar llegar al «?» con Tab]
 
-## 10. Solución · Lo esencial, visible y asociado como descripción
+## 10. Solución · Lo esencial, siempre visible
 
 - Texto visible junto a la barra
 - `aria-describedby` desde el botón de la papelera: nombre + descripción
 - Lector: «Mover a la papelera, botón, Los mensajes de la papelera se borran…»
-- [Ejemplo: «Ver cambios» · revisar los tres arreglos]
+- [Ejemplo: «Explicación» · revisar los tres arreglos]
 
 ## 11. Resumen · Antes de añadir un tooltip
 

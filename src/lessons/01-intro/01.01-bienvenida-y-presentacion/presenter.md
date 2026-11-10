@@ -26,5 +26,12 @@
 
 - Siempre el mismo recorrido: lección → persona → error → solución
 - Tres personas nos acompañan: Andrés (teclado), Elena (lector de pantalla), Lucía (atención y lectura)
-- Cada error vive en una página real · botón flotante «Aplicar arreglo» y «Ver cambios»
 - > «Siempre empezamos por la persona, no por la técnica.»
+
+## 5. Cómo usar las páginas de ejemplo
+
+- Cada error está en una página real, con un botón flotante abajo a la derecha
+- «Con barreras»: así se abre · probarla como la persona de la lección
+- «Arreglada»: la misma página sin barreras · ir y volver para comparar
+- «Explicación»: qué probar · lista de barreras · al abrir una se marca en la página con su número · código antes y después
+- > «Primero nota la barrera; después mira el arreglo.»

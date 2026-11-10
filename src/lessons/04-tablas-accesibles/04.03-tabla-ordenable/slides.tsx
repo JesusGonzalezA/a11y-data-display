@@ -12,14 +12,14 @@ export const slides = [
       Tabla ordenable: controles y dirección de ordenación
     </SlideTitle>
     <p>
-      Ordenar una tabla es una <strong>acción</strong>: tiene que poder
-      encontrarse, activarse con teclado y dejar claro el resultado.
+      Ordenar una tabla es una <strong>acción</strong>. Hay que poder
+      encontrarla, hacerla con el teclado y saber qué ha pasado después.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás a:</p>
     <ul>
-      <li>Convertir el encabezado en un control que se pueda usar.</li>
-      <li>Exponer qué columna ordena y en qué sentido.</li>
-      <li>Comunicar el cambio sin perder el foco.</li>
+      <li>Poner un botón en el encabezado para ordenar.</li>
+      <li>Indicar qué columna ordena la tabla y en qué sentido.</li>
+      <li>Avisar del cambio sin mover el foco.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.3-que-cambia">
@@ -29,15 +29,16 @@ export const slides = [
         <strong>El control:</strong> la persona elige una columna.
       </li>
       <li>
-        <strong>El estado:</strong> esa columna pasa a mandar, en un sentido.
+        <strong>El estado:</strong> la tabla queda ordenada por esa columna, en
+        un sentido.
       </li>
       <li>
         <strong>El resultado:</strong> las filas cambian de sitio.
       </li>
     </ol>
     <p>
-      Quien mira la tabla percibe los tres a la vez. Quien usa teclado o lector
-      de pantalla necesita recibir cada uno por separado.
+      Quien mira la tabla percibe las tres cosas a la vez. Quien usa el teclado
+      o un lector de pantalla necesita recibir cada una.
     </p>
   </Fragment>,
   <Fragment key="4.3-situacion">
@@ -53,9 +54,9 @@ export const slides = [
       {'<th onclick="ordenar(\'nombre\')">\n  Nombre ▲\n</th>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> pulsa <kbd>Tab</kbd> y el foco
-      salta la cabecera entera. No hay forma de ordenar con teclado; tendría que
-      recorrer toda la tabla a mano.
+      <strong>Qué le pasa a Andrés:</strong> pulsa <kbd>Tab</kbd> y el foco se
+      salta los encabezados. No puede ordenar con el teclado: tendría que buscar
+      a su hermana fila a fila.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-control">
@@ -70,20 +71,21 @@ export const slides = [
         El <code>th</code> sigue siendo el encabezado; el botón es la acción.
       </li>
       <li>
-        <kbd>Tab</kbd> lo alcanza; <kbd>Enter</kbd> o <kbd>Espacio</kbd>{' '}
-        ordenan. Otra pulsación invierte el sentido.
+        <kbd>Tab</kbd> llega al botón; <kbd>Enter</kbd> o <kbd>Espacio</kbd>{' '}
+        ordenan. Otra pulsación invierte el orden.
       </li>
       <li>El foco se queda en el botón: Andrés no pierde su sitio.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.3-error-estado">
-    <SlideTitle kind="error">La dirección solo es una flecha</SlideTitle>
+    <SlideTitle kind="error">El orden solo se indica con una flecha</SlideTitle>
     <Code tone="error" caption="Así está">
       {'<th>\n  <button>Tiempo ▲</button>\n</th>'}
     </Code>
     <p>
-      <strong>Qué le pasa:</strong> la flecha se lee como «triángulo negro» o no
-      se lee. Elena, con su lector, no sabe qué columna manda ni en qué sentido.
+      <strong>Qué le pasa a Elena:</strong> su lector lee la flecha como
+      «triángulo negro», o no la lee. No sabe qué columna ordena la tabla ni en
+      qué sentido.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-estado">
@@ -95,23 +97,26 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <code>ascending</code> o <code>descending</code>, solo en{' '}
-        <strong>una</strong> columna a la vez.
+        <code>ascending</code> (de menor a mayor) o <code>descending</code> (de
+        mayor a menor), solo en <strong>una</strong> columna a la vez.
       </li>
-      <li>La flecha se oculta: el estado ya está en el atributo.</li>
-      <li>El caption avisa: «Los encabezados con botón permiten ordenar».</li>
+      <li>La flecha se oculta al lector: el atributo ya lo dice.</li>
+      <li>
+        El título de la tabla avisa: «Los encabezados con botón permiten
+        ordenar».
+      </li>
     </ul>
   </Fragment>,
   <Fragment key="4.3-error-anuncio">
     <SlideTitle kind="error">Las filas cambian en silencio</SlideTitle>
     <p>
-      Al ordenar, el foco sigue en el botón y las filas cambian donde no se ven.
-      Que el lector anuncie o no el nuevo <code>aria-sort</code> depende del
-      lector y del navegador.
+      Al ordenar, el foco sigue en el botón y las filas cambian más abajo. No
+      todos los lectores de pantalla anuncian el nuevo valor de{' '}
+      <code>aria-sort</code>.
     </p>
     <p>
-      <strong>Qué le pasa:</strong> Andrés y Elena pulsan el botón y no tienen
-      confirmación de que algo haya ocurrido.
+      <strong>Qué le pasa a Elena:</strong> pulsa el botón y nada le confirma
+      que la tabla haya cambiado.
     </p>
   </Fragment>,
   <Fragment key="4.3-solucion-anuncio">
@@ -123,8 +128,8 @@ export const slides = [
       <li>
         <code>role="status"</code> se anuncia sin mover el foco.
       </li>
-      <li>Visible, sirve también a quien mira la tabla.</li>
-      <li>Corto: columna y sentido, en palabras del dato.</li>
+      <li>Es visible: también confirma el cambio a quien mira la tabla.</li>
+      <li>Es corto: dice la columna y el sentido.</li>
     </ul>
     <ExampleLinks
       slug="carrera"

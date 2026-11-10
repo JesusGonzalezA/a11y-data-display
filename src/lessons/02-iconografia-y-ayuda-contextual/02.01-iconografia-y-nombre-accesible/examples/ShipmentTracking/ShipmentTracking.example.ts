@@ -7,14 +7,20 @@ export const shipmentTrackingExample: ExampleDefinition = {
   lesson: '2.1',
   lessonTitle: 'Iconografía: significado y nombre accesible',
   title: 'Mis envíos · Mensajería Rayo',
-  tryIt:
-    'Intenta saber qué envío tiene una incidencia sin distinguir colores. Recorre la página con Tab y fíjate en qué anuncia el lector de pantalla para cada botón con icono y para el título de cada envío.',
+  steps: [
+    'Sin fijarte en los colores, busca el envío que tiene un problema.',
+    'Con un lector de pantalla, salta de título en título (tecla H).',
+    'Pulsa Tab y escucha cómo se anuncia cada botón con icono.',
+  ],
   fixes: [
     {
       id: 'status',
-      title: 'El estado se escribe y el icono cambia de forma',
-      where: 'Línea de estado de cada envío.',
-      why: 'Sin arreglo, el estado es un círculo que solo cambia de color: quien no distingue colores no sabe cuál es cuál y el lector de pantalla no anuncia nada. Con texto visible, el estado se entiende siempre; el icono, con una forma distinta por estado, pasa a ser un refuerzo decorativo y se oculta con aria-hidden para no repetir información.',
+      title: 'El estado es solo un círculo de color',
+      where: 'Debajo de la fecha de cada envío.',
+      problem:
+        'El círculo solo cambia de color y no tiene texto. El lector de pantalla no anuncia nada, y quien no distingue el rojo del verde tampoco sabe qué envío falla.',
+      solution:
+        'El estado se escribe con palabras. El icono cambia de forma según el estado y se oculta al lector para no repetir lo mismo.',
       before:
         '<p class="status status--issue">\n  <svg viewBox="0 0 24 24">…</svg>\n</p>',
       after:
@@ -22,18 +28,24 @@ export const shipmentTrackingExample: ExampleDefinition = {
     },
     {
       id: 'decorative',
-      title: 'La ilustración de la caja es decorativa',
-      where: 'Imagen de la caja junto al título de cada envío.',
-      why: 'El texto alternativo «Icono de una caja de cartón» se suma al nombre del encabezado y se repite en cada envío: el lector anuncia «Icono de una caja de cartón Envío a Lugo». La imagen no aporta información, así que su alternativa es vacía.',
+      title: 'La ilustración de la caja se anuncia en cada envío',
+      where: 'Junto al título de cada envío.',
+      problem:
+        'La caja es un adorno, pero tiene texto alternativo. El lector lee «Icono de una caja de cartón» antes de cada título.',
+      solution:
+        'Un texto alternativo vacío (alt="") indica que la imagen es decorativa. El lector se la salta.',
       before:
         '<h2>\n  <img src="caja.svg" alt="Icono de una caja de cartón">\n  Envío a Lugo\n</h2>',
       after: '<h2>\n  <img src="caja.svg" alt="">\n  Envío a Lugo\n</h2>',
     },
     {
       id: 'icon-name',
-      title: 'Los controles con icono tienen nombre',
+      title: 'Los botones con icono no tienen nombre',
       where: 'Botón de copiar y enlace de descarga de cada envío.',
-      why: 'Un botón o enlace que solo contiene un SVG no tiene nombre accesible: el lector anuncia «botón» o «enlace» sin decir qué hace, y además hay tres iguales. aria-label da a cada control un nombre que dice la acción y a qué envío afecta; el SVG queda oculto.',
+      problem:
+        'Solo contienen un dibujo. El lector anuncia «botón» o «enlace», sin decir qué hacen ni a qué envío afectan.',
+      solution:
+        'aria-label da a cada uno un nombre con la acción y el envío: «Copiar número de seguimiento RY4821».',
       before:
         '<button type="button">\n  <svg aria-hidden="true">…</svg>\n</button>',
       after:

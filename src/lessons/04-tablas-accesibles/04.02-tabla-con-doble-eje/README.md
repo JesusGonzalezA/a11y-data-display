@@ -26,7 +26,7 @@
 - Demo:
   1. Columna Plus con Ctrl+Alt+flecha abajo: valores sin fila.
   2. Fila Televisión: celdas vacías.
-  3. **Aplicar arreglo** y repetir.
+  3. Pulsar **Arreglada** y repetir.
 - Código: `examples/PlanComparison/`.
 
 ## Conceptos clave

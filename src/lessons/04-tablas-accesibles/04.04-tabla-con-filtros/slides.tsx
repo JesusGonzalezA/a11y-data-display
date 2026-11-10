@@ -12,15 +12,15 @@ export const slides = [
       Tabla con filtros: resultados y continuidad de la tarea
     </SlideTitle>
     <p>
-      Un filtro reduce lo que se muestra para encontrar algo antes. Funciona si
-      la persona sabe <strong>qué está filtrando</strong>,{' '}
+      Un filtro muestra menos datos para encontrar algo antes. Funciona si la
+      persona sabe <strong>qué está filtrando</strong>,{' '}
       <strong>qué ha encontrado</strong> y <strong>cómo volver atrás</strong>.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás a:</p>
     <ul>
-      <li>Filtros con etiquetas que no desaparecen.</li>
-      <li>Comunicar cuántos resultados hay sin mover el foco.</li>
-      <li>Explicar la ausencia de resultados y recuperar la lista completa.</li>
+      <li>Poner etiquetas que no desaparecen.</li>
+      <li>Decir cuántos resultados hay sin mover el foco.</li>
+      <li>Explicar que no hay resultados y ofrecer una salida.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.4-situacion">
@@ -39,8 +39,8 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Lucía:</strong> en cuanto escribe o elige una
-      opción, la pista desaparece. ¿«Buscar» qué: puesto, ciudad, empresa? ¿Qué
-      era «Remoto»?
+      opción, la pista desaparece. ¿Qué buscaba este campo: un puesto, una
+      ciudad? ¿De qué era «Remoto»?
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-etiquetas">
@@ -53,8 +53,8 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>La etiqueta dice qué se filtra y sigue ahí mientras se escribe.</li>
-      <li>«Todas» es un valor real, no un título disfrazado de opción.</li>
+      <li>La etiqueta dice qué se filtra y no desaparece al escribir.</li>
+      <li>«Todas» es una opción de verdad, no una etiqueta disfrazada.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.4-error-foco">
@@ -66,8 +66,8 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Lucía:</strong> escribe «di» y la segunda letra se
-      pierde: el foco ya está en otra parte. Quien usa lector, como Elena, salta
-      de sitio sin haberlo pedido.
+      pierde: el foco ya está en otro sitio. Con un lector de pantalla, Elena
+      salta de sitio sin haberlo pedido.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-foco">
@@ -78,12 +78,12 @@ export const slides = [
       {'<p role="status">\n  Mostrando 3 de 8 ofertas.\n</p>'}
     </Code>
     <ul>
-      <li>Filtrar no es navegar: el foco no se mueve.</li>
+      <li>Filtrar no es cambiar de página: el foco no se mueve.</li>
       <li>
-        El recuento, visible y dentro de <code>role="status"</code>, se anuncia
-        sin interrumpir.
+        El recuento es visible y, con <code>role="status"</code>, el lector lo
+        anuncia sin interrumpir.
       </li>
-      <li>«3 de 8» dice cuánto queda y cuánto había.</li>
+      <li>«3 de 8» dice cuántas quedan y cuántas había.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.4-error-vacio">
@@ -93,8 +93,7 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Lucía:</strong> ve una cabecera sin filas. ¿Ha
-      fallado la página? ¿Qué filtro sobra? Para volver tiene que borrar y
-      cambiar cada filtro uno a uno.
+      fallado la página? Para volver, tiene que deshacer cada filtro a mano.
     </p>
   </Fragment>,
   <Fragment key="4.4-solucion-vacio">
@@ -125,16 +124,16 @@ export const slides = [
         y mensaje de estado.
       </li>
       <li>
-        <strong>Filtrar:</strong> etiquetas, foco estable, recuento y salida.
+        <strong>Filtrar:</strong> etiquetas, foco quieto, recuento y una salida.
       </li>
       <li>
-        En ambos casos el lector sigue recorriendo filas y columnas con sus
+        En los dos casos, el lector sigue recorriendo filas y columnas con sus
         atajos de tabla.
       </li>
     </ul>
     <p>
-      Añadir controles a una tabla no obliga a convertirla en otra cosa. Eso lo
-      veremos en el siguiente módulo.
+      Añadir controles a una tabla no la convierte en otra cosa. Cuándo hace
+      falta un grid lo veremos en el siguiente módulo.
     </p>
   </Fragment>,
 ]

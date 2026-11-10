@@ -49,15 +49,15 @@
 - Ranking, pasos, cronologías · el orden es parte del dato
 - Atributos útiles: `start`, `reversed`
 
-## 8. Error · Las etiquetas y los valores se leen por separado
+## 8. Error · Los nombres y sus valores se leen por separado
 
 - Dos columnas independientes en el DOM → se ven como pares, se leen como dos bloques
 - WCAG 1.3.2 Secuencia significativa: el orden de lectura debe conservar el sentido
 - [Ejemplo: leer «Datos del alojamiento» con flecha abajo]
 
-## 9. Solución · Pares nombre–valor en una lista de descripciones
+## 9. Solución · Cada nombre, junto a su valor
 
 - `dl` > `div` > `dt` + `dd` (el `div` envolvente es válido en HTML)
 - Orden del código = orden de lectura = significado
 - El soporte de `dl` varía: algunos lectores no anuncian «término»/«definición», pero el orden ya resuelve lo esencial
-- [Ejemplo: «Aplicar arreglo» · repetir con el lector · «Ver cambios»]
+- [Ejemplo: «Arreglada» · repetir con el lector · «Explicación»]

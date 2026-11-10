@@ -27,7 +27,7 @@
 - Demo:
   1. Intentar ordenar por nombre con Tab y Enter.
   2. Con el lector, escuchar el encabezado «Tiempo».
-  3. **Aplicar arreglo**: ordenar con Enter, invertir con Espacio, escuchar el mensaje.
+  3. Pulsar **Arreglada**: ordenar con Enter, invertir con Espacio, escuchar el mensaje.
 - Código: `examples/RaceResults/`.
 
 ## Conceptos clave

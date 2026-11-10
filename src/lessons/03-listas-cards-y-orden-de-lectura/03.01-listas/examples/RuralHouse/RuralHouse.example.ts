@@ -7,14 +7,20 @@ export const ruralHouseExample: ExampleDefinition = {
   lesson: '3.1',
   lessonTitle: 'Listas: expresar relaciones entre elementos',
   title: 'Casa El Roble, en Collera · Casa rural El Roble',
-  tryIt:
-    'Con un lector de pantalla, pide la lista de listas de la página (NVDA: tecla L; VoiceOver: rotor). Recorre «Cómo llegar» y comprueba si sabes cuántos pasos hay. Lee «Datos del alojamiento» de arriba abajo: ¿qué valor corresponde a «Salida»?',
+  steps: [
+    'Con un lector de pantalla, busca las listas de la página (NVDA: tecla L; VoiceOver: rotor).',
+    'Lee «Cómo llegar». ¿Sabes cuántos pasos hay?',
+    'Lee «Datos del alojamiento» de arriba abajo. ¿Qué valor corresponde a «Salida»?',
+  ],
   fixes: [
     {
       id: 'ul',
-      title: 'Los servicios son una lista no ordenada',
+      title: 'Los servicios son párrafos sueltos',
       where: 'Sección «Servicios».',
-      why: 'Cinco párrafos con un punto dibujado parecen una lista, pero el navegador no comunica que forman un conjunto ni cuántos son. Con <ul>, el lector anuncia «lista, 5 elementos» y permite saltar a ella o pasarla de largo. El orden no importa: por eso no es <ol>.',
+      problem:
+        'Parecen una lista, pero son cinco párrafos. El lector no dice que van juntos ni cuántos son.',
+      solution:
+        'Una lista no ordenada (<ul>). El lector anuncia «lista, 5 elementos» y permite saltar a ella o pasarla de largo.',
       before:
         '<div class="servicios">\n  <p>• Wifi en toda la casa</p>\n  <p>• Chimenea de leña</p>\n</div>',
       after:
@@ -22,9 +28,12 @@ export const ruralHouseExample: ExampleDefinition = {
     },
     {
       id: 'ol',
-      title: 'Las indicaciones son una lista ordenada',
+      title: 'Los pasos no forman una secuencia',
       where: 'Sección «Cómo llegar».',
-      why: 'Los pasos solo funcionan en orden, pero el número es un dibujo de CSS dentro de un <div>. Con <ol>, la secuencia forma parte del significado: se anuncia la posición («2 de 4») y el número no depende del estilo.',
+      problem:
+        'El número de cada paso es un dibujo de CSS. El lector no dice en qué paso estás ni cuántos faltan.',
+      solution:
+        'Una lista ordenada (<ol>). El número forma parte del contenido y el lector anuncia la posición: «2 de 4».',
       before:
         '<div class="pasos">\n  <div class="paso">Toma la salida 334…</div>\n  <div class="paso">En la rotonda…</div>\n</div>',
       after:
@@ -32,9 +41,12 @@ export const ruralHouseExample: ExampleDefinition = {
     },
     {
       id: 'dl',
-      title: 'Los datos son pares nombre–valor',
+      title: 'Los nombres y sus valores se leen por separado',
       where: 'Sección «Datos del alojamiento».',
-      why: 'Etiquetas y valores están en dos columnas separadas en el código: se ven como pares, pero se leen «Entrada, Salida, Capacidad, Mascotas, A partir de las 16:00…». Con <dl>, cada término (<dt>) va seguido de su valor (<dd>) y el orden de lectura coincide con el significado.',
+      problem:
+        'En el código van primero todos los nombres y después todos los valores. Se oye «Entrada, Salida, Capacidad, Mascotas» y luego cuatro datos sin dueño.',
+      solution:
+        'Una lista de descripciones (<dl>). Cada nombre (<dt>) va seguido de su valor (<dd>).',
       before:
         '<div class="datos">\n  <div><p>Entrada</p><p>Salida</p>…</div>\n  <div><p>A partir de las 16:00</p>…</div>\n</div>',
       after:

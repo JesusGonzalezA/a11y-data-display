@@ -95,7 +95,6 @@ export function RaceResults({ fixed }: ExamplePageProps) {
         >
           {fixed ? summary : ''}
         </p>
-        {/* biome-ignore lint/a11y/noNoninteractiveTabindex: zona desplazable enfocable para teclado */}
         <div
           className="race__scroll"
           role="region"
@@ -142,7 +141,6 @@ export function RaceResults({ fixed }: ExamplePageProps) {
                       </button>
                     </th>
                   ) : (
-                    // biome-ignore lint/a11y/useKeyWithClickEvents: barrera deliberada, solo responde al ratón
                     <th
                       key={column.key}
                       scope="col"

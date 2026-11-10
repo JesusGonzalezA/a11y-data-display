@@ -7,22 +7,31 @@ export const orderHistoryExample: ExampleDefinition = {
   lesson: '4.1',
   lessonTitle: 'Tabla simple: título, encabezados y celdas',
   title: 'Mis pedidos · Papelería Trazo',
-  tryIt:
-    'Con un lector de pantalla, entra en la tabla y muévete por las celdas (NVDA y JAWS: Ctrl+Alt+flechas; VoiceOver: Ctrl+Opción+flechas). ¿Qué anuncia al llegar a «7,50 €»? Reduce la ventana a 320 píxeles o amplía al 400% e intenta ver el estado del último pedido.',
+  steps: [
+    'Con un lector de pantalla, entra en la tabla y muévete por las celdas (NVDA: Ctrl+Alt+flechas; VoiceOver: Ctrl+Opción+flechas).',
+    'Llega hasta «7,50 €». ¿Sabes qué dato es?',
+    'Estrecha la ventana o amplía la página al 400 % e intenta ver el estado del último pedido.',
+  ],
   fixes: [
     {
       id: 'caption',
-      title: 'La tabla tiene título',
+      title: 'La tabla no tiene título',
       where: 'Encima de la tabla.',
-      why: 'Un párrafo encima de la tabla parece su título, pero no está asociado: el lector anuncia «tabla, 6 filas, 5 columnas» sin decir de qué. <caption> es el nombre accesible de la tabla y se anuncia al entrar en ella.',
+      problem:
+        'El título es un párrafo suelto. El lector anuncia «tabla, 6 filas, 5 columnas», sin decir de qué.',
+      solution:
+        '<caption> es el título de la tabla. El lector lo anuncia al entrar en ella.',
       before: '<p class="titulo">Tus pedidos de 2026</p>\n<table>…</table>',
       after: '<table>\n  <caption>Tus pedidos de 2026</caption>\n  …\n</table>',
     },
     {
       id: 'headers',
-      title: 'La primera fila son encabezados de columna',
+      title: 'La primera fila no son encabezados',
       where: 'Fila «Pedido, Fecha, Artículos, Importe, Estado».',
-      why: 'Sin arreglo, la primera fila son celdas normales en negrita. Al moverse por la tabla, el lector anuncia «7,50 €» sin decir que es el importe. Con <th scope="col"> dentro de <thead>, cada celda se anuncia con su encabezado: «Importe, 7,50 €».',
+      problem:
+        'Son celdas normales en negrita. Al moverse por la tabla solo se oye «7,50 €», sin saber que es el importe.',
+      solution:
+        'Cada celda de la primera fila es un encabezado de columna (<th scope="col">). Ahora se oye «Importe, 7,50 €».',
       before:
         '<tr class="cabecera">\n  <td>Pedido</td>\n  <td>Fecha</td>\n  …\n</tr>',
       after:
@@ -30,9 +39,12 @@ export const orderHistoryExample: ExampleDefinition = {
     },
     {
       id: 'scroll',
-      title: 'La tabla se desplaza dentro de una zona enfocable',
+      title: 'La tabla se recorta en pantallas estrechas',
       where: 'Contenedor de la tabla.',
-      why: 'Las tablas de datos son una de las excepciones del reflujo: pueden necesitar desplazamiento horizontal. Pero con overflow: hidden, a 320 px o con zoom las últimas columnas quedan recortadas y no hay forma de verlas. Con overflow-x: auto se pueden desplazar; tabindex="0" permite hacerlo con las flechas, y role="region" con el nombre del caption explica qué es esa parada de foco.',
+      problem:
+        'Con zoom o en un móvil, las últimas columnas quedan fuera (overflow: hidden) y no hay forma de verlas.',
+      solution:
+        'La tabla se desplaza dentro de su contenedor (overflow-x: auto). tabindex="0" permite moverla con las flechas, y role="region" con un nombre dice qué es.',
       before:
         '<div class="tabla-contenedor">\n  <table>…</table>\n</div>\n\n.tabla-contenedor { overflow: hidden; }',
       after:

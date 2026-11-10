@@ -35,7 +35,7 @@
 - Foco: el mismo botón, no se vuelve a crear → no se pierde
 - [Ejemplo: con arreglo, Tab hasta «Nombre» · Enter · Espacio]
 
-## 6. Error · La dirección solo es una flecha
+## 6. Error · El orden solo se indica con una flecha
 
 - Carácter ▲ dentro del nombre: «Tiempo triángulo negro hacia arriba»
 - O un icono sin texto: no se sabe nada
@@ -61,4 +61,4 @@
 - Debe existir en el DOM antes de cambiar su texto
 - Visible: también útil para Lucía o quien vuelve a la página
 - No mover el foco a la tabla ni a la primera fila: Andrés quiere poder invertir con otra pulsación
-- [Ejemplo: lector activo · ordenar por nombre · escuchar el mensaje · «Ver cambios»]
+- [Ejemplo: lector activo · ordenar por nombre · escuchar el mensaje · «Explicación»]

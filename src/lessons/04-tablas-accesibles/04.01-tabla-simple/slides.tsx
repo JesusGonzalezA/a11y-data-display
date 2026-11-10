@@ -12,29 +12,30 @@ export const slides = [
       Tabla simple: título, encabezados y celdas
     </SlideTitle>
     <p>
-      Una <strong>tabla</strong> organiza datos en filas y columnas. Cada dato
-      se entiende gracias a su contexto: el encabezado de su columna.
+      Una <strong>tabla</strong> ordena datos en filas y columnas. Cada dato se
+      entiende gracias al encabezado de su columna.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás a:</p>
     <ul>
-      <li>Reconocer cuándo los datos son tabulares.</li>
-      <li>Dar título a la tabla y relacionar cada celda con su encabezado.</li>
-      <li>Permitir desplazar una tabla ancha sin recortarla.</li>
+      <li>Reconocer cuándo unos datos piden una tabla.</li>
+      <li>Dar título a la tabla y encabezado a cada columna.</li>
+      <li>Evitar que una tabla ancha se recorte.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-cuando">
     <SlideTitle kind="leccion">¿Son datos de tabla?</SlideTitle>
     <p>
-      Sí, cuando cada elemento tiene <strong>los mismos atributos</strong> y
-      tiene sentido leerlos <strong>en fila y en columna</strong>: comparar
-      fechas, sumar importes, buscar un estado.
+      Sí, cuando todos los elementos tienen <strong>los mismos datos</strong> y
+      tiene sentido leerlos <strong>por filas y por columnas</strong>.
     </p>
     <ul>
       <li>
         Pedidos con número, fecha, importe y estado: <strong>tabla</strong>.
       </li>
-      <li>Datos de un solo elemento: lista de descripciones (lección 3.1).</li>
-      <li>Colocar cosas en columnas para maquetar: CSS, nunca una tabla.</li>
+      <li>
+        Los datos de un solo elemento: lista de descripciones (lección 3.1).
+      </li>
+      <li>Colocar contenido en columnas: CSS, nunca una tabla.</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-estructura">
@@ -45,9 +46,9 @@ export const slides = [
       }
     </Code>
     <p>
-      <code>caption</code>: el título. <code>th</code>: encabezado.{' '}
-      <code>td</code>: dato. <code>scope="col"</code>: este encabezado manda en
-      su columna.
+      <code>caption</code>: el título. <code>th</code>: un encabezado.{' '}
+      <code>td</code>: un dato. <code>scope="col"</code>: el encabezado vale
+      para toda su columna.
     </p>
   </Fragment>,
   <Fragment key="4.1-situacion">
@@ -65,23 +66,21 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> oye «tabla, 6 filas, 5 columnas» sin
-      saber de qué. Al llegar a una celda solo oye «7,50 €»: ¿es el importe, un
-      descuento, un envío?
+      <strong>Qué le pasa a Elena:</strong> oye «tabla, 6 filas, 5 columnas»,
+      sin saber de qué. Llega a una celda y solo oye «7,50 €». ¿Es el importe,
+      un descuento, el envío?
     </p>
   </Fragment>,
   <Fragment key="4.1-solucion-encabezados">
     <SlideTitle kind="solucion">Caption y encabezados de columna</SlideTitle>
     <Code tone="solucion" caption="Así se arregla">
       {
-        '<table>\n  <caption>Tus pedidos de 2026</caption>\n  <thead>\n    <tr>\n      <th scope="col">Pedido</th>\n      <th scope="col">Fecha</th>…\n    </tr>\n  </thead>\n  …\n</table>'
+        '<table>\n  <caption>Tus pedidos de 2026</caption>\n  <thead>\n    <tr>\n      <th scope="col">Pedido</th>\n      <th scope="col">Fecha</th>…\n    </tr>\n  </thead>\n</table>'
       }
     </Code>
     <ul>
-      <li>Al entrar: «Tus pedidos de 2026, tabla, 6 filas, 5 columnas».</li>
-      <li>
-        Al cambiar de columna: «Importe, 7,50 €». El encabezado da el contexto.
-      </li>
+      <li>Al entrar en la tabla: «Tus pedidos de 2026, tabla…».</li>
+      <li>Al cambiar de columna: «Importe, 7,50 €».</li>
     </ul>
   </Fragment>,
   <Fragment key="4.1-error-recorte">
@@ -91,8 +90,8 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa:</strong> con zoom o en una pantalla estrecha, las
-      columnas de importe y estado quedan fuera y no hay forma de verlas. Le
-      pasa a quien amplía la página, y a Elena si usa lupa además del lector.
+      últimas columnas quedan fuera y no hay forma de verlas. Le pasa a
+      cualquier persona que amplíe la página.
     </p>
   </Fragment>,
   <Fragment key="4.1-solucion-recorte">
@@ -106,12 +105,11 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        Una tabla puede necesitar desplazamiento horizontal: es una excepción
-        aceptada del reflujo.
+        <code>tabindex="0"</code>: la zona se alcanza con Tab y se desplaza con
+        las flechas.
       </li>
       <li>
-        <code>tabindex="0"</code> permite desplazarla con las flechas;{' '}
-        <code>role="region"</code> y el nombre explican qué es esa parada.
+        <code>role="region"</code> y un nombre dicen qué es esa parada del foco.
       </li>
     </ul>
     <ExampleLinks

@@ -7,14 +7,21 @@ export const jobBoardExample: ExampleDefinition = {
   lesson: '4.4',
   lessonTitle: 'Tabla con filtros: resultados y continuidad de la tarea',
   title: 'Ofertas de empleo · Brote Empleo',
-  tryIt:
-    'Escribe «diseñadora» en el buscador sin mirar el teclado: ¿dónde acaba lo que escribes? Elige una modalidad y fíjate en qué se conserva de la etiqueta. Busca «chef» en modalidad remota y comprueba qué ves y qué anuncia el lector. Intenta volver a ver todas las ofertas.',
+  steps: [
+    'Escribe «diseñadora» en el buscador. ¿Dónde acaba lo que escribes?',
+    'Elige una modalidad. ¿Sigues viendo qué es ese campo?',
+    'Busca «chef» en modalidad remota. ¿Qué ha pasado?',
+    'Intenta volver a ver todas las ofertas.',
+  ],
   fixes: [
     {
       id: 'labels',
-      title: 'Cada filtro tiene una etiqueta que no desaparece',
+      title: 'Los filtros no tienen etiqueta',
       where: 'Buscador y selector de modalidad.',
-      why: 'Un placeholder no es una etiqueta: desaparece al escribir y tiene poco contraste. En el selector, la primera opción hacía de etiqueta y se perdía al elegir. Con <label>, el nombre de cada filtro está siempre visible y se anuncia al enfocarlo.',
+      problem:
+        'La pista del buscador desaparece al escribir, y «Modalidad» desaparece al elegir una opción. Después no se sabe qué es cada campo.',
+      solution:
+        'Cada filtro tiene una etiqueta (<label>) siempre visible. El lector la anuncia al enfocar el campo.',
       before:
         '<input type="search" placeholder="Buscar…">\n<select>\n  <option value="">Modalidad</option>…\n</select>',
       after:
@@ -22,9 +29,12 @@ export const jobBoardExample: ExampleDefinition = {
     },
     {
       id: 'focus',
-      title: 'El foco se queda en el filtro',
+      title: 'El foco salta a los resultados',
       where: 'Título «Resultados».',
-      why: 'Sin arreglo, cada cambio lleva el foco al título de resultados: al escribir, la segunda letra ya no entra en el buscador y quien usa lector salta de sitio sin haberlo pedido. Filtrar no es una navegación: el foco se queda donde está y el resultado se comunica con un mensaje.',
+      problem:
+        'Con cada letra, el foco se va al título de resultados. La segunda letra ya no entra en el buscador.',
+      solution:
+        'El foco se queda en el filtro. El resultado se comunica con un mensaje, no moviendo el foco.',
       before:
         'input.addEventListener("input", () => {\n  filtrar()\n  tituloResultados.focus()\n})',
       after:
@@ -32,18 +42,24 @@ export const jobBoardExample: ExampleDefinition = {
     },
     {
       id: 'status',
-      title: 'El número de resultados se ve y se anuncia',
+      title: 'No se sabe cuántos resultados quedan',
       where: 'Debajo del título «Resultados».',
-      why: 'Sin arreglo, nada dice cuántas ofertas quedan: hay que recorrer la tabla para saberlo. Un mensaje visible dentro de role="status" lo muestra a todas las personas y el lector lo anuncia sin mover el foco (WCAG 4.1.3).',
+      problem:
+        'Nada dice cuántas ofertas hay. Hay que recorrer la tabla para saberlo.',
+      solution:
+        'Un mensaje visible, «Mostrando 3 de 8 ofertas», dentro de role="status". El lector lo anuncia sin mover el foco.',
       before: '<p class="contador"></p>',
       after:
         '<p class="contador" role="status">\n  Mostrando 3 de 8 ofertas.\n</p>',
     },
     {
       id: 'empty',
-      title: 'Sin resultados, se explica y se ofrece una salida',
-      where: 'Zona de la tabla cuando ningún resultado coincide.',
-      why: 'Una tabla con solo encabezados parece rota y no dice qué ha pasado. El mensaje explica qué filtros no tienen resultados y el botón «Quitar los filtros» recupera la lista completa en un paso; al pulsarlo, el foco vuelve al buscador, porque el botón desaparece.',
+      title: 'Sin resultados, la tabla se queda vacía',
+      where: 'Zona de la tabla, cuando nada coincide.',
+      problem:
+        'Solo queda la cabecera. Parece un fallo, y para volver hay que deshacer cada filtro a mano.',
+      solution:
+        'Un mensaje dice qué filtros no dan resultados, y «Quitar los filtros» recupera todas las ofertas en un paso.',
       before: '<table>\n  <thead>…</thead>\n  <tbody></tbody>\n</table>',
       after:
         '<p role="status">No hay ofertas para «chef»\n  en modalidad remoto.</p>\n<p>Prueba con otra palabra o con otra modalidad.</p>\n<button type="button">Quitar los filtros</button>',

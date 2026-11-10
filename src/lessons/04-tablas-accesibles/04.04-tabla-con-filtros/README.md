@@ -29,7 +29,7 @@
   1. Escribir «diseñadora»: el foco se va.
   2. Elegir Remoto: la etiqueta desaparece.
   3. «chef» + Remoto: tabla vacía.
-  4. **Aplicar arreglo** y repetir con lector.
+  4. Pulsar **Arreglada** y repetir con lector.
 - Código: `examples/JobBoard/`.
 
 ## Conceptos clave

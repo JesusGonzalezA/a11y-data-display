@@ -30,7 +30,7 @@
 - WCAG 1.4.1 Uso del color: el color no puede ser la única forma de transmitir información
 - [Ejemplo: devtools → Rendering → «Emulate vision deficiencies» → deuteranopía]
 
-## 5. Solución · Escribir el estado; el icono acompaña
+## 5. Solución · Escribir el estado con palabras
 
 - Texto visible: lo mejor para todos, no solo para el lector
 - El icono se queda como refuerzo y se oculta (`aria-hidden`) → no se anuncia dos veces
@@ -66,4 +66,4 @@
 - Copiar es acción → `<button>`; descargar un archivo es ir a un recurso → `<a>`
 - Visual: añadir también un tooltip ayuda a quien ve el icono y no lo entiende → siguiente lección
 - > «Un control sin nombre es un control que no existe para quien no lo ve.»
-- [Ejemplo: «Aplicar arreglo» · repetir con el lector · «Ver cambios»]
+- [Ejemplo: «Arreglada» · repetir con el lector · «Explicación»]

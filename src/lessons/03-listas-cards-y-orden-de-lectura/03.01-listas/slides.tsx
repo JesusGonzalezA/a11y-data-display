@@ -12,15 +12,14 @@ export const slides = [
       Listas: expresar relaciones entre elementos
     </SlideTitle>
     <p>
-      Una <strong>lista</strong> le dice al navegador que varios elementos van
-      juntos y cuántos son. Quien no ve la página recibe esa relación solo si
-      está en el HTML.
+      Una <strong>lista</strong> dice que varios elementos van juntos y cuántos
+      son. Quien no ve la página solo lo sabe si la lista está en el HTML.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás:</p>
     <ul>
-      <li>Elegir entre lista no ordenada, ordenada y de descripciones.</li>
-      <li>Qué aporta la estructura a quien usa un lector de pantalla.</li>
-      <li>Cuándo el orden de los elementos tiene significado.</li>
+      <li>A elegir entre los tres tipos de lista.</li>
+      <li>Qué gana con ello quien usa un lector de pantalla.</li>
+      <li>Cuándo importa el orden de los elementos.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.1-tres-listas">
@@ -28,28 +27,28 @@ export const slides = [
     <table className="summary-table">
       <thead>
         <tr>
-          <th scope="col">Relación</th>
+          <th scope="col">Qué son los elementos</th>
           <th scope="col">Elemento</th>
           <th scope="col">Ejemplo</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Conjunto, el orden no importa</th>
+          <th scope="row">Un conjunto: el orden no importa</th>
           <td>
             <code>&lt;ul&gt;</code>
           </td>
           <td>Servicios de un alojamiento, etiquetas, resultados</td>
         </tr>
         <tr>
-          <th scope="row">Secuencia, el orden importa</th>
+          <th scope="row">Una secuencia: el orden importa</th>
           <td>
             <code>&lt;ol&gt;</code>
           </td>
-          <td>Pasos de una receta, indicaciones, ranking</td>
+          <td>Pasos de una receta, indicaciones, un ranking</td>
         </tr>
         <tr>
-          <th scope="row">Pares nombre–valor</th>
+          <th scope="row">Pares de nombre y valor</th>
           <td>
             <code>&lt;dl&gt;</code>
           </td>
@@ -58,8 +57,8 @@ export const slides = [
       </tbody>
     </table>
     <p>
-      Pregunta clave:{' '}
-      <strong>¿cambia el significado si cambio el orden?</strong>
+      Pregúntate: <strong>¿cambia el significado si cambio el orden?</strong> Si
+      cambia, es <code>&lt;ol&gt;</code>.
     </p>
   </Fragment>,
   <Fragment key="3.1-situacion">
@@ -77,9 +76,8 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> oye frases una tras otra, sin saber
-      que forman un grupo ni cuántas son. No puede saltar al final del grupo ni
-      encontrarlo con el atajo de listas.
+      <strong>Qué le pasa a Elena:</strong> oye una frase tras otra. No sabe que
+      forman un grupo ni cuántas quedan, y no puede saltarse el grupo.
     </p>
   </Fragment>,
   <Fragment key="3.1-solucion-ul">
@@ -92,10 +90,11 @@ export const slides = [
       }
     </Code>
     <ul>
+      <li>El lector anuncia «lista, 5 elementos»: Elena sabe qué viene.</li>
       <li>
-        El lector anuncia «lista, 5 elementos»: Elena sabe cuánto va a oír.
+        El aspecto lo decide el CSS: puede no parecer una lista y seguir
+        siéndolo.
       </li>
-      <li>El aspecto es libre: estas «píldoras» siguen siendo una lista.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.1-error-ol">
@@ -106,8 +105,8 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Elena:</strong> el número es un dibujo de CSS. No
-      sabe en qué paso está ni cuántos faltan para llegar.
+      <strong>Qué le pasa a Elena:</strong> el número de cada paso lo dibuja el
+      CSS. No sabe en qué paso está ni cuántos faltan para llegar.
     </p>
   </Fragment>,
   <Fragment key="3.1-solucion-ol">
@@ -118,16 +117,13 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>La posición forma parte del significado: «2 de 4».</li>
-      <li>
-        Si reordenar los elementos cambia el sentido, es <code>&lt;ol&gt;</code>
-        .
-      </li>
+      <li>El lector anuncia la posición de cada paso: «2 de 4».</li>
+      <li>El número forma parte del contenido, no del estilo.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.1-error-dl">
     <SlideTitle kind="error">
-      Las etiquetas y los valores se leen por separado
+      Los nombres y sus valores se leen por separado
     </SlideTitle>
     <Code tone="error" caption="Así está">
       {
@@ -136,22 +132,21 @@ export const slides = [
     </Code>
     <p>
       <strong>Qué le pasa a Elena:</strong> oye «Entrada, Salida, Capacidad,
-      Mascotas» y después cuatro valores. Tiene que adivinar cuál va con cuál.
+      Mascotas» y después cuatro valores seguidos. Tiene que adivinar cuál va
+      con cuál.
     </p>
   </Fragment>,
   <Fragment key="3.1-solucion-dl">
-    <SlideTitle kind="solucion">
-      Pares nombre–valor en una lista de descripciones
-    </SlideTitle>
+    <SlideTitle kind="solucion">Cada nombre, junto a su valor</SlideTitle>
     <Code tone="solucion" caption="Así se arregla">
       {
         '<dl class="datos">\n  <div>\n    <dt>Entrada</dt>\n    <dd>A partir de las 16:00</dd>\n  </div>\n  …\n</dl>'
       }
     </Code>
     <p>
-      Cada término va seguido de su valor en el código, y por tanto en la
-      lectura. Un <code>&lt;div&gt;</code> puede agrupar cada par para
-      maquetarlo.
+      En una lista de descripciones, cada nombre (<code>&lt;dt&gt;</code>) va
+      seguido de su valor (<code>&lt;dd&gt;</code>). Se lee en el mismo orden en
+      que se entiende.
     </p>
     <ExampleLinks
       slug="casa-rural"

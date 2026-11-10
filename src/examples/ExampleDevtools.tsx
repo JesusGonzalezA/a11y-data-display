@@ -13,9 +13,23 @@ interface ExampleDevtoolsProps {
 const reducedMotion = () =>
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
 
+function Chevron() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="example-devtools__chevron"
+      viewBox="0 0 16 16"
+      focusable="false"
+    >
+      <path d="m3 6 5 5 5-5" />
+    </svg>
+  )
+}
+
 /**
- * Herramienta flotante del curso: alterna el arreglo y explica cada cambio.
- * Va después de la página para no alterar su orden de lectura ni de foco.
+ * Herramienta flotante del curso: elige la versión de la página (con barreras
+ * o arreglada) y explica cada cambio. Va después de la página para no alterar
+ * su orden de lectura ni de foco.
  */
 export function ExampleDevtools({
   example,
@@ -25,17 +39,21 @@ export function ExampleDevtools({
   const id = useId()
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(true)
-  const [located, setLocated] = useState<string>()
+  const [openFix, setOpenFix] = useState<string>()
   const toggleRef = useRef<HTMLButtonElement>(null)
+  const total = example.fixes.length
 
-  const locate = (fixId: string) => {
-    const target = document.querySelector(`[data-fix="${fixId}"]`)
-    target?.scrollIntoView?.({
+  // Abrir un cambio lo explica y lo señala en la página.
+  const toggleFix = (fixId: string) => {
+    if (openFix === fixId) {
+      setOpenFix(undefined)
+      return
+    }
+    setOpenFix(fixId)
+    document.querySelector(`[data-fix="${fixId}"]`)?.scrollIntoView?.({
       block: 'center',
       behavior: reducedMotion() ? 'auto' : 'smooth',
     })
-    setHighlight(true)
-    setLocated(fixId)
   }
 
   // Escape cierra el panel y devuelve el foco al botón que lo abrió.
@@ -53,7 +71,7 @@ export function ExampleDevtools({
   return (
     <div className="example-devtools" data-example-devtools="">
       {open && highlight && (
-        <FixHighlights fixes={example.fixes} fixed={fixed} located={located} />
+        <FixHighlights fixes={example.fixes} fixed={fixed} located={openFix} />
       )}
       <div
         id={`${id}-panel`}
@@ -63,80 +81,121 @@ export function ExampleDevtools({
         <p className="example-devtools__eyebrow">
           Lección {example.lesson} · {example.lessonTitle}
         </p>
-        <p className="example-devtools__state">
+        <p
+          className={`example-devtools__state example-devtools__state--${fixed ? 'fixed' : 'barrier'}`}
+        >
           {fixed
-            ? 'Estás viendo la página con el arreglo aplicado.'
-            : 'Estás viendo la página con la barrera.'}
+            ? 'Ahora ves la página arreglada.'
+            : 'Ahora ves la página con barreras.'}
         </p>
-        <p>{example.tryIt}</p>
+
+        <p className="example-devtools__label">Pruébalo</p>
+        <ol className="example-devtools__steps">
+          {example.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+
+        <p className="example-devtools__label">
+          {fixed ? `Barreras arregladas (${total})` : `Barreras (${total})`}
+        </p>
+        <p className="example-devtools__hint">
+          Abre una para ver dónde está, qué pasa y cómo se arregla.
+        </p>
+        <ol className="example-devtools__fixes">
+          {example.fixes.map((fix, index) => {
+            const expanded = openFix === fix.id
+            return (
+              <li key={fix.id} className="example-devtools__fix">
+                <button
+                  type="button"
+                  className="example-devtools__fix-toggle"
+                  aria-expanded={expanded}
+                  aria-controls={`${id}-fix-${fix.id}`}
+                  onClick={() => toggleFix(fix.id)}
+                >
+                  <span className="example-devtools__badge" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <span className="example-devtools__fix-title">
+                    {fix.title}
+                  </span>
+                  <Chevron />
+                </button>
+                <div
+                  id={`${id}-fix-${fix.id}`}
+                  className="example-devtools__fix-body"
+                  hidden={!expanded}
+                >
+                  <dl className="example-devtools__details">
+                    <dt>Dónde</dt>
+                    <dd>{fix.where}</dd>
+                    <dt>Qué pasa</dt>
+                    <dd>{fix.problem}</dd>
+                    <dt>Cómo se arregla</dt>
+                    <dd>{fix.solution}</dd>
+                  </dl>
+                  <p
+                    className={`example-devtools__code-label${fixed ? '' : ' example-devtools__code-label--current'}`}
+                  >
+                    <span aria-hidden="true">✕ </span>
+                    Con barreras{fixed ? '' : ' · lo que ves ahora'}
+                  </p>
+                  <pre className="example-devtools__code">
+                    <code>{fix.before}</code>
+                  </pre>
+                  <p
+                    className={`example-devtools__code-label${fixed ? ' example-devtools__code-label--current' : ''}`}
+                  >
+                    <span aria-hidden="true">✓ </span>
+                    Arreglada{fixed ? ' · lo que ves ahora' : ''}
+                  </p>
+                  <pre className="example-devtools__code">
+                    <code>{fix.after}</code>
+                  </pre>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
         <label className="example-devtools__option">
           <input
             type="checkbox"
             checked={highlight}
             onChange={(event) => setHighlight(event.target.checked)}
           />
-          Resaltar los cambios en la página
+          Marcar con números dónde está cada barrera
         </label>
-        <ol className="example-devtools__fixes">
-          {example.fixes.map((fix, index) => (
-            <li key={fix.id} className="example-devtools__fix">
-              <p className="example-devtools__fix-title">
-                <span className="example-devtools__badge" aria-hidden="true">
-                  {index + 1}
-                </span>
-                {fix.title}
-              </p>
-              <dl className="example-devtools__details">
-                <dt>Dónde</dt>
-                <dd>{fix.where}</dd>
-                <dt>Por qué</dt>
-                <dd>{fix.why}</dd>
-              </dl>
-              <p
-                className={`example-devtools__code-label${fixed ? '' : ' example-devtools__code-label--current'}`}
-              >
-                Sin arreglo{fixed ? '' : ' · en pantalla'}
-              </p>
-              <pre className="example-devtools__code">
-                <code>{fix.before}</code>
-              </pre>
-              <p
-                className={`example-devtools__code-label${fixed ? ' example-devtools__code-label--current' : ''}`}
-              >
-                Con arreglo{fixed ? ' · en pantalla' : ''}
-              </p>
-              <pre className="example-devtools__code">
-                <code>{fix.after}</code>
-              </pre>
-              <button
-                type="button"
-                className="example-devtools__locate"
-                onClick={() => locate(fix.id)}
-              >
-                Localizar «{fix.title}»
-              </button>
-            </li>
-          ))}
-        </ol>
         <a className="example-devtools__link" href={examplesBase}>
           Todos los ejemplos
         </a>
       </div>
       <div className="example-devtools__bar">
-        <button
-          type="button"
-          className="example-devtools__switch"
-          aria-pressed={fixed}
-          onClick={() => onFixedChange(!fixed)}
+        {/* biome-ignore lint/a11y/useSemanticElements: un fieldset añadiría una leyenda visible que la barra no necesita */}
+        <div
+          className="example-devtools__versions"
+          role="group"
+          aria-label="Versión de la página"
         >
-          <span className="example-devtools__track" aria-hidden="true">
-            <span className="example-devtools__thumb" />
-          </span>
-          Aplicar arreglo
-        </button>
-        <span className="example-devtools__switch-state" aria-hidden="true">
-          {fixed ? 'Activado' : 'Desactivado'}
-        </span>
+          <button
+            type="button"
+            className="example-devtools__version example-devtools__version--barrier"
+            aria-pressed={!fixed}
+            onClick={() => onFixedChange(false)}
+          >
+            <span aria-hidden="true">✕ </span>
+            Con barreras
+          </button>
+          <button
+            type="button"
+            className="example-devtools__version example-devtools__version--fixed"
+            aria-pressed={fixed}
+            onClick={() => onFixedChange(true)}
+          >
+            <span aria-hidden="true">✓ </span>
+            Arreglada
+          </button>
+        </div>
         <button
           ref={toggleRef}
           type="button"
@@ -145,7 +204,8 @@ export function ExampleDevtools({
           aria-controls={`${id}-panel`}
           onClick={() => setOpen(!open)}
         >
-          Ver cambios ({example.fixes.length})
+          Explicación
+          <Chevron />
         </button>
       </div>
     </div>

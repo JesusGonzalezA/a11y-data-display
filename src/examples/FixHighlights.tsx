@@ -86,9 +86,7 @@ export function FixHighlights({ fixes, fixed, located }: FixHighlightsProps) {
             height: box.height,
           }}
         >
-          <span className="fix-highlights__badge">
-            {box.number} · {fixed ? 'Arreglo' : 'Barrera'}
-          </span>
+          <span className="fix-highlights__badge">{box.number}</span>
         </div>
       ))}
     </div>

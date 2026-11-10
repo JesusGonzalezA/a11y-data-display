@@ -43,7 +43,7 @@
 - Lector al cambiar de columna anuncia el encabezado; al bajar por la misma columna, normalmente solo el dato
 - WCAG 1.3.1 Información y relaciones
 - > «El encabezado viaja con el dato: eso es lo que hace útil una tabla con lector.»
-- [Ejemplo: «Aplicar arreglo» · repetir el recorrido]
+- [Ejemplo: «Arreglada» · repetir el recorrido]
 
 ## 7. Error · La tabla se recorta al ampliar
 
@@ -57,4 +57,4 @@
 - `overflow-x: auto` · `tabindex="0"`: Chrome y Firefox recientes ya hacen enfocables las zonas desplazables; Safari no → `tabindex` lo garantiza
 - `role="region"` + `aria-labelledby` al caption: la parada de foco tiene nombre
 - Alternativa en móvil: reorganizar en cards con CSS… cuidado, cambiar `display` de las celdas puede quitar la semántica de tabla en algunos navegadores
-- [Ejemplo: con arreglo, Tab hasta la tabla y flechas a la derecha · «Ver cambios»]
+- [Ejemplo: con arreglo, Tab hasta la tabla y flechas a la derecha · «Explicación»]

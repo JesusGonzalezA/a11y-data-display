@@ -100,8 +100,9 @@ añadir slides de tipo «Lección» con conceptos previos y cerrar con un «Resu
   (página, pasos de la demo, código), Conceptos clave, Pruebas (automatizadas y
   manuales pendientes) y Fuentes. Sin prosa larga ni duplicar las slides.
 - `examples/`: páginas de ejemplo de la lección.
-- `*.example.ts`: definición de la página (slug, lección, título, qué probar y lista
-  de arreglos con dónde, por qué y código antes/después). Se registra una vez en
+- `*.example.ts`: definición de la página (slug, lección, título, pasos para
+  probarla y lista de barreras con dónde, qué pasa, cómo se arregla y código
+  antes/después). Se registra una vez en
   `src/examples/exampleRegistry.ts`, en el orden del curso.
 - `*.test.tsx`: comportamiento, semántica accesible y teclado de la página con y sin
   arreglo.
@@ -118,9 +119,15 @@ la sirve en `/ejemplos/<slug>`; `?arreglo=1` la abre con el arreglo aplicado.
 - La página recibe `fixed: boolean` y muestra por defecto la barrera. No incluye
   rótulos didácticos: la herramienta flotante del curso explica el cambio.
 - Marca con `data-fix="<id>"` cada elemento que cambia, en ambos estados, para que
-  «Ver cambios» lo resalte. Cada `id` corresponde a un arreglo de la definición.
-- Cada arreglo dice dónde está, por qué la versión sin arreglo es una barrera y
-  muestra el código antes y después con los mismos detalles que la página.
+  «Explicación» lo numere. Cada `id` corresponde a un arreglo de la definición.
+- La herramienta tiene tres botones: «Con barreras» y «Arreglada» eligen la
+  versión; «Explicación» abre los pasos para probar y la lista de barreras. Abrir
+  una barrera la señala en la página.
+- `steps` son de dos a cuatro pasos cortos, uno por acción, en imperativo.
+- Cada arreglo se titula con la barrera en lenguaje cotidiano (el mismo título que
+  su slide de error) y la explica en tres textos de una o dos frases: `where`
+  (dónde), `problem` (qué pasa y a quién) y `solution` (cómo se arregla). Muestra
+  el código antes y después con los mismos detalles que la página.
 - Las barreras se acotan al bloque BEM de la página; nunca afectan a la
   herramienta flotante ni capturan el teclado de forma real.
 - La herramienta flotante no añade encabezados ni regiones, para no alterar lo que

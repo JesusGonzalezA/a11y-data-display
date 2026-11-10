@@ -7,14 +7,20 @@ export const planComparisonExample: ExampleDefinition = {
   lesson: '4.2',
   lessonTitle: 'Tabla con doble eje: encabezados de fila y columna',
   title: 'Compara nuestras tarifas · Onda Fibra',
-  tryIt:
-    'Con un lector de pantalla, colócate en la celda «12 meses» de la columna Plus y muévete arriba y abajo por la columna (NVDA: Ctrl+Alt+flechas; VoiceOver: Ctrl+Opción+flechas). ¿Sabes a qué característica corresponde cada valor? ¿Qué se anuncia en las celdas con un icono?',
+  steps: [
+    'Con un lector de pantalla, colócate en «12 meses», en la columna Plus.',
+    'Sube y baja por la columna (NVDA: Ctrl+Alt+flechas; VoiceOver: Ctrl+Opción+flechas). ¿Sabes qué es cada valor?',
+    'Escucha las celdas que solo tienen un icono.',
+  ],
   fixes: [
     {
       id: 'row-headers',
-      title: 'La primera columna son encabezados de fila',
-      where: 'Columna con «Velocidad de fibra», «Precio al mes»…',
-      why: 'Cada dato depende de dos ejes: la tarifa (columna) y la característica (fila). Sin arreglo, solo las tarifas son encabezados: al bajar por la columna Plus, el lector anuncia «35 €», «2», «12 meses» sin decir qué son. Con <th scope="row">, cada celda se anuncia con su fila y su columna: «Permanencia, Plus, 12 meses».',
+      title: 'La primera columna no son encabezados',
+      where: 'Columna «Velocidad de fibra», «Precio al mes»…',
+      problem:
+        'Al bajar por la columna Plus se oye «35 €», «2», «12 meses». Se sabe la tarifa, pero no qué es cada valor.',
+      solution:
+        'Cada celda de la primera columna es un encabezado de fila (<th scope="row">). Ahora se oye «Permanencia, 12 meses».',
       before:
         '<tr>\n  <td class="caracteristica">Permanencia</td>\n  <td>Sin permanencia</td>\n  <td>12 meses</td>\n  …\n</tr>',
       after:
@@ -22,9 +28,12 @@ export const planComparisonExample: ExampleDefinition = {
     },
     {
       id: 'included',
-      title: 'Las marcas de incluido tienen texto',
+      title: 'Las celdas con icono se anuncian vacías',
       where: 'Filas «Televisión» y «Router wifi 6».',
-      why: 'La marca y la cruz son SVG ocultos: la celda se anuncia vacía. Un texto oculto visualmente («Incluida», «No incluida») completa el dato; las formas distintas siguen ayudando a quien no distingue el verde del rojo.',
+      problem:
+        'La marca y la cruz son dibujos ocultos al lector. En la fila «Televisión» se oyen tres celdas en blanco.',
+      solution:
+        'Cada celda añade un texto oculto a la vista: «Incluida» o «No incluida». La marca y la cruz tienen formas distintas, no solo colores.',
       before: '<td>\n  <svg aria-hidden="true">…</svg>\n</td>',
       after:
         '<td>\n  <svg aria-hidden="true">…</svg>\n  <span class="visually-hidden">Incluida</span>\n</td>',

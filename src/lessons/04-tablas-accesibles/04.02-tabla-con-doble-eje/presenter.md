@@ -19,7 +19,7 @@
 - Tarea con tres condiciones: precio, televisión, permanencia → compara en vertical y en horizontal
 - [Ejemplo: abrir «Comparar las tarifas con barreras» · ir a la columna Plus]
 
-## 4. Error · Las características son celdas normales
+## 4. Error · La primera columna no son encabezados
 
 - Primera columna en `td` con negrita
 - Elena bajando por Plus: solo valores · subiendo por la columna, vuelve a oír «Plus» pero no la fila
@@ -32,9 +32,9 @@
 - Lector: al bajar anuncia la fila nueva («Permanencia») + dato · al cambiar de columna, la tarifa
 - Esquina vacía: `td` · un `th` vacío se anunciaría como encabezado sin texto
 - Alternativa: poner texto en la esquina («Característica») como `th scope="col"` si aporta
-- [Ejemplo: «Aplicar arreglo» · repetir el recorrido]
+- [Ejemplo: «Arreglada» · repetir el recorrido]
 
-## 6. Error · Las marcas de «incluido» están vacías
+## 6. Error · Las celdas con icono se anuncian vacías
 
 - SVG con `aria-hidden` sin texto → celda vacía
 - Mismo error que en 2.1, ahora en tabla: es donde más duele, porque es lo que se compara
@@ -43,7 +43,7 @@
 
 - `visually-hidden` con «Incluida» / «No incluida»
 - Alternativa visible: «Sí» / «No» junto al icono, mejor para todas las personas si el diseño lo permite
-- [Ejemplo: fila Televisión con el lector · «Ver cambios»]
+- [Ejemplo: fila Televisión con el lector · «Explicación»]
 
 ## 8. Resumen · Cuando la tabla se complica
 

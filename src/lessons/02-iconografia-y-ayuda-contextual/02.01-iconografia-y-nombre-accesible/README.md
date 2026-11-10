@@ -28,7 +28,7 @@
   1. Simular deuteranopía en devtools (Rendering) y buscar la incidencia.
   2. Recorrer encabezados con el lector: ruido de la caja.
   3. Tab por los controles: «botón» sin nombre.
-  4. **Aplicar arreglo** y repetir.
+  4. Pulsar **Arreglada** y repetir.
 - Código: `examples/ShipmentTracking/`.
 
 ## Conceptos clave

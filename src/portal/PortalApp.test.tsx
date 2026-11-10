@@ -12,7 +12,7 @@ describe('Índice del curso', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /desarrollo web accesible/,
+        name: /Presentación de datos accesible/,
       }),
     ).toBeInTheDocument()
     const hrefs = screen

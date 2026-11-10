@@ -27,7 +27,7 @@
 - Demo:
   1. Entrar en la tabla con el lector y recorrer la fila T-1029.
   2. Ventana de 320 px o zoom al 400 %.
-  3. **Aplicar arreglo** y repetir; Tab hasta la tabla y flechas.
+  3. Pulsar **Arreglada** y repetir; Tab hasta la tabla y flechas.
 - Código: `examples/OrderHistory/`.
 
 ## Conceptos clave

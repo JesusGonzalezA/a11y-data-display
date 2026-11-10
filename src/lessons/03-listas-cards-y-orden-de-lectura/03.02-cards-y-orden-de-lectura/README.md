@@ -28,7 +28,7 @@
   1. Tab desde el principio en cuadrícula: el destacado llega al final.
   2. Enlace de la primera card con el lector: nombre con toda la card.
   3. Navegar por encabezados: no hay.
-  4. **Aplicar arreglo**; repetir en cuadrícula y en lista.
+  4. Pulsar **Arreglada**; repetir en cuadrícula y en lista.
 - Código: `examples/CourseCatalog/`.
 
 ## Conceptos clave

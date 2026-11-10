@@ -12,14 +12,16 @@ export const slides = [
       Cards: estructura, acciones y orden de lectura
     </SlideTitle>
     <p>
-      Una <strong>card</strong> agrupa la información de un elemento de una
-      colección (un curso, un producto) y las acciones sobre él.
+      Una <strong>card</strong> reúne los datos de un elemento de una colección
+      (un curso, un producto) y lo que se puede hacer con él.
     </p>
-    <p>En esta lección:</p>
+    <p>En esta lección aprenderás a:</p>
     <ul>
-      <li>Dar a cada card un encabezado, su información y acciones claras.</li>
-      <li>Separar el enlace al detalle de las acciones secundarias.</li>
-      <li>Que el orden visual, el del código y el del foco coincidan.</li>
+      <li>Dar a cada card un título que sea un encabezado.</li>
+      <li>Separar el enlace principal de los botones.</li>
+      <li>
+        Hacer que lo que se ve, lo que se lee y el foco sigan el mismo orden.
+      </li>
     </ul>
   </Fragment>,
   <Fragment key="3.2-anatomia">
@@ -31,15 +33,14 @@ export const slides = [
     </Code>
     <ul>
       <li>
-        <strong>Encabezado:</strong> el punto de entrada para saltar de card en
-        card.
+        <strong>Encabezado:</strong> permite saltar de card en card.
       </li>
       <li>
-        <strong>Acción principal:</strong> un enlace corto, en el título.
+        <strong>Enlace principal:</strong> corto y en el título.
       </li>
       <li>
-        <strong>Acciones secundarias:</strong> controles aparte, nunca dentro
-        del enlace.
+        <strong>Otras acciones:</strong> botones aparte, nunca dentro del
+        enlace.
       </li>
     </ul>
   </Fragment>,
@@ -56,9 +57,9 @@ export const slides = [
       {'<span class="card__titulo">Excel desde cero</span>'}
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> nada visible, pero quien usa un
-      lector de pantalla, como Elena, no puede saltar de un curso a otro con la
-      tecla de encabezados: tiene que escuchar cada card entera.
+      <strong>Qué le pasa:</strong> Andrés no nota la diferencia, pero Elena sí.
+      Con su lector de pantalla no puede saltar de curso en curso: tiene que
+      escuchar cada card entera.
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-titulo">
@@ -69,8 +70,11 @@ export const slides = [
       }
     </Code>
     <ul>
-      <li>El nivel sigue la jerarquía de la página, no el tamaño de letra.</li>
-      <li>El enlace en el título tiene un nombre corto y único.</li>
+      <li>
+        El nivel del encabezado depende de la estructura de la página, no del
+        tamaño de letra.
+      </li>
+      <li>El enlace del título es corto y distinto en cada card.</li>
     </ul>
   </Fragment>,
   <Fragment key="3.2-error-anidado">
@@ -83,19 +87,19 @@ export const slides = [
     <p>
       <strong>Qué le pasa a Andrés:</strong> el foco entra en el enlace y
       después en un botón que está dentro de él. El enlace se anuncia con todo
-      el texto de la card, incluido «Guardar». Y hay cuatro «Guardar» iguales.
+      el texto de la card, «Guardar» incluido. Y hay cuatro «Guardar» iguales.
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-anidado">
-    <SlideTitle kind="solucion">Enlace en el título, acción al lado</SlideTitle>
+    <SlideTitle kind="solucion">Enlace en el título, botón al lado</SlideTitle>
     <Code tone="solucion" caption="Así se arregla">
       {
         '<h2><a class="card__enlace" href="/cursos/excel">Excel…</a></h2>\n<button>Guardar\n  <span class="visually-hidden">Excel desde cero</span>\n</button>\n\n.card { position: relative; }\n.card__enlace::after { position: absolute; inset: 0; content: ""; }'
       }
     </Code>
     <p>
-      Toda la card sigue respondiendo al clic, pero en el código hay dos
-      controles hermanos, cada uno con su nombre.
+      En el código hay dos controles separados, cada uno con su nombre. El CSS
+      hace que toda la card siga respondiendo al clic.
     </p>
   </Fragment>,
   <Fragment key="3.2-error-orden">
@@ -108,22 +112,22 @@ export const slides = [
       }
     </Code>
     <p>
-      <strong>Qué le pasa a Andrés:</strong> el destacado aparece arriba a la
-      izquierda, pero el foco empieza en la segunda card y salta hacia atrás al
-      final.
+      <strong>Qué le pasa a Andrés:</strong> ve el curso destacado arriba a la
+      izquierda, pero el foco empieza en la segunda card. Llega al destacado al
+      final, saltando hacia atrás.
     </p>
   </Fragment>,
   <Fragment key="3.2-solucion-orden">
     <SlideTitle kind="solucion">El código manda el orden</SlideTitle>
     <ul>
+      <li>Escribe los elementos en el orden en que deben leerse.</li>
       <li>
-        Escribe los elementos en el orden en que deben leerse y recorrerse.
+        El CSS (<code>order</code>, <code>row-reverse</code>, <code>grid</code>)
+        cambia lo que se ve, pero no lo que se lee ni el orden del foco.
       </li>
       <li>
-        <code>order</code>, <code>flex-direction: row-reverse</code> o la
-        colocación en <code>grid</code> cambian lo que se ve, no lo que se lee.
+        Si hay varias vistas (cuadrícula, lista), el orden es el mismo en todas.
       </li>
-      <li>Al cambiar de vista (cuadrícula, lista), el orden se mantiene.</li>
     </ul>
     <ExampleLinks
       slug="academia"

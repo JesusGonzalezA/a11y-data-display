@@ -26,13 +26,13 @@ describe('Contenido del curso', () => {
 
   it('convierte enlaces relativos en rutas del servidor o de GitHub', () => {
     const from =
-      'src/lessons/02-entender-la-accesibilidad/02.01-personas-interaccion-y-barreras/README.md'
+      'src/lessons/02-iconografia-y-ayuda-contextual/02.01-iconografia-y-nombre-accesible/README.md'
     expect(resolveContentLink(from, '../README.md')).toBe('/contenido/modulo-2')
     expect(resolveContentLink(from, './presenter.md')).toBe(
       '/contenido/2.1/presentador',
     )
     expect(resolveContentLink(from, './slides.tsx')).toBe(
-      `${repositoryUrl}/blob/develop/src/lessons/02-entender-la-accesibilidad/02.01-personas-interaccion-y-barreras/slides.tsx`,
+      `${repositoryUrl}/blob/develop/src/lessons/02-iconografia-y-ayuda-contextual/02.01-iconografia-y-nombre-accesible/slides.tsx`,
     )
     expect(resolveContentLink(from, 'https://www.w3.org/')).toBe(
       'https://www.w3.org/',
@@ -46,7 +46,7 @@ describe('Contenido del curso', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: '2.1 Personas, formas de interacción y barreras',
+        name: '2.1 Iconografía: significado y nombre accesible',
       }),
     ).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Diapositivas' })).toHaveAttribute(
@@ -58,8 +58,8 @@ describe('Contenido del curso', () => {
       'page',
     )
     expect(
-      screen.getByRole('link', { name: /Ficha de producto/ }),
-    ).toHaveAttribute('href', '/ejemplos/tienda-online')
+      screen.getByRole('link', { name: /Seguimiento de envíos/ }),
+    ).toHaveAttribute('href', '/ejemplos/envios')
     expect(await axe(container)).toHaveNoViolations()
   })
 

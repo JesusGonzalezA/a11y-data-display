@@ -28,7 +28,7 @@
   1. Tab por los botones: sin ayuda.
   2. Ratón hacia el tooltip: se cierra. Escape: nada.
   3. Buscar el plazo de la papelera con teclado.
-  4. **Aplicar arreglo** y repetir; revisar con lector de pantalla.
+  4. Pulsar **Arreglada** y repetir; revisar con lector de pantalla.
 - Código: `examples/MailToolbar/`.
 
 ## Conceptos clave

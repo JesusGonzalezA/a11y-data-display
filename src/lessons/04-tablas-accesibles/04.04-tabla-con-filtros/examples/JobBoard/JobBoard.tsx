@@ -56,10 +56,7 @@ export function JobBoard({ fixed }: ExamplePageProps) {
     searchRef.current?.focus()
   }
 
-  const filters = [
-    term && `«${query.trim()}»`,
-    mode && mode.toLocaleLowerCase('es'),
-  ]
+  const filters = [term && `«${query.trim()}»`, mode?.toLocaleLowerCase('es')]
     .filter(Boolean)
     .join(' en modalidad ')
 
@@ -139,7 +136,6 @@ export function JobBoard({ fixed }: ExamplePageProps) {
               </button>
             </div>
           ) : (
-            // biome-ignore lint/a11y/noNoninteractiveTabindex: zona desplazable enfocable para teclado
             <div
               className="jobs__scroll"
               role="region"

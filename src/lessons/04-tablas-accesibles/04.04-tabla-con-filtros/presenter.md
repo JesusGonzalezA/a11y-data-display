@@ -56,7 +56,7 @@
 - Sugerencia concreta + botón «Quitar los filtros»
 - Gestión del foco: el botón desaparece al pulsarlo → foco al buscador (si no, se pierde en el `body`)
 - > «Si el elemento con foco desaparece, decide tú adónde va el foco.»
-- [Ejemplo: «Quitar los filtros» · «Ver cambios»]
+- [Ejemplo: «Quitar los filtros» · «Explicación»]
 
 ## 9. Resumen · La tabla sigue siendo una tabla
 
