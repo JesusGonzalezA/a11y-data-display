@@ -1,6 +1,6 @@
-# 4.5 Cómo continuar aprendiendo
+# 5.4 Cómo continuar aprendiendo
 
-> Módulo 4 · Tablas accesibles · cierre del curso · sin página de ejemplo
+> Módulo 5 · Patrón grid · cierre del curso · sin página de ejemplo
 
 ## Objetivo
 
@@ -12,7 +12,7 @@
 
 | Persona | Necesita | Solución vista |
 | --- | --- | --- |
-| Andrés | Hacerlo todo con el teclado, en el orden que ve | `button`, tooltips con foco y Escape, orden del HTML |
+| Andrés | Hacerlo todo con el teclado, en el orden que ve | `button`, tooltips con foco y Escape, orden del HTML, grid con una parada de Tab y flechas |
 | Elena | Que su lector le diga qué es cada dato | Texto junto a los iconos, `ul`/`ol`/`dl`, `caption`, `th scope`, `aria-sort`, `role="status"` |
 | Lucía | Saber qué está filtrando y qué ha pasado | `label` visible, recuento de resultados, «Quitar los filtros» |
 
@@ -25,6 +25,7 @@
 | Varios elementos | Lista: `ul`, `ol` o `dl` | 3.1 |
 | Elementos con título y acciones | Cards dentro de una lista | 3.2 |
 | Elementos con los mismos datos | Tabla con título y encabezados | 4.1–4.4 |
+| Muchas celdas en las que actuar | Grid, solo si hace falta | 5.1–5.3 |
 
 ## Cursos para profundizar
 
@@ -51,3 +52,4 @@ Catálogo completo: [weaaare.com/cursos](https://weaaare.com/cursos).
 - [WAI: tutorial de tablas](https://www.w3.org/WAI/tutorials/tables/)
 - [WAI: tutorial de imágenes](https://www.w3.org/WAI/tutorials/images/)
 - [WAI-ARIA APG: Tooltip](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/)
+- [WAI-ARIA APG: Grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/)

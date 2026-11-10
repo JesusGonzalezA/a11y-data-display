@@ -4,7 +4,7 @@ Curso de **weAAAre** para personas que ya conocen lo básico de HTML semántico,
 nombre accesible y teclado. Docente: **Jesús González Álvarez**.
 
 Enseña a presentar datos para que cualquier persona pueda entenderlos y usarlos:
-iconos, tooltips, listas, cards y tablas. Publicado en
+iconos, tooltips, listas, cards, tablas y grids. Publicado en
 <https://jesusgonzaleza.github.io/a11y-data-display/>.
 
 ## Cómo está construida cada lección
@@ -27,8 +27,8 @@ iconos, tooltips, listas, cards y tablas. Publicado en
 | [1. Introducción](./src/lessons/01-intro/README.md) | 1.1 Bienvenida y presentación · 1.2 Objetivos y contenidos | — |
 | [2. Iconografía y ayuda contextual](./src/lessons/02-iconografia-y-ayuda-contextual/README.md) | 2.1 Iconografía: significado y nombre accesible · 2.2 Tooltip: ayuda contextual y límites | `envios`, `correo` |
 | [3. Listas, cards y orden de lectura](./src/lessons/03-listas-cards-y-orden-de-lectura/README.md) | 3.1 Listas · 3.2 Cards | `casa-rural`, `academia` |
-| [4. Tablas accesibles](./src/lessons/04-tablas-accesibles/README.md) | 4.1 Tabla simple · 4.2 Tabla con doble eje · 4.3 Tabla ordenable · 4.4 Tabla con filtros · 4.5 Cómo continuar aprendiendo | `pedidos`, `tarifas`, `carrera`, `empleo` |
-| 5. Patrón grid | Pendiente de desarrollar | — |
+| [4. Tablas accesibles](./src/lessons/04-tablas-accesibles/README.md) | 4.1 Tabla simple · 4.2 Tabla con doble eje · 4.3 Tabla ordenable · 4.4 Tabla con filtros | `pedidos`, `tarifas`, `carrera`, `empleo` |
+| [5. Patrón grid](./src/lessons/05-patron-grid/README.md) | 5.1 Tabla o grid · 5.2 Navegación y foco · 5.3 Acciones en las celdas · 5.4 Cómo continuar aprendiendo | `horario`, `pistas`, `suscripciones` |
 
 Temario original: [issue #1](https://github.com/JesusGonzalezA/a11y-data-display/issues/1).
 

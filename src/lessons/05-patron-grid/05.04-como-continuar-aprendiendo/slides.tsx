@@ -3,7 +3,7 @@ import { portalUrl } from '../../../routes'
 import { SlideTitle } from '../../../slides/parts'
 
 export const slides = [
-  <Fragment key="4.5-repaso">
+  <Fragment key="5.4-repaso">
     <SlideTitle kind="leccion">Cómo continuar aprendiendo</SlideTitle>
     <p>Primero, un repaso: qué necesita cada persona y cómo se lo damos.</p>
     <table className="summary-table">
@@ -19,7 +19,7 @@ export const slides = [
           <th scope="row">Andrés</th>
           <td>Hacerlo todo con el teclado, en el orden que ve</td>
           <td>
-            Botones de verdad, tooltips que se abren con el foco, HTML en orden
+            Botones de verdad, HTML en orden, grids con una sola parada de Tab
           </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@ export const slides = [
       </tbody>
     </table>
   </Fragment>,
-  <Fragment key="4.5-estructuras">
+  <Fragment key="5.4-estructuras">
     <SlideTitle kind="resumen">Qué estructura elegir</SlideTitle>
     <table className="summary-table">
       <thead>
@@ -70,11 +70,15 @@ export const slides = [
           <th scope="row">Elementos con los mismos datos</th>
           <td>Una tabla, con título y encabezados.</td>
         </tr>
+        <tr>
+          <th scope="row">Muchas celdas en las que actuar</th>
+          <td>Un grid. Solo si hace falta.</td>
+        </tr>
       </tbody>
     </table>
     <p>Elige por lo que la persona quiere hacer, no por el aspecto.</p>
   </Fragment>,
-  <Fragment key="4.5-cursos">
+  <Fragment key="5.4-cursos">
     <SlideTitle kind="resumen">Cursos para profundizar</SlideTitle>
     <ul>
       <li>
@@ -121,7 +125,7 @@ export const slides = [
       </li>
     </ul>
   </Fragment>,
-  <Fragment key="4.5-materiales">
+  <Fragment key="5.4-materiales">
     <SlideTitle kind="resumen">Dónde seguir</SlideTitle>
     <ul>
       <li>

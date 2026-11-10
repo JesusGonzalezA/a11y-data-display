@@ -17,6 +17,9 @@ describe('Registro de páginas de ejemplo', () => {
       '4.2',
       '4.3',
       '4.4',
+      '5.1',
+      '5.2',
+      '5.3',
     ])
   })
 

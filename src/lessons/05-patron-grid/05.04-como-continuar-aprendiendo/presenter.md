@@ -1,4 +1,4 @@
-# Notas · 4.5 Cómo continuar aprendiendo
+# Notas · 5.4 Cómo continuar aprendiendo
 
 ≈ 3 min · sin demo
 
@@ -10,9 +10,10 @@
 
 ## 2. Qué estructura elegir
 
-- De lo más simple a lo más complejo: dato → ayuda → lista → cards → tabla
+- De lo más simple a lo más complejo: dato → ayuda → lista → cards → tabla → grid
 - La pregunta siempre es la misma: ¿qué quiere hacer la persona con estos datos?
 - Ordenar y filtrar no cambian la estructura: la tabla sigue siendo una tabla
+- El grid, el último recurso: solo si hay que actuar en muchas celdas
 - > «Elegir bien la estructura resuelve más barreras que cualquier atributo ARIA.»
 
 ## 3. Cursos para profundizar

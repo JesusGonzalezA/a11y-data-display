@@ -6,6 +6,9 @@ import { orderHistoryExample } from '../lessons/04-tablas-accesibles/04.01-tabla
 import { planComparisonExample } from '../lessons/04-tablas-accesibles/04.02-tabla-con-doble-eje/examples/PlanComparison/PlanComparison.example'
 import { raceResultsExample } from '../lessons/04-tablas-accesibles/04.03-tabla-ordenable/examples/RaceResults/RaceResults.example'
 import { jobBoardExample } from '../lessons/04-tablas-accesibles/04.04-tabla-con-filtros/examples/JobBoard/JobBoard.example'
+import { classTimetableExample } from '../lessons/05-patron-grid/05.01-elegir-tabla-o-grid/examples/ClassTimetable/ClassTimetable.example'
+import { courtBookingExample } from '../lessons/05-patron-grid/05.02-navegacion-y-gestion-del-foco/examples/CourtBooking/CourtBooking.example'
+import { subscriptionsExample } from '../lessons/05-patron-grid/05.03-acciones-y-revision-del-recorrido/examples/Subscriptions/Subscriptions.example'
 import type { ExampleDefinition } from './types'
 
 /** Única fuente de las páginas de ejemplo, en el orden del curso. */
@@ -18,4 +21,7 @@ export const exampleRegistry: ExampleDefinition[] = [
   planComparisonExample,
   raceResultsExample,
   jobBoardExample,
+  classTimetableExample,
+  courtBookingExample,
+  subscriptionsExample,
 ]

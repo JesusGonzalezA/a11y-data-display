@@ -8,7 +8,6 @@
 | [4.2 Tabla con doble eje: encabezados de fila y columna](./04.02-tabla-con-doble-eje/README.md) | Elena compara tarifas | Características en `td`, marcas sin texto → `th scope="row"`, texto oculto | `tarifas` |
 | [4.3 Tabla ordenable: controles y dirección de ordenación](./04.03-tabla-ordenable/README.md) | Andrés (teclado) busca a su hermana | `onclick` en `th`, flecha como único estado, cambio silencioso → botón, `aria-sort`, `role="status"` | `carrera` |
 | [4.4 Tabla con filtros: resultados y continuidad de la tarea](./04.04-tabla-con-filtros/README.md) | Lucía busca trabajo | Placeholder, foco que salta, sin recuento, vacío → `label`, foco estable, recuento, salida | `empleo` |
-| [4.5 Cómo continuar aprendiendo](./04.05-como-continuar-aprendiendo/README.md) | Repaso de las tres personas y cierre del curso | — | — |
 
 ## Materiales
 

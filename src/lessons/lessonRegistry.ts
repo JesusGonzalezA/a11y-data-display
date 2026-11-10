@@ -9,7 +9,10 @@ import { slides as simpleTableSlides } from './04-tablas-accesibles/04.01-tabla-
 import { slides as twoAxisSlides } from './04-tablas-accesibles/04.02-tabla-con-doble-eje/slides'
 import { slides as sortableSlides } from './04-tablas-accesibles/04.03-tabla-ordenable/slides'
 import { slides as filterSlides } from './04-tablas-accesibles/04.04-tabla-con-filtros/slides'
-import { slides as closingSlides } from './04-tablas-accesibles/04.05-como-continuar-aprendiendo/slides'
+import { slides as tableOrGridSlides } from './05-patron-grid/05.01-elegir-tabla-o-grid/slides'
+import { slides as gridNavigationSlides } from './05-patron-grid/05.02-navegacion-y-gestion-del-foco/slides'
+import { slides as gridActionsSlides } from './05-patron-grid/05.03-acciones-y-revision-del-recorrido/slides'
+import { slides as closingSlides } from './05-patron-grid/05.04-como-continuar-aprendiendo/slides'
 
 export interface CourseLesson {
   /** Número humano: `2.1`. */
@@ -116,10 +119,35 @@ export const courseModules: CourseModule[] = [
         folder: '04.04-tabla-con-filtros',
         slides: filterSlides,
       },
+    ],
+  },
+  {
+    number: 5,
+    title: 'Patrón grid',
+    folder: '05-patron-grid',
+    lessons: [
       {
-        number: '4.5',
+        number: '5.1',
+        title: 'Cuándo elegir una tabla y cuándo un grid',
+        folder: '05.01-elegir-tabla-o-grid',
+        slides: tableOrGridSlides,
+      },
+      {
+        number: '5.2',
+        title: 'Navegación por celdas y gestión del foco',
+        folder: '05.02-navegacion-y-gestion-del-foco',
+        slides: gridNavigationSlides,
+      },
+      {
+        number: '5.3',
+        title: 'Acciones dentro de las celdas y revisión del recorrido',
+        folder: '05.03-acciones-y-revision-del-recorrido',
+        slides: gridActionsSlides,
+      },
+      {
+        number: '5.4',
         title: 'Cómo continuar aprendiendo',
-        folder: '04.05-como-continuar-aprendiendo',
+        folder: '05.04-como-continuar-aprendiendo',
         slides: closingSlides,
       },
     ],
